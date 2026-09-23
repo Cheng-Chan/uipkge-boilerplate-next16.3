@@ -32,12 +32,12 @@ The shadcn aliases establish these project roots:
 Registry items may contain explicit `target` paths, which take precedence over the general aliases.
 The React manifests inspected on 2026-09-23 resolve as follows:
 
-| Item                      | Type             | Inspected targets                                   | Dependencies    |
-| ------------------------- | ---------------- | --------------------------------------------------- | --------------- |
-| `@uipkge-react/tailwind`  | `registry:style` | `app/globals.css`                                   | None            |
-| `@uipkge-react/utils`     | `registry:lib`   | `lib/utils.ts`                                      | None            |
-| `@uipkge-react/use-theme` | `registry:hook`  | `components/theme-provider.tsx`, `lib/use-theme.ts` | `next-themes`   |
-| `@uipkge-react/button`    | `registry:ui`    | `components/ui/button/*`                            | Radix Slot, CVA |
+| Item                      | Type             | Inspected targets                                   | Manifest dependencies |
+| ------------------------- | ---------------- | --------------------------------------------------- | --------------------- |
+| `@uipkge-react/tailwind`  | `registry:style` | `app/globals.css`                                   | None                  |
+| `@uipkge-react/utils`     | `registry:lib`   | `lib/utils.ts`                                      | None                  |
+| `@uipkge-react/use-theme` | `registry:hook`  | `components/theme-provider.tsx`, `lib/use-theme.ts` | `next-themes`         |
+| `@uipkge-react/button`    | `registry:ui`    | `components/ui/button/*`                            | Radix Slot, CVA       |
 
 The `init` item contains no files of its own; it depends on `tailwind`, `utils`, and `use-theme`.
 Installing it would therefore implement parts of D02 and D03 together and is not authorized by D01.
@@ -69,6 +69,32 @@ After a later item ticket is approved:
 6. Record installed paths, adaptations, evidence, and status in the future catalogue manifest.
 
 Bulk add, `init`, `-y`, and unreviewed dependency installation are not part of this workflow.
+
+## Installed nonvisual foundation
+
+The following foundation items were installed through the pinned CLI on 2026-09-23. They are
+tracked separately from the visual catalogue count.
+
+| Item                     | Raw manifest SHA-256                                               | Installed path    | Local status                  |
+| ------------------------ | ------------------------------------------------------------------ | ----------------- | ----------------------------- |
+| `@uipkge-react/tailwind` | `19fe880ee9c5485cb394d2674280ede2bba7e8ef2cf422ac4ff78372eceea25f` | `app/globals.css` | Installed and locally adapted |
+| `@uipkge-react/utils`    | `55d16300c5431b80e332180498d2f4a8cee3a500fc023a5b9b38d742ce27af84` | `lib/utils.ts`    | Installed and locally adapted |
+
+The raw manifests declare no package dependencies even though their source imports
+`tw-animate-css`, `clsx`, and `tailwind-merge`. Those three runtime dependencies are therefore pinned
+explicitly in this project.
+
+Local adaptations are intentional and reviewable:
+
+- Removed the Google Fonts import and replaced DM Sans, Anybody, and DM Mono with local system font
+  stacks so the default runtime makes no font-provider request.
+- Removed the CLI-generated invalid `--radius: var(----radius)` mapping.
+- Added `color-scheme` declarations for native controls.
+- Adjusted the dark destructive surface from `oklch(0.68 0.18 25)` to `oklch(0.57 0.18 25)` after
+  contrast measurement; the foreground pair increased from 3.00:1 to approximately 4.68:1.
+- Kept `lib/utils.ts` limited to the canonical `cn` helper. The upstream redirect helper is deferred
+  because the auth ticket requires validation against this application's known routes.
+- Updated the foundation landing and not-found pages to consume semantic color tokens.
 
 ## Sources and licensing
 

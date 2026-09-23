@@ -12,6 +12,7 @@ Last updated: 2026-09-23
 | F03    | Complete | Zero-config Zod environment contract; 9 tests and default/valid static builds passed; invalid partial configuration failed as designed |
 | F04    | Complete | Architecture, security, reuse, dependency backlog, progress evidence, and catalogue caveats documented; aggregate check passed         |
 | D01    | Complete | Pinned shadcn CLI, schema-valid UIPKGE namespace, canonical paths, read-only resolution, and dry-run write plans verified              |
+| D02    | Complete | UIPKGE semantic tokens and canonical `cn` utility installed with offline-font, dependency, generated-CSS, and contrast adaptations     |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -85,13 +86,33 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
   included formatting, lint, typecheck, 9 unit tests, and static build.
 - Browser tests were not rerun because no runtime source or rendered behavior changed.
 
+### D02 — tokens and base utilities
+
+- Inspected and installed only `@uipkge-react/tailwind` and `@uipkge-react/utils` through the pinned
+  CLI after reviewing its overwrite diff.
+- Recorded raw manifest SHA-256 hashes, installed paths, MIT source attribution, missing declared
+  dependencies, and every local adaptation in `docs/registry.md`.
+- Pinned `tw-animate-css`, `clsx`, and `tailwind-merge`, which the installed source imports but its
+  raw manifests do not declare.
+- Removed the external Google Fonts request, used local system stacks, removed a malformed generated
+  radius variable, narrowed `lib/utils.ts` to `cn`, and moved the existing pages to semantic tokens.
+- Audited eleven foreground/surface pairs in both modes. After adapting dark destructive, all were
+  at least 4.68:1; light background/foreground measured 17.07:1 and dark measured 16.29:1.
+- Three design-foundation tests cover complete light/dark token pairs, offline font behavior,
+  generated variable validity, Tailwind theme/dark directives, and class merging.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, `pnpm check`, and `pnpm test:coverage` passed;
+  the final suite contains 12 tests across 3 files.
+- Two Chromium smoke tests passed against the static production preview. Light and forced-dark
+  screenshots were manually inspected, computed body colors/fonts changed as expected, and the page
+  made zero external requests.
+
 ## Known constraints
 
 - ESLint 9 remains pinned because the installed Next.js ESLint peer stack does not accept ESLint 10.
 - Playwright Chromium on Linux needs its documented system packages.
 - The catalogue count is provisional until LAB01 records provenance and content hashes.
-- No demo auth, RBAC, business fixtures, installed registry components, feature pages, or
-  workbenches exist yet.
+- No demo auth, RBAC, business fixtures, visual catalogue components, feature pages, or workbenches
+  exist yet. Installed nonvisual registry foundation is tracked separately in `docs/registry.md`.
 
 Append ticket evidence here only after commands have actually run. Link richer evidence from the
 future catalogue manifest rather than converting planned checks into claims.

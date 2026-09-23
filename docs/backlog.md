@@ -84,7 +84,7 @@ after inspecting relevant registry manifests.
 - **Verification:** CLI/schema inspection, `pnpm check`, registry resolution without apply.
 - **Review:** Inspect manifest, proposed writes, dependencies, aliases, and registry URL.
 
-### D02 — tokens and base utilities — Planned
+### D02 — tokens and base utilities — Complete
 
 - **Goal:** Establish the canonical Tailwind v4 UIPKGE visual foundation.
 - **Description:** Adopt verified OKLCH tokens and one class-merging utility; install only the

@@ -4,19 +4,20 @@ Last updated: 2026-09-23
 
 ## Status summary
 
-| Ticket | Status   | Evidence summary                                                                                                                       |
-| ------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| T00    | Complete | Read-only workspace, toolchain, source, architecture, catalogue, route, and permission planning                                        |
-| F01    | Complete | Minimal Next.js 16.3.6 static application; lint, TypeScript 7 check, and production export passed                                      |
-| F02    | Complete | Vitest/RTL and Playwright baseline; static preview returned 200/404 correctly; 2 unit and 2 browser tests passed                       |
-| F03    | Complete | Zero-config Zod environment contract; 9 tests and default/valid static builds passed; invalid partial configuration failed as designed |
-| F04    | Complete | Architecture, security, reuse, dependency backlog, progress evidence, and catalogue caveats documented; aggregate check passed         |
-| D01    | Complete | Pinned shadcn CLI, schema-valid UIPKGE namespace, canonical paths, read-only resolution, and dry-run write plans verified              |
-| D02    | Complete | UIPKGE semantic tokens and canonical `cn` utility installed with offline-font, dependency, generated-CSS, and contrast adaptations     |
-| D03    | Complete | UIPKGE theme provider plus accessible light/dark/system control; hydration, persistence, keyboard, and system changes verified         |
-| P01    | Complete | Typed local service results and deterministic loading/empty/failure/rate-limited/success controls with cancellable timers verified     |
-| P02    | Complete | Versioned Zod-validated browser storage with typed recovery, memory fallback, reset seams, and prerender-safe access verified          |
-| P03    | Complete | Three schema-backed synthetic identities with stable IDs and explicitly public credentials separated from identity references verified |
+| Ticket | Status   | Evidence summary                                                                                                                                    |
+| ------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| T00    | Complete | Read-only workspace, toolchain, source, architecture, catalogue, route, and permission planning                                                     |
+| F01    | Complete | Minimal Next.js 16.3.6 static application; lint, TypeScript 7 check, and production export passed                                                   |
+| F02    | Complete | Vitest/RTL and Playwright baseline; static preview returned 200/404 correctly; 2 unit and 2 browser tests passed                                    |
+| F03    | Complete | Zero-config Zod environment contract; 9 tests and default/valid static builds passed; invalid partial configuration failed as designed              |
+| F04    | Complete | Architecture, security, reuse, dependency backlog, progress evidence, and catalogue caveats documented; aggregate check passed                      |
+| D01    | Complete | Pinned shadcn CLI, schema-valid UIPKGE namespace, canonical paths, read-only resolution, and dry-run write plans verified                           |
+| D02    | Complete | UIPKGE semantic tokens and canonical `cn` utility installed with offline-font, dependency, generated-CSS, and contrast adaptations                  |
+| D03    | Complete | UIPKGE theme provider plus accessible light/dark/system control; hydration, persistence, keyboard, and system changes verified                      |
+| P01    | Complete | Typed local service results and deterministic loading/empty/failure/rate-limited/success controls with cancellable timers verified                  |
+| P02    | Complete | Versioned Zod-validated browser storage with typed recovery, memory fallback, reset seams, and prerender-safe access verified                       |
+| P03    | Complete | Three schema-backed synthetic identities with stable IDs and explicitly public credentials separated from identity references verified              |
+| P04    | Complete | Bounded synthetic customer/project fixtures and typed async CRUD/reset services with deterministic IDs, dates, validation, and persistence verified |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -195,12 +196,40 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
 - `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed. Browser tests were not
   rerun because P03 adds no rendered behavior.
 
+### P04 — customer and project fixtures/services
+
+- Added four customer and five project fixtures with stable IDs, explicit ISO timestamps/date-only
+  values, invented `Demo`/`Sample` names, reserved `.invalid` emails, bounded integer budgets, and
+  valid customer relationships.
+- Added strict Zod schemas for entities and create/update inputs. Stored customer/project arrays are
+  capped at 100/200 records, project dates must be real calendar dates in order, and update payloads
+  cannot be empty.
+- Added asynchronous list/detail/create/update/delete/reset contracts for both domains. Successful
+  results include persistence provenance; not-found and validation failures use the shared
+  `ServiceResult` vocabulary without echoing rejected values.
+- Added a shared local-collection seam justified by the two domain consumers. It lazy-loads versioned
+  storage, clones mutable state, preserves memory/quota warnings, persists validated mutations, and
+  restores fresh fixture copies through explicit reset behavior.
+- Local creations use deterministic `customer-local-N`/`project-local-N` IDs and all mutations use
+  fixed timestamp `2026-01-15T12:00:00.000Z`. Project services validate customer relationships and
+  allow an injected lookup for locally created customers.
+- Eighteen focused tests cover fixture validity/uniqueness/bounds/relationships, every CRUD success
+  and validation/not-found failure, persistence reloads, corrupt storage, quota fallback,
+  unavailable storage, failed reset recovery, fixed IDs/timestamps, and reset-to-fixtures behavior.
+- The final suite contains 72 tests across 12 files. `pnpm test:coverage` passed at 94.04% statements
+  overall; both service modules, schemas, fixtures, validation helper, and local collection reached
+  100% line/function coverage.
+- Source inspection found no current-time, random-ID, HTTP/API, Axios, or fetch behavior in the new
+  domain implementation. No dependency was added.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed. Browser tests were not
+  rerun because P04 adds no rendered behavior.
+
 ## Known constraints
 
 - ESLint 9 remains pinned because the installed Next.js ESLint peer stack does not accept ESLint 10.
 - Playwright Chromium on Linux needs its documented system packages.
 - The catalogue count is provisional until LAB01 records provenance and content hashes.
-- No demo auth, RBAC, business fixtures, visual catalogue components, feature pages, or workbenches
+- No demo authentication behavior, RBAC, visual catalogue components, feature pages, or workbenches
   exist yet. Installed nonvisual registry foundation is tracked separately in `docs/registry.md`.
 
 Append ticket evidence here only after commands have actually run. Link richer evidence from the

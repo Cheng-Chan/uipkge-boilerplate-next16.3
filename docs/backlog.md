@@ -147,7 +147,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Fixture schema/unit tests and `pnpm check`.
 - **Review:** Inspect displayed values and search for accidental secret-like configuration.
 
-### P04 — customer and project fixtures/services — Planned
+### P04 — customer and project fixtures/services — Complete
 
 - **Goal:** Supply deterministic local customer/project data behind typed interfaces.
 - **Description:** Add schemas, fixtures, list/detail/create/update/delete contracts, validation, and

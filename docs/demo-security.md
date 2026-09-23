@@ -27,6 +27,8 @@ production.
   use stable `demo-*` identifiers and display names.
 - Fake passwords exist only in fixtures marked `public-demo-credential` and carry the label “Public
   demo credential — not a secret.” Identity and identity-reference schemas reject password fields.
+- Customer/project fixtures use invented `Demo`/`Sample` names, reserved `.invalid` email domains,
+  stable IDs, and explicit dates. They contain no copied customer records or live contact details.
 
 ## Required future behavior
 

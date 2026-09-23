@@ -117,6 +117,13 @@ schema, and owns an in-memory fallback. Browser storage is resolved only when an
 never while the module loads. Corrupt or unsupported data remains intact until an explicit reset;
 write fallbacks report their warning and do not pretend to be durable.
 
+Customer and project domains expose asynchronous CRUD interfaces under `features/*/services`.
+Their shared `lib/local-collection.ts` seam lazy-loads bounded, schema-validated arrays, keeps UI
+away from storage, and returns persistence provenance with every successful result. Fixture data
+uses explicit IDs/dates and reserved `.invalid` contact domains. Local mutations use deterministic
+`*-local-N` IDs and the fixed timestamp `2026-01-15T12:00:00.000Z`; they never read the current time
+or generate random values.
+
 `RATE_LIMITED` only represents the explicit `rate-limited` demo scenario. It is not evidence of real
 rate limiting.
 

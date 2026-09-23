@@ -57,6 +57,7 @@ existing `out/` directory; rebuild the application instead. Never put secrets in
 
 - [Architecture](docs/architecture.md)
 - [Demo security](docs/demo-security.md)
+- [UIPKGE registry](docs/registry.md)
 - [Backlog](docs/backlog.md)
 - [Progress and verification evidence](docs/progress.md)
 - [Reusing the application foundation](docs/reuse.md)

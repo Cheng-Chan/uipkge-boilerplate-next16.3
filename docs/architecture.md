@@ -74,13 +74,17 @@ contract only after two real consumers justify it.
 - `components/ui` is the single canonical primitive tree.
 - `components/blocks` holds registry blocks whose manifests prescribe block-level files.
 - `components/shared` holds project-authored compositions.
+- Registry bootstrap files with explicit targets remain at those targets. In particular, UIPKGE's
+  inspected theme provider belongs at `components/theme-provider.tsx`; it is not duplicated under
+  `components/shared`.
 - `features/showcase` owns demo wrappers and examples; registry source is not edited merely to
   insert showcase controls.
 - Do not create `app/components`, a second `ui` tree, or competing `cn` and theme helpers.
 
-Registry manifests and target paths must still be inspected before each installation. If an item
-requires a different path, record that exception in the catalogue manifest rather than silently
-duplicating source.
+Registry manifests and target paths must still be inspected before each installation. Exact
+bootstrap targets and the review workflow are recorded in [the registry guide](registry.md). If an
+item requires a different path, record that exception in the catalogue manifest rather than
+silently duplicating source.
 
 ## Rendering and routing
 

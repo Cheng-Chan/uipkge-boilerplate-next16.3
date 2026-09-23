@@ -72,7 +72,7 @@ after inspecting relevant registry manifests.
 
 ## Design system
 
-### D01 — UIPKGE registry and canonical paths — Planned
+### D01 — UIPKGE registry and canonical paths — Complete
 
 - **Goal:** Configure one inspectable UIPKGE installation path without installing catalogue batches.
 - **Description:** Pin and inspect the shadcn CLI, validate its schema, configure the
@@ -102,8 +102,9 @@ after inspecting relevant registry manifests.
 - **Goal:** Provide one accessible light/dark/system theme mechanism.
 - **Description:** Add the pinned theme provider, localized client boundary, switcher, hydration-safe
   initialization, and persistence tests.
-- **Proposed files:** `components/shared/theme-provider.tsx`, `components/shared/theme-switcher.tsx`,
-  root layout, tests, package lockfile.
+- **Proposed files:** inspected registry targets `components/theme-provider.tsx` and
+  `lib/use-theme.ts`, project-authored `components/shared/theme-switcher.tsx`, root layout, tests,
+  package lockfile.
 - **Dependencies:** D02.
 - **Acceptance:** All three states work without hydration warnings; system changes apply; keyboard
   labels and persistence are verified.

@@ -11,6 +11,7 @@ Last updated: 2026-09-23
 | F02    | Complete | Vitest/RTL and Playwright baseline; static preview returned 200/404 correctly; 2 unit and 2 browser tests passed                       |
 | F03    | Complete | Zero-config Zod environment contract; 9 tests and default/valid static builds passed; invalid partial configuration failed as designed |
 | F04    | Complete | Architecture, security, reuse, dependency backlog, progress evidence, and catalogue caveats documented; aggregate check passed         |
+| D01    | Complete | Pinned shadcn CLI, schema-valid UIPKGE namespace, canonical paths, read-only resolution, and dry-run write plans verified              |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -69,12 +70,28 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
 - `pnpm check` passed formatting, lint, typecheck, 9 unit tests, and static build.
 - Browser tests were not rerun because this ticket changes documentation only.
 
+### D01 — UIPKGE registry and canonical paths
+
+- Pinned `shadcn` 4.21.0 and added a `components.json` validated with that version's exported
+  `rawConfigSchema`.
+- Configured `@uipkge-react` as `https://uipkge.dev/r/react/{name}.json` with canonical component,
+  UI, hook, library, and utility aliases.
+- `pnpm exec shadcn view @uipkge-react/init` resolved the public namespace without applying source.
+- `pnpm exec shadcn add --dry-run @uipkge-react/init` reported three creates, one stylesheet
+  overwrite, `next-themes`, and 113 CSS variables; the proposed targets remained untouched.
+- `pnpm exec shadcn add --dry-run @uipkge-react/button` resolved four files under the canonical
+  `components/ui/button` path and two dependencies without applying them.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed; the aggregate check
+  included formatting, lint, typecheck, 9 unit tests, and static build.
+- Browser tests were not rerun because no runtime source or rendered behavior changed.
+
 ## Known constraints
 
 - ESLint 9 remains pinned because the installed Next.js ESLint peer stack does not accept ESLint 10.
 - Playwright Chromium on Linux needs its documented system packages.
 - The catalogue count is provisional until LAB01 records provenance and content hashes.
-- No demo auth, RBAC, business fixtures, registry components, feature pages, or workbenches exist yet.
+- No demo auth, RBAC, business fixtures, installed registry components, feature pages, or
+  workbenches exist yet.
 
 Append ticket evidence here only after commands have actually run. Link richer evidence from the
 future catalogue manifest rather than converting planned checks into claims.

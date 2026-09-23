@@ -16,7 +16,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reporter: ["text", "json-summary", "html"],
-      include: ["app/**/*.{ts,tsx}"],
+      include: ["app/**/*.{ts,tsx}", "config/**/*.{ts,tsx}"],
     },
   },
 });

@@ -38,6 +38,21 @@ pnpm exec playwright install chromium
 Linux hosts may also need Playwright's system packages, installed once with
 `pnpm exec playwright install-deps chromium`.
 
+## Environment
+
+The default frontend-only demo needs no environment variables, credentials, or backend URL.
+Copy `.env.example` to `.env.local` only when configuring an optional feature.
+
+`NEXT_PUBLIC_MAPBOX_ENABLED` accepts only `true` or `false`. When it is `true`,
+`NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN` must contain a public `pk.` Mapbox token. A token without the
+explicit opt-in, a missing token, or a secret `sk.` token fails configuration validation. These
+settings reserve the contract for the later opt-in map workbench; they do not enable external
+requests in the current foundation.
+
+All `NEXT_PUBLIC_*` values are browser-visible and are frozen into the static output by
+`pnpm build`. Changing a static host's environment after deployment does not reconfigure an
+existing `out/` directory; rebuild the application instead. Never put secrets in public variables.
+
 TypeScript 7 is the application type checker. A separately aliased TypeScript 6 compatibility
 package supplies the JavaScript compiler API currently required by ESLint tooling; it is not the
 project type-check command.

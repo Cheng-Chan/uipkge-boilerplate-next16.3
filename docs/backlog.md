@@ -124,7 +124,7 @@ after inspecting relevant registry manifests.
 - **Verification:** `pnpm test`, `pnpm typecheck`, fake-timer cleanup tests.
 - **Review:** Inspect error vocabulary and confirm there is no fetch/Axios/MSW/API route.
 
-### P02 — versioned browser storage adapter — Planned
+### P02 — versioned browser storage adapter — Complete
 
 - **Goal:** Isolate safe, recoverable browser persistence.
 - **Description:** Implement memory fallback, versioned keys, Zod decoding, corruption/quota handling,

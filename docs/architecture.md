@@ -111,6 +111,12 @@ local error vocabulary. `features/demo-state/demo-state.ts` supplies determinist
 failure, rate-limited, and success scenarios through a cancellable timer task. Consumers retain and
 invoke the task's cleanup handle when their lifecycle ends.
 
+`lib/storage/versioned-storage.ts` is the single browser-persistence seam. Each adapter instance
+uses a namespaced/versioned key and envelope, validates decoded and submitted values with its Zod
+schema, and owns an in-memory fallback. Browser storage is resolved only when an operation runs,
+never while the module loads. Corrupt or unsupported data remains intact until an explicit reset;
+write fallbacks report their warning and do not pretend to be durable.
+
 `RATE_LIMITED` only represents the explicit `rate-limited` demo scenario. It is not evidence of real
 rate limiting.
 
@@ -148,6 +154,7 @@ permitted. Provider access and cost implications must be documented before opt-i
 | Static export                   | Matches the frontend-only deployment boundary and makes hosting portable. |
 | Local service interfaces        | Preserves replaceable seams without inventing an HTTP backend.            |
 | Session identity reference only | Avoids treating browser storage as an authorization source.               |
+| Versioned validated storage     | Makes browser persistence recoverable without coupling it to UI code.     |
 | Manifest-driven catalogue       | Makes coverage, routes, provenance, and evidence auditable.               |
 | Explicit lazy previews          | Prevents the complete catalogue and heavy tools entering shared bundles.  |
 | Node static preview             | Keeps preview behavior consistent across Windows, macOS, and Linux.       |

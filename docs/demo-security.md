@@ -45,6 +45,9 @@ production.
   closed to a safe default and provide recoverable feedback.
 - Storage access must handle unavailable storage and quota errors. UI components do not access
   storage directly.
+- The shared storage adapter reports fixed recovery messages and validation paths without including
+  rejected stored or submitted values. A memory fallback is session-local and is never described as
+  durable persistence.
 - Local file experiments create previews only. They do not upload files and must revoke object URLs.
 - User-editable CSV exports must neutralize spreadsheet formula prefixes.
 

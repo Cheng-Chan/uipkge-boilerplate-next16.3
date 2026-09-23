@@ -15,6 +15,7 @@ Last updated: 2026-09-23
 | D02    | Complete | UIPKGE semantic tokens and canonical `cn` utility installed with offline-font, dependency, generated-CSS, and contrast adaptations     |
 | D03    | Complete | UIPKGE theme provider plus accessible light/dark/system control; hydration, persistence, keyboard, and system changes verified         |
 | P01    | Complete | Typed local service results and deterministic loading/empty/failure/rate-limited/success controls with cancellable timers verified     |
+| P02    | Complete | Versioned Zod-validated browser storage with typed recovery, memory fallback, reset seams, and prerender-safe access verified          |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -148,6 +149,27 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
 - Source inspection found no fetch, Axios, MSW, `/api/`, application server, or added dependency.
 - `pnpm install --frozen-lockfile`, `pnpm peers check`, `pnpm check`, and the focused test/typecheck
   commands passed. Browser tests were not rerun because P01 adds no rendered behavior.
+
+### P02 — versioned browser storage adapter
+
+- Added `lib/storage/versioned-storage.ts` with `uipkge.demo:<name>:v<version>` keys, matching
+  versioned JSON envelopes, caller-supplied Zod schemas, and local/session storage provider seams.
+- Reads distinguish missing values from stored values, including valid `null` data. Corrupt JSON,
+  invalid envelopes, unsupported versions, and schema-invalid data return typed recoverable
+  failures without deleting the stored value or echoing its contents.
+- Writes validate before persistence and verify a JSON round trip. Unavailable storage, quota
+  failures, and other write failures use an adapter-local memory mirror with a typed warning rather
+  than claiming durable persistence.
+- Reset always clears memory, explicitly attempts persistent removal, and reports when persistent
+  data might remain. Storage-provider, read, write, and remove exceptions are contained.
+- Twenty-four focused tests cover keys, envelopes, missing/corrupt/invalid/unknown-version values,
+  sensitive-value-safe errors, validation, non-JSON values, memory fallback, quota/generic failures,
+  reset recovery, provider exceptions, and Node/prerender operation without `window`.
+- The final suite contains 50 tests across 8 files. `pnpm test:coverage` passed at 95.16% statements
+  overall; the adapter reached 98.23% statements, 96.22% branches, and 100% functions/lines.
+- No dependency, module-time browser access, fixture, identity, UI, or network behavior was added.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, `pnpm check`, and focused storage/typecheck
+  commands passed. Browser tests were not rerun because P02 adds no rendered behavior.
 
 ## Known constraints
 

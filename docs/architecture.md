@@ -8,8 +8,9 @@ This repository has two deliberately separated responsibilities:
    RBAC, deterministic synthetic data, and replaceable service interfaces.
 2. A component laboratory for the approved UIPKGE React catalogue snapshot.
 
-Only the static foundation, quality tooling, and environment contract exist today. Directories
-marked **planned** below describe approved boundaries, not implemented features.
+The static foundation, quality tooling, design system, environment contract, and initial local
+service/demo-state contracts exist today. Directories marked **planned** below describe approved
+boundaries, not implemented features.
 
 ## Non-negotiable boundaries
 
@@ -105,9 +106,13 @@ Planned domain UI calls typed asynchronous service interfaces. Local adapters va
 stored values, enforce the same presentation policy as controls, then update memory or versioned
 browser storage. UI code does not manipulate storage directly.
 
-The common result is a discriminated `ServiceResult<T>` with the documented local error codes.
-`RATE_LIMITED` may only represent an explicit demo failure mode. It is not evidence of real rate
-limiting.
+The common result is the discriminated `ServiceResult<T>` in `lib/service-result.ts`, with its exact
+local error vocabulary. `features/demo-state/demo-state.ts` supplies deterministic loading, empty,
+failure, rate-limited, and success scenarios through a cancellable timer task. Consumers retain and
+invoke the task's cleanup handle when their lifecycle ends.
+
+`RATE_LIMITED` only represents the explicit `rate-limited` demo scenario. It is not evidence of real
+rate limiting.
 
 ## Authentication and access control
 

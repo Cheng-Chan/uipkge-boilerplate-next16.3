@@ -14,6 +14,7 @@ Last updated: 2026-09-23
 | D01    | Complete | Pinned shadcn CLI, schema-valid UIPKGE namespace, canonical paths, read-only resolution, and dry-run write plans verified              |
 | D02    | Complete | UIPKGE semantic tokens and canonical `cn` utility installed with offline-font, dependency, generated-CSS, and contrast adaptations     |
 | D03    | Complete | UIPKGE theme provider plus accessible light/dark/system control; hydration, persistence, keyboard, and system changes verified         |
+| P01    | Complete | Typed local service results and deterministic loading/empty/failure/rate-limited/success controls with cancellable timers verified     |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -127,6 +128,26 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
   reloads, live system-preference changes, and zero console, page, or hydration errors.
 - Light and dark system-mode screenshots were manually inspected at 1280×800; the theme control,
   selected states, foregrounds, surfaces, borders, and warning treatment remained legible.
+
+### P01 — service result and demo-state contracts
+
+- Added the exact discriminated `ServiceResult<T>` envelope, its six-code error vocabulary, and
+  small success/failure constructors in `lib/service-result.ts`.
+- Added a dependency-free demo-state task in `features/demo-state/demo-state.ts`. It emits loading
+  immediately and deterministically settles to empty, failure, explicit simulated rate limiting, or
+  typed success after a validated delay.
+- The returned cleanup handle is idempotent, clears pending timers, resolves cancellation
+  explicitly, and prevents terminal state delivery after cancellation. Consumer-listener failures
+  reject completion without retaining a timer.
+- Twelve focused tests verify discriminant narrowing, all required states, the explicit
+  `RATE_LIMITED` wording/code, invalid delays, cancellation, listener failures, and fake-timer
+  cleanup. The final suite contains 26 tests across 6 files.
+- `pnpm test:coverage` passed at 90.41% statements overall. `service-result.ts` reached 100%
+  statement/branch/function/line coverage; `demo-state.ts` reached 97.22% statements, 80% branches,
+  100% functions, and 100% lines.
+- Source inspection found no fetch, Axios, MSW, `/api/`, application server, or added dependency.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, `pnpm check`, and the focused test/typecheck
+  commands passed. Browser tests were not rerun because P01 adds no rendered behavior.
 
 ## Known constraints
 

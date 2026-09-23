@@ -113,7 +113,7 @@ after inspecting relevant registry manifests.
 
 ## Local demo platform
 
-### P01 — service result and demo-state contracts — Planned
+### P01 — service result and demo-state contracts — Complete
 
 - **Goal:** Define reusable local async boundaries without inventing HTTP infrastructure.
 - **Description:** Add `ServiceResult<T>`, error codes, cancellable deterministic state controls, and

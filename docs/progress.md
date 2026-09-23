@@ -18,6 +18,8 @@ Last updated: 2026-09-23
 | P02    | Complete | Versioned Zod-validated browser storage with typed recovery, memory fallback, reset seams, and prerender-safe access verified                       |
 | P03    | Complete | Three schema-backed synthetic identities with stable IDs and explicitly public credentials separated from identity references verified              |
 | P04    | Complete | Bounded synthetic customer/project fixtures and typed async CRUD/reset services with deterministic IDs, dates, validation, and persistence verified |
+| P05    | Complete | Deterministic task movement/editing, calendar mutation, and read-only accessible activity contracts verified                                        |
+| P06    | Complete | Local-only message simulation plus deterministic KPI and illustrative coordinate fixtures/services verified                                         |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -223,6 +225,39 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
   domain implementation. No dependency was added.
 - `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed. Browser tests were not
   rerun because P04 adds no rendered behavior.
+
+### P05 — task, calendar, and activity fixtures/services
+
+- Added five task fixtures across every planned workflow status, three timezone-explicit calendar
+  events, and four reverse-chronological activity records. All relationships resolve to tracked
+  synthetic project/user fixtures, and every calendar/activity item carries an accessible summary.
+- Added strict bounded Zod schemas and asynchronous task, calendar, and activity services. Tasks
+  support validated editing and deterministic cross-column movement/reindexing; calendar events
+  support create/detail/update/delete/reset with merged date validation; activity remains read-only
+  with optional project filtering.
+- Task and calendar mutations persist through versioned keys, return persistence provenance, and
+  use fixed timestamp `2026-01-15T12:00:00.000Z`. Invalid moves, reversed/equal dates, unknown
+  relationships, empty updates, and missing targets return typed failures.
+- Focused fixture/service tests cover relationships, explicit ordering/dates, accessible summaries,
+  editing, movement, CRUD, persistence reload, validation failures, filtering, detail, and reset.
+
+### P06 — messages, KPI, and coordinate fixtures/services
+
+- Added two synthetic message threads, three KPI series, and marker/polyline/polygon coordinate
+  fixtures. Message records use `local-simulation` plus the exact non-delivery notice; every
+  coordinate record carries the exact illustrative/non-navigation notice.
+- Added an asynchronous thread/detail/send/reset service with deterministic IDs/timestamps,
+  participant enforcement, versioned storage, nested-state cloning, and no delivery mechanism.
+  KPI and coordinate services are intentionally read-only and return cloned fixture data.
+- Zod contracts bound thread/message sizes, validate authors and ordering, require ascending KPI
+  dates, constrain coordinate ranges/geometry point counts, and make safety labels structural.
+- P05/P06 brought the final suite to 95 tests across 18 files. `pnpm test:coverage` passed at 92.72%
+  statements, 83.44% branches, 95.26% functions, and 97.69% lines overall.
+- Source inspection found no current-time, random-ID, fetch, Axios, API-route, or external-URL
+  behavior in either ticket. No dependency was added.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed, including the static
+  export of `/` and `/_not-found`. Browser tests were not rerun because neither ticket changes
+  rendered behavior.
 
 ## Known constraints
 

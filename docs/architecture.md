@@ -8,9 +8,9 @@ This repository has two deliberately separated responsibilities:
    RBAC, deterministic synthetic data, and replaceable service interfaces.
 2. A component laboratory for the approved UIPKGE React catalogue snapshot.
 
-The static foundation, quality tooling, design system, environment contract, and initial local
-service/demo-state contracts exist today. Directories marked **planned** below describe approved
-boundaries, not implemented features.
+The static foundation, quality tooling, design system, environment contract, and local demo data
+platform exist today. Directories marked **planned** below describe approved boundaries, not
+implemented features.
 
 ## Non-negotiable boundaries
 
@@ -123,6 +123,14 @@ away from storage, and returns persistence provenance with every successful resu
 uses explicit IDs/dates and reserved `.invalid` contact domains. Local mutations use deterministic
 `*-local-N` IDs and the fixed timestamp `2026-01-15T12:00:00.000Z`; they never read the current time
 or generate random values.
+
+The task service separates editing from deterministic column movement and reindexes affected
+columns. Calendar events use offset-aware timestamps and validate their merged start/end range.
+Activity, KPI, and coordinate services are read-only; their fixtures provide accessible text
+summaries, ordered series, bounded values, and explicit illustrative/non-navigation labels.
+Messages persist nested local threads through a collection-specific deep clone and mark every send
+as `local-simulation` with an explicit non-delivery notice. None of these contracts performs an HTTP
+request or claims external delivery, live geography, or current data.
 
 `RATE_LIMITED` only represents the explicit `rate-limited` demo scenario. It is not evidence of real
 rate limiting.

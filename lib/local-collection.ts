@@ -32,8 +32,11 @@ type StorageAccess = {
   warning?: StorageIssue;
 };
 
-function cloneItems<T extends object>(items: readonly T[]) {
-  return items.map((item) => ({ ...item }));
+function cloneItems<T extends object>(
+  items: readonly T[],
+  cloneItem: (item: T) => T,
+) {
+  return items.map(cloneItem);
 }
 
 function persistenceFromStorage(access: StorageAccess): LocalPersistence {
@@ -58,17 +61,19 @@ function storageFailure<T>(result: {
 }
 
 export function createLocalCollection<T extends { id: string }>(options: {
+  cloneItem?: (item: T) => T;
   fixtures: readonly T[];
   storage: VersionedStorage<T[]>;
 }): LocalCollection<T> {
-  let items = cloneItems(options.fixtures);
+  const cloneItem = options.cloneItem ?? ((item: T) => ({ ...item }));
+  let items = cloneItems(options.fixtures, cloneItem);
   let loaded = false;
   let persistence: LocalPersistence = { source: "fixtures" };
 
   function data(): LocalServiceData<readonly T[]> {
     return {
       persistence,
-      value: cloneItems(items),
+      value: cloneItems(items, cloneItem),
     };
   }
 
@@ -79,10 +84,10 @@ export function createLocalCollection<T extends { id: string }>(options: {
     if (!stored.ok) return storageFailure(stored);
 
     if (stored.data.found) {
-      items = cloneItems(stored.data.value);
+      items = cloneItems(stored.data.value, cloneItem);
       persistence = persistenceFromStorage(stored.data);
     } else {
-      items = cloneItems(options.fixtures);
+      items = cloneItems(options.fixtures, cloneItem);
       persistence = stored.data.warning
         ? persistenceFromStorage(stored.data)
         : { source: "fixtures" };
@@ -97,16 +102,16 @@ export function createLocalCollection<T extends { id: string }>(options: {
       const initialized = load();
       if (!initialized.ok) return initialized;
 
-      const written = options.storage.write(cloneItems(nextItems));
+      const written = options.storage.write(cloneItems(nextItems, cloneItem));
       if (!written.ok) return storageFailure(written);
 
-      items = cloneItems(written.data.value);
+      items = cloneItems(written.data.value, cloneItem);
       persistence = persistenceFromStorage(written.data);
       return serviceSuccess(data());
     },
     reset() {
       const reset = options.storage.reset();
-      items = cloneItems(options.fixtures);
+      items = cloneItems(options.fixtures, cloneItem);
       loaded = true;
 
       if (!reset.ok) {

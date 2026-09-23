@@ -29,6 +29,9 @@ production.
   demo credential — not a secret.” Identity and identity-reference schemas reject password fields.
 - Customer/project fixtures use invented `Demo`/`Sample` names, reserved `.invalid` email domains,
   stable IDs, and explicit dates. They contain no copied customer records or live contact details.
+- Task, calendar, activity, KPI, message, and coordinate fixtures are deterministic and synthetic.
+  Message records state that delivery is only a local simulation, and every coordinate record says
+  that it is illustrative and not for navigation.
 
 ## Required future behavior
 

@@ -159,7 +159,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Unit tests, `pnpm check`.
 - **Review:** Exercise mutation/reset adapters and inspect fixture determinism.
 
-### P05 — task, calendar, and activity fixtures/services — Planned
+### P05 — task, calendar, and activity fixtures/services — Complete
 
 - **Goal:** Supply deterministic workflow and time-series domain data.
 - **Description:** Add task movement/editing, event mutation, and read-only activity contracts using
@@ -171,7 +171,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Unit tests with fixed dates and `pnpm check`.
 - **Review:** Inspect time zones, stable ordering, and failure/reset behavior.
 
-### P06 — messages, KPI, and coordinate fixtures/services — Planned
+### P06 — messages, KPI, and coordinate fixtures/services — Complete
 
 - **Goal:** Complete synthetic data required by dashboard, messaging, chart, and map work.
 - **Description:** Add local thread/send simulation, KPI series, and illustrative coordinates with

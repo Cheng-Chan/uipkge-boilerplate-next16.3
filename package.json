@@ -6,10 +6,18 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "start": "pnpm preview",
+    "preview": "node scripts/preview-static.mjs",
     "lint": "eslint .",
     "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "pretest:e2e": "pnpm build",
+    "test:e2e": "playwright test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {
     "next": "16.3.6",
@@ -17,18 +25,28 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "@tailwindcss/postcss": "4.3.3",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.7",
     "@types/node": "24.13.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@typescript/native": "npm:typescript@7.0.2",
+    "@vitejs/plugin-react": "6.1.1",
+    "@vitest/coverage-v8": "5.0.1",
     "eslint": "9.39.5",
     "eslint-config-next": "16.3.6",
+    "jsdom": "30.1.1",
     "postcss": "8.5.28",
     "prettier": "3.9.9",
     "prettier-plugin-tailwindcss": "0.8.1",
     "tailwindcss": "4.3.3",
-    "typescript": "npm:@typescript/typescript6@6.0.2"
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "vite": "8.3.0",
+    "vitest": "5.0.1"
   },
   "engines": {
     "node": ">=24.15.0 <25",

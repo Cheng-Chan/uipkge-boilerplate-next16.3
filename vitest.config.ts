@@ -18,6 +18,7 @@ export default defineConfig({
       reporter: ["text", "json-summary", "html"],
       include: [
         "app/**/*.{ts,tsx}",
+        "components/**/*.{ts,tsx}",
         "config/**/*.{ts,tsx}",
         "lib/**/*.{ts,tsx}",
       ],

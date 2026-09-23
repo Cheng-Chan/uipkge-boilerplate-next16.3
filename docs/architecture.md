@@ -75,7 +75,7 @@ contract only after two real consumers justify it.
 - `components/blocks` holds registry blocks whose manifests prescribe block-level files.
 - `components/shared` holds project-authored compositions.
 - Registry bootstrap files with explicit targets remain at those targets. In particular, UIPKGE's
-  inspected theme provider belongs at `components/theme-provider.tsx`; it is not duplicated under
+  installed theme provider belongs at `components/theme-provider.tsx`; it is not duplicated under
   `components/shared`.
 - `features/showcase` owns demo wrappers and examples; registry source is not edited merely to
   insert showcase controls.

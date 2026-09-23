@@ -97,7 +97,7 @@ after inspecting relevant registry manifests.
 - **Verification:** `pnpm check`, token contrast/manual style inspection, production build.
 - **Review:** Compare tokens with inspected upstream source and review every installed file.
 
-### D03 — three-state theme — Planned
+### D03 — three-state theme — Complete
 
 - **Goal:** Provide one accessible light/dark/system theme mechanism.
 - **Description:** Add the pinned theme provider, localized client boundary, switcher, hydration-safe

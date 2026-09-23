@@ -13,6 +13,7 @@ Last updated: 2026-09-23
 | F04    | Complete | Architecture, security, reuse, dependency backlog, progress evidence, and catalogue caveats documented; aggregate check passed         |
 | D01    | Complete | Pinned shadcn CLI, schema-valid UIPKGE namespace, canonical paths, read-only resolution, and dry-run write plans verified              |
 | D02    | Complete | UIPKGE semantic tokens and canonical `cn` utility installed with offline-font, dependency, generated-CSS, and contrast adaptations     |
+| D03    | Complete | UIPKGE theme provider plus accessible light/dark/system control; hydration, persistence, keyboard, and system changes verified         |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -105,6 +106,27 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
 - Two Chromium smoke tests passed against the static production preview. Light and forced-dark
   screenshots were manually inspected, computed body colors/fonts changed as expected, and the page
   made zero external requests.
+
+### D03 — three-state theme
+
+- Re-inspected and installed only `@uipkge-react/use-theme` through pinned shadcn 4.21.0, recorded
+  raw manifest SHA-256 `5390238e0be8bd57de05f6914228251bbcf82c463f684d837a61d5c601e1d42e`,
+  and pinned its MIT-licensed `next-themes` dependency to exact version 0.4.6.
+- Kept the root layout a Server Component while placing the required theme provider and switcher in
+  localized client boundaries. The document opts into the narrow hydration suppression required for
+  the provider's pre-paint class update.
+- Added a three-button fieldset with an accessible group name, pressed-state semantics, native
+  keyboard activation, semantic colors, and a visible focus ring in both color modes.
+- Two focused switcher tests cover labels, selected-state semantics, and keyboard changes. The final
+  unit suite contains 14 tests across 4 files; coverage passed at 82.35% statements overall and
+  92.85% statements for the switcher.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed; the production build
+  remained a static export of `/` and `/_not-found`.
+- Three Chromium tests passed against the static production preview. The theme flow covered the
+  system default, explicit light/dark changes, Enter-key activation, local-storage persistence and
+  reloads, live system-preference changes, and zero console, page, or hydration errors.
+- Light and dark system-mode screenshots were manually inspected at 1280×800; the theme control,
+  selected states, foregrounds, surfaces, borders, and warning treatment remained legible.
 
 ## Known constraints
 

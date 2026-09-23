@@ -75,14 +75,16 @@ Bulk add, `init`, `-y`, and unreviewed dependency installation are not part of t
 The following foundation items were installed through the pinned CLI on 2026-09-23. They are
 tracked separately from the visual catalogue count.
 
-| Item                     | Raw manifest SHA-256                                               | Installed path    | Local status                  |
-| ------------------------ | ------------------------------------------------------------------ | ----------------- | ----------------------------- |
-| `@uipkge-react/tailwind` | `19fe880ee9c5485cb394d2674280ede2bba7e8ef2cf422ac4ff78372eceea25f` | `app/globals.css` | Installed and locally adapted |
-| `@uipkge-react/utils`    | `55d16300c5431b80e332180498d2f4a8cee3a500fc023a5b9b38d742ce27af84` | `lib/utils.ts`    | Installed and locally adapted |
+| Item                      | Raw manifest SHA-256                                               | Installed path                                      | Local status                  |
+| ------------------------- | ------------------------------------------------------------------ | --------------------------------------------------- | ----------------------------- |
+| `@uipkge-react/tailwind`  | `19fe880ee9c5485cb394d2674280ede2bba7e8ef2cf422ac4ff78372eceea25f` | `app/globals.css`                                   | Installed and locally adapted |
+| `@uipkge-react/utils`     | `55d16300c5431b80e332180498d2f4a8cee3a500fc023a5b9b38d742ce27af84` | `lib/utils.ts`                                      | Installed and locally adapted |
+| `@uipkge-react/use-theme` | `5390238e0be8bd57de05f6914228251bbcf82c463f684d837a61d5c601e1d42e` | `components/theme-provider.tsx`, `lib/use-theme.ts` | Installed; formatting only    |
 
-The raw manifests declare no package dependencies even though their source imports
-`tw-animate-css`, `clsx`, and `tailwind-merge`. Those three runtime dependencies are therefore pinned
-explicitly in this project.
+The `tailwind` and `utils` raw manifests declare no package dependencies even though their source
+imports `tw-animate-css`, `clsx`, and `tailwind-merge`. Those three runtime dependencies are
+therefore pinned explicitly in this project. The `use-theme` manifest correctly declares
+`next-themes`.
 
 Local adaptations are intentional and reviewable:
 
@@ -95,11 +97,18 @@ Local adaptations are intentional and reviewable:
 - Kept `lib/utils.ts` limited to the canonical `cn` helper. The upstream redirect helper is deferred
   because the auth ticket requires validation against this application's known routes.
 - Updated the foundation landing and not-found pages to consume semantic color tokens.
+- Pinned the `use-theme` manifest's `next-themes` dependency to exact version `0.4.6`; the registry
+  source received formatting only.
+- Integrated that provider beneath `<body>` with class-based light/dark styling, a system default,
+  browser persistence under `theme`, and the intentional `<html>` hydration-warning suppression.
+- Added a project-owned switcher under `components/shared` whose server snapshot stays neutral until
+  hydration, avoiding theme-dependent server/client markup while preserving the pre-paint class.
 
 ## Sources and licensing
 
 - UIPKGE React registry: <https://uipkge.dev/r/react/{name}.json>
 - UIPKGE public source: <https://github.com/uday-a/uipkge-registry>
+- next-themes source and usage guidance: <https://github.com/pacocoursey/next-themes>
 - shadcn configuration schema: <https://ui.shadcn.com/schema.json>
 - shadcn CLI documentation: <https://ui.shadcn.com/docs/cli>
 

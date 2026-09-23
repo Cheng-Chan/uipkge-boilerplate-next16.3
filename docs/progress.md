@@ -16,6 +16,7 @@ Last updated: 2026-09-23
 | D03    | Complete | UIPKGE theme provider plus accessible light/dark/system control; hydration, persistence, keyboard, and system changes verified         |
 | P01    | Complete | Typed local service results and deterministic loading/empty/failure/rate-limited/success controls with cancellable timers verified     |
 | P02    | Complete | Versioned Zod-validated browser storage with typed recovery, memory fallback, reset seams, and prerender-safe access verified          |
+| P03    | Complete | Three schema-backed synthetic identities with stable IDs and explicitly public credentials separated from identity references verified |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -170,6 +171,29 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
 - No dependency, module-time browser access, fixture, identity, UI, or network behavior was added.
 - `pnpm install --frozen-lockfile`, `pnpm peers check`, `pnpm check`, and focused storage/typecheck
   commands passed. Browser tests were not rerun because P02 adds no rendered behavior.
+
+### P03 — demo identities and account fixtures
+
+- Added strict Zod schemas and types for the admin/manager/viewer roles, three stable user IDs,
+  public identity records, identity references, and deliberately public demo credentials in
+  `features/auth/types.ts`.
+- Added one deterministic `demo-*` identity per role in `mocks/users.ts`. Identities contain only
+  ID, username, synthetic display name, and role—no password, email, phone, address, URL, or other
+  real-person field.
+- Fake passwords are isolated in `PUBLIC_DEMO_CREDENTIALS`. Every entry is tagged
+  `public-demo-credential`, carries the exact “Public demo credential — not a secret.” label, and
+  resolves to exactly one identity.
+- The separate identity-reference schema accepts only `userId`; login behavior, session state,
+  expiry, persistence, permissions, and UI remain deferred to their approved tickets.
+- Four focused tests verify schema parsing, exact role/ID coverage, fixture uniqueness, credential
+  linkage and labels, identity/reference separation, and rejection of unlabeled credentials.
+- The final suite contains 54 tests across 9 files. `pnpm test:coverage` passed at 95.40% statements
+  overall; the auth types and user fixture modules reached 100% statement/branch/function/line
+  coverage.
+- A targeted source scan found no API key, auth secret, private key, bearer token, or secret-token
+  pattern in the new identity, fixture, or test files.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed. Browser tests were not
+  rerun because P03 adds no rendered behavior.
 
 ## Known constraints
 

@@ -23,6 +23,10 @@ production.
 - Environment validation rejects secret Mapbox tokens in browser-public configuration and does not
   include rejected values in its error messages.
 - The initial page visibly warns users not to enter real credentials or sensitive information.
+- Admin, manager, and viewer identities are synthetic, contain no email/contact/address fields, and
+  use stable `demo-*` identifiers and display names.
+- Fake passwords exist only in fixtures marked `public-demo-credential` and carry the label “Public
+  demo credential — not a secret.” Identity and identity-reference schemas reject password fields.
 
 ## Required future behavior
 

@@ -122,6 +122,11 @@ rate limiting.
 
 ## Authentication and access control
 
+The three public synthetic identities and their Zod schemas live in `mocks/users.ts` and
+`features/auth/types.ts`. Identity objects contain stable ID, username, display name, and role only.
+Fake passwords live in a separate `public-demo-credential` fixture whose label states that it is not
+a secret. The session-safe reference schema contains only `userId`.
+
 Authentication will persist only a versioned demo identity reference and optional expiry in
 `sessionStorage`. Roles and permissions are derived from tracked fixtures and a centralized policy,
 never trusted from storage. Guards, navigation, controls, and mutation handlers consume the same

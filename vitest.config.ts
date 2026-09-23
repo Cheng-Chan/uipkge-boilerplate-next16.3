@@ -22,6 +22,7 @@ export default defineConfig({
         "config/**/*.{ts,tsx}",
         "features/**/*.{ts,tsx}",
         "lib/**/*.{ts,tsx}",
+        "mocks/**/*.{ts,tsx}",
       ],
     },
   },

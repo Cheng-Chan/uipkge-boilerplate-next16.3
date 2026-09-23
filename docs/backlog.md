@@ -136,7 +136,7 @@ after inspecting relevant registry manifests.
 - **Verification:** `pnpm test`, `pnpm build`, storage failure tests.
 - **Review:** Inspect storage keys, recovery messages, SSR safety, and absence of sensitive values.
 
-### P03 — demo identities and account fixtures — Planned
+### P03 — demo identities and account fixtures — Complete
 
 - **Goal:** Provide clearly public admin, manager, and viewer identities.
 - **Description:** Add deterministic user fixtures and fake passwords separated from session state.

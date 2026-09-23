@@ -53,6 +53,14 @@ All `NEXT_PUBLIC_*` values are browser-visible and are frozen into the static ou
 `pnpm build`. Changing a static host's environment after deployment does not reconfigure an
 existing `out/` directory; rebuild the application instead. Never put secrets in public variables.
 
+## Project documentation
+
+- [Architecture](docs/architecture.md)
+- [Demo security](docs/demo-security.md)
+- [Backlog](docs/backlog.md)
+- [Progress and verification evidence](docs/progress.md)
+- [Reusing the application foundation](docs/reuse.md)
+
 TypeScript 7 is the application type checker. A separately aliased TypeScript 6 compatibility
 package supplies the JavaScript compiler API currently required by ESLint tooling; it is not the
 project type-check command.

@@ -8,9 +8,9 @@ This repository has two deliberately separated responsibilities:
    RBAC, deterministic synthetic data, and replaceable service interfaces.
 2. A component laboratory for the approved UIPKGE React catalogue snapshot.
 
-The static foundation, quality tooling, design system, environment contract, and local demo data
-platform exist today. Directories marked **planned** below describe approved boundaries, not
-implemented features.
+The static foundation, quality tooling, design system, environment contract, local demo data
+platform, browser-local session, and typed permission policy exist today. Directories marked
+**planned** below describe approved boundaries, not implemented features.
 
 ## Non-negotiable boundaries
 
@@ -96,6 +96,11 @@ silently duplicating source.
   paths that a static host cannot generate.
 - Query readers that require client navigation are placed behind a localized client/Suspense
   boundary.
+- `app/(app)/layout.tsx` wraps exported protected routes with the shared client guard and responsive
+  shell. The guard holds route content during session restoration, redirects anonymous users with a
+  validated return path, and replaces forbidden content with an explicit frontend-only 403 state.
+- Navigation metadata tracks planned destinations but renders only routes whose static pages exist.
+  This avoids broken placeholder links while retaining one policy source for future feature work.
 - Heavy charts, maps, editors, and full-page blocks use explicit lazy preview imports and do not
   enter the shared shell bundle.
 - The exported `out` directory is served by `scripts/preview-static.mjs`; `next start` is not used.
@@ -142,10 +147,23 @@ The three public synthetic identities and their Zod schemas live in `mocks/users
 Fake passwords live in a separate `public-demo-credential` fixture whose label states that it is not
 a secret. The session-safe reference schema contains only `userId`.
 
-Authentication will persist only a versioned demo identity reference and optional expiry in
-`sessionStorage`. Roles and permissions are derived from tracked fixtures and a centralized policy,
-never trusted from storage. Guards, navigation, controls, and mutation handlers consume the same
-policy.
+Authentication persists only a versioned demo identity reference and optional expiry in
+`sessionStorage`. Initializing, anonymous, and authenticated states prevent an authenticated-state
+flash before restoration. Corrupt, unknown, and expired records recover to anonymous. Roles and
+permissions are derived from tracked fixtures and `features/access-control/policy.ts`, never trusted
+from storage.
+
+The static `/login` route uses React Hook Form with direct Zod validation, displays all public demo
+credentials, and validates `next` against known same-origin route policy after authentication. The
+static `/signup` route explicitly reports that no account was created and clears its password field.
+The landing account panel supports logout and intentional fixture-account switching; a switch
+rechecks the current route before leaving it open. The protected route group applies the same policy
+to direct navigation, filtered links, and live role changes. Its responsive shell owns breadcrumbs,
+role/account controls, theme selection, a skip link, and the persistent demo warning.
+
+`/dashboard` is intentionally a lightweight shell entry rather than the future KPI dashboard.
+`/access-control` renders the exact tracked fixture users and permission matrix for admin; other
+authenticated roles receive the 403 presentation. This remains browser-controlled UI behavior.
 
 These controls demonstrate application states. Static assets, fixtures, credentials, and code are
 public, so they cannot protect confidential data. See [demo security](demo-security.md).

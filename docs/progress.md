@@ -1,6 +1,6 @@
 # Progress and verification evidence
 
-Last updated: 2026-09-23
+Last updated: 2026-09-24
 
 ## Status summary
 
@@ -20,6 +20,13 @@ Last updated: 2026-09-23
 | P04    | Complete | Bounded synthetic customer/project fixtures and typed async CRUD/reset services with deterministic IDs, dates, validation, and persistence verified |
 | P05    | Complete | Deterministic task movement/editing, calendar mutation, and read-only accessible activity contracts verified                                        |
 | P06    | Complete | Local-only message simulation plus deterministic KPI and illustrative coordinate fixtures/services verified                                         |
+| A01    | Complete | Typed permission matrix, any/all evaluators, segment-safe route matching, and deny-by-default decisions verified                                    |
+| A02    | Complete | Versioned session identity restoration, expiry/recovery, derived permissions, login/logout, and no-auth-flash state verified                        |
+| A03    | Complete | Accessible public-fixture login with React Hook Form/Zod and safe post-login destination validation verified                                        |
+| A04    | Complete | Explicitly non-provisioning sign-up plus route-rechecking fixture-account switching verified                                                        |
+| S01    | Complete | Centralized available-route navigation plus restoring/anonymous/allowed/forbidden/unknown client guard decisions verified                           |
+| S02    | Complete | Responsive protected shell with filtered navigation, breadcrumbs, account controls, theme, role, skip link, and warning verified                    |
+| S03    | Complete | Admin policy inspector and explicit frontend-only 403 states verified for admin, manager, and viewer                                                |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -259,13 +266,102 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
   export of `/` and `/_not-found`. Browser tests were not rerun because neither ticket changes
   rendered behavior.
 
+### A01 — typed permission and route policy
+
+- Added 27 exact permission codes and typed admin, manager, and viewer mappings. Admin receives all
+  defined permissions; manager receives business creation/update/movement/send/export without
+  destructive or access-administration actions; viewer receives viewing only.
+- Added public and protected policies for the dashboard, every business destination, UI kit,
+  blocks, charts, maps, editor, settings, and access inspection. Matching uses complete path segment
+  boundaries, and unknown routes/permissions plus empty requirements deny by default.
+- Added `docs/permission-matrix.md` and focused tests that compare role behavior, any/all semantics,
+  destination coverage, nested boundaries, and anonymous/forbidden/unknown decisions.
+
+### A02 — demo session state
+
+- Added a version-1 `uipkge.demo:demo-session:v1` session-storage record containing only `userId`
+  and optional `expiresAt`. Roles and permissions are always re-derived from fixtures and A01.
+- Added initializing, anonymous, and authenticated provider states plus asynchronous restoration,
+  login, logout, switching, expiry, corruption recovery, unavailable-storage provenance, and effect
+  cleanup. Browser storage remains unresolved until an operation runs.
+- Service/provider tests cover missing, valid, expired, and corrupt records, exact persisted fields,
+  permission derivation, no protected-state flash, login, logout, and rerendered states.
+
+### A03 — login and safe next handling
+
+- Added a static `/login` route with a localized search-parameter Suspense boundary and accessible
+  React Hook Form/Zod form. It includes labels, required/invalid feedback, password visibility,
+  pending state, keyboard submission, and all three deliberately public credential fixtures.
+- Safe-next validation permits only known same-origin destinations allowed for the authenticated
+  role. It rejects external and protocol-relative URLs, unsafe schemes, malformed encoding,
+  backslashes/control characters, login/signup loops, unknown routes, and forbidden destinations.
+- Added exact `react-hook-form` 7.88.0 after verifying its Node and React 19 compatibility; no
+  resolver package or additional state library was introduced.
+
+### A04 — signup simulation and account switching
+
+- Added a static `/signup` form experiment whose result explicitly says no real account was created
+  and that the password was not retained. The form sends no email, provisions nothing, and clears
+  every submitted field after success.
+- Added an authenticated landing account panel with current role, logout, and intentional fixture
+  switching. Switching persists only the new identity reference, re-derives permissions, and
+  redirects to `/` if the new role cannot view the current route.
+- The final unit suite contains 126 tests across 26 files. `pnpm test:coverage` passed at 91.82%
+  statements, 82.91% branches, 95.47% functions, and 95.96% lines overall.
+- Five Chromium tests passed against the static production preview, including login, exact session
+  storage inspection, refresh restoration, account switching, logout, sign-up non-retention, theme,
+  root smoke, and real 404 behavior. The host again required temporary official Ubuntu extracts for
+  its three missing Chromium runtime libraries.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed. The aggregate gate
+  included formatting, lint, TypeScript 7, all 126 unit tests, and the static export of `/`,
+  `/login`, `/signup`, and `/_not-found`.
+
+### S01 — centralized navigation and client route guards
+
+- Added typed navigation metadata for all planned destinations while marking only exported routes
+  available. Visible links use the same role permissions as direct-route decisions, so unavailable
+  feature routes never appear as broken placeholders.
+- Added a client route guard with explicit restoring, redirecting, allowed, forbidden, and
+  unknown-route decisions. Protected content stays hidden during restoration, anonymous navigation
+  preserves an encoded known pathname, and segment-safe unknowns deny by default.
+- Unit and production-preview flows cover nested boundary matching, filtered links, anonymous deep
+  links, post-login restoration, refresh, role changes, forbidden routes, and real static 404s.
+
+### S02 — responsive application shell
+
+- Added a protected route-group layout and shared shell with a keyboard skip link, mobile menu,
+  permission-aware navigation, active state, breadcrumbs, current-role badge, theme switcher,
+  account switcher, user menu/logout, and the persistent exact demo warning.
+- Added `/dashboard` as a deliberately lightweight shell entry; it does not claim completion of the
+  later KPI/chart dashboard ticket. Planned business/laboratory destinations remain metadata-only
+  until their static pages exist.
+- Source and built-chunk inspection found no ECharts, Leaflet, Mapbox, Tiptap, editor, catalogue
+  preview, or business-feature import in the shell path.
+
+### S03 — access-control inspection and denied states
+
+- Added the static `/access-control` inspector with all three fixture users, effective permission
+  counts, and all 27 permissions rendered directly from the tracked policy. Only admin can render
+  it; manager and viewer receive a 403-style state.
+- Added a static `/403` route and reusable denied presentation explaining that client RBAC is not
+  server authorization. Forbidden and unknown policy outcomes do not render protected children.
+- The final unit suite contains 140 tests across 31 files. `pnpm test:coverage` passed at 91.38%
+  statements, 83.42% branches, 93.97% functions, and 95.20% lines overall.
+- Eight Chromium tests passed against the production static preview. They cover anonymous deep-link
+  redirect/return, admin inspection, manager/viewer denial, mobile navigation/account controls,
+  login/session/switch/logout, simulated signup, themes, root smoke, and real 404 behavior.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed. The final static
+  export contains `/`, `/login`, `/signup`, `/dashboard`, `/access-control`, `/403`, and the custom
+  not-found output. Chromium used temporary official Ubuntu extracts for the host's three missing
+  runtime libraries.
+
 ## Known constraints
 
 - ESLint 9 remains pinned because the installed Next.js ESLint peer stack does not accept ESLint 10.
 - Playwright Chromium on Linux needs its documented system packages.
 - The catalogue count is provisional until LAB01 records provenance and content hashes.
-- No demo authentication behavior, RBAC, visual catalogue components, feature pages, or workbenches
-  exist yet. Installed nonvisual registry foundation is tracked separately in `docs/registry.md`.
+- Visual catalogue components, business feature pages, and complex workbenches do not exist yet.
+  Installed nonvisual registry foundation is tracked separately in `docs/registry.md`.
 
 Append ticket evidence here only after commands have actually run. Link richer evidence from the
 future catalogue manifest rather than converting planned checks into claims.

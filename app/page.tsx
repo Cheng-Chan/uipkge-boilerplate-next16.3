@@ -1,3 +1,5 @@
+import { DemoAccountPanel } from "@/features/auth/demo-account-panel";
+
 export default function HomePage() {
   return (
     <main className="mx-auto flex min-h-screen max-w-3xl items-center px-6 py-16">
@@ -20,6 +22,7 @@ export default function HomePage() {
           simulated in your browser. Do not enter real credentials or sensitive
           information.
         </aside>
+        <DemoAccountPanel />
       </section>
     </main>
   );

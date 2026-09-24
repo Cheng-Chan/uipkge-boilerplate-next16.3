@@ -185,7 +185,7 @@ after inspecting relevant registry manifests.
 
 ## Authentication, permission policy, and shell
 
-### A01 — typed permission and route policy — Planned
+### A01 — typed permission and route policy — Complete
 
 - **Goal:** Centralize exact permissions before guards or navigation exist.
 - **Description:** Define permission codes, role matrix, known routes, any/all evaluators,
@@ -197,7 +197,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Focused policy/route tests, `pnpm check`.
 - **Review:** Compare the documented matrix with typed mappings and test admin/manager/viewer cases.
 
-### A02 — demo session state — Planned
+### A02 — demo session state — Complete
 
 - **Goal:** Restore and expire a browser-local demo identity without protected-state flashes.
 - **Description:** Implement initializing/anonymous/authenticated states, versioned session identity,
@@ -209,7 +209,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Unit/component tests for restoration, expiry, errors, logout, and rerender.
 - **Review:** Refresh each state and inspect sessionStorage contents.
 
-### A03 — login and safe next handling — Planned
+### A03 — login and safe next handling — Complete
 
 - **Goal:** Build an accessible demo login with safe post-login navigation.
 - **Description:** Use React Hook Form/Zod, displayed fake credentials, password visibility, pending
@@ -221,7 +221,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Unit/component tests and Playwright account/deep-link flows.
 - **Review:** Try all accounts, keyboard flow, refresh, and malicious `next` values.
 
-### A04 — signup simulation and account switching — Planned
+### A04 — signup simulation and account switching — Complete
 
 - **Goal:** Demonstrate form and role switching states without creating accounts.
 - **Description:** Add an explicit no-account-created signup result and intentional switcher using
@@ -233,7 +233,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Form/component tests and Playwright switch/refresh flow.
 - **Review:** Inspect messages, storage, open protected pages, and role badge changes.
 
-### S01 — centralized navigation and client route guards — Planned
+### S01 — centralized navigation and client route guards — Complete
 
 - **Goal:** Apply the route policy consistently to links and direct navigation.
 - **Description:** Add route/navigation metadata, permission filtering, anonymous redirect behavior,
@@ -245,7 +245,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Route unit tests, build, static-preview Playwright deep links.
 - **Review:** Navigate directly as each role and compare visible navigation.
 
-### S02 — responsive application shell — Planned
+### S02 — responsive application shell — Complete
 
 - **Goal:** Provide a coherent, accessible shell without loading heavy experiments.
 - **Description:** Add responsive navigation, breadcrumbs, user menu, role badge, theme switcher, and
@@ -257,7 +257,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Component tests, responsive Playwright checks, bundle inspection.
 - **Review:** Inspect focus order, collapsed navigation, breadcrumbs, warning, and logout.
 
-### S03 — access-control inspection and denied states — Planned
+### S03 — access-control inspection and denied states — Complete
 
 - **Goal:** Make effective demo policy inspectable without implying server enforcement.
 - **Description:** Add admin-only users/roles/permissions matrix, 403 state, and action explanations.

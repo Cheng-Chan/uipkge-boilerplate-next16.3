@@ -29,6 +29,11 @@ pnpm preview
 `pnpm build` writes the static site to `out/`. Both `pnpm preview` and `pnpm start` serve
 that directory; this project does not use `next start`.
 
+The current export includes `/`, `/login`, `/signup`, `/dashboard`, `/access-control`, and `/403`.
+Login uses the deliberately public demo accounts shown on the page and stores only a versioned
+fixture identity reference in `sessionStorage`. Sign-up is a form simulation and does not create an
+account. Protected routes and permissions demonstrate browser-side presentation behavior only.
+
 Before the first end-to-end test run, install the pinned Playwright browser:
 
 ```bash
@@ -57,6 +62,7 @@ existing `out/` directory; rebuild the application instead. Never put secrets in
 
 - [Architecture](docs/architecture.md)
 - [Demo security](docs/demo-security.md)
+- [Demo permission matrix](docs/permission-matrix.md)
 - [UIPKGE registry](docs/registry.md)
 - [Backlog](docs/backlog.md)
 - [Progress and verification evidence](docs/progress.md)

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeSwitcher } from "@/components/shared/theme-switcher";
+import { GlobalThemeControl } from "@/components/shared/global-theme-control";
+import { DemoSessionProvider } from "@/features/auth/session/session-provider";
 
 import "./globals.css";
 
@@ -25,10 +26,10 @@ export default function RootLayout({
           enableSystem
           storageKey="theme"
         >
-          <div className="fixed top-4 right-4 z-50">
-            <ThemeSwitcher />
-          </div>
-          {children}
+          <DemoSessionProvider>
+            <GlobalThemeControl />
+            {children}
+          </DemoSessionProvider>
         </ThemeProvider>
       </body>
     </html>

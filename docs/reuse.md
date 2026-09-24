@@ -7,8 +7,8 @@ validation pattern, canonical shared components, and typed local-service seams. 
 synthetic business domains, catalogue previews, workbenches, and showcase routes are optional
 experiments.
 
-Do not treat the future demo authentication or client RBAC as production security. Removing the
-warning banner changes presentation only; it does not add a trusted server, secure sessions, or
+Do not treat the demo authentication or client RBAC as production security. Removing the warning
+banner changes presentation only; it does not add a trusted server, secure sessions, or
 authorization.
 
 ## Removal order

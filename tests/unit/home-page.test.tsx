@@ -1,7 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import HomePage from "@/app/page";
+
+vi.mock("@/features/auth/demo-account-panel", () => ({
+  DemoAccountPanel: () => <div data-testid="demo-account-panel" />,
+}));
 
 describe("HomePage", () => {
   it("identifies the application foundation", () => {

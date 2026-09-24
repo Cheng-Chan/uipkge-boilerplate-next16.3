@@ -7,7 +7,7 @@ permissions, failures, and business operations are simulated in code running und
 control. A user can inspect or alter all shipped JavaScript, fixtures, credentials, storage, and
 state.
 
-The following warning must remain visible on login and throughout the future authenticated shell:
+The following warning remains visible on login and throughout the authenticated shell:
 
 > Demo only. Authentication, permissions, and data are simulated in your browser. Do not enter
 > real credentials or sensitive information.
@@ -32,14 +32,24 @@ production.
 - Task, calendar, activity, KPI, message, and coordinate fixtures are deterministic and synthetic.
   Message records state that delivery is only a local simulation, and every coordinate record says
   that it is illustrative and not for navigation.
+- The demo session stores only a versioned fixture user ID and optional expiry in `sessionStorage`;
+  roles and permissions are re-derived from tracked source. Invalid and expired records recover to
+  anonymous.
+- Login accepts only the displayed public fixtures. Safe-next handling rejects external,
+  protocol-relative, malformed, looped, unknown, and newly forbidden destinations.
+- Simulated sign-up creates no account, sends no message, and clears the submitted password. Demo
+  account switching re-evaluates the open route against the new fixture role.
+- Protected static routes wait for session restoration, redirect anonymous visitors to the demo
+  login, and show a frontend-only 403 state when the current fixture role lacks permission. Visible
+  navigation is filtered from the same policy, but all shipped pages and code remain public.
 
-## Required future behavior
+## Current and required behavior
 
 | Area          | Required behavior                                                    | Explicit non-guarantee                             |
 | ------------- | -------------------------------------------------------------------- | -------------------------------------------------- |
 | Demo accounts | Public synthetic accounts displayed on the login page                | Credentials are not secrets                        |
 | Session       | Versioned identity reference and optional expiry in `sessionStorage` | No protected or encrypted session                  |
-| RBAC          | Shared policy for routes, navigation, controls, and local mutations  | No server authorization boundary                   |
+| RBAC          | Shared policy exists; guards and consumers must use it               | No server authorization boundary                   |
 | Data          | Deterministic synthetic fixtures validated before use                | No persistence durability or tenant isolation      |
 | Forms         | Local validation and simulation; passwords never stored or logged    | No account provisioning, email, or upload          |
 | External maps | Explicit opt-in, public token, documented provider requests          | No private token or offline guarantee when enabled |

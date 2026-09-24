@@ -76,7 +76,7 @@ export const NAVIGATION_ITEMS = [
     label: "UI kit",
     group: "Laboratory",
     permission: "showcase.view",
-    available: false,
+    available: true,
   },
   {
     path: "/blocks",

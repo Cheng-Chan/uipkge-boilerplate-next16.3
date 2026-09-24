@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "snapshot.schema.json",
+  "title": "UIPKGE React catalogue snapshot",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "capturedAt",
+    "framework",
+    "upstreamRevision",
+    "summary",
+    "items"
+  ]
+}

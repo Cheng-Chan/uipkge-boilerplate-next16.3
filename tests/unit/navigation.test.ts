@@ -28,16 +28,19 @@ describe("navigation metadata", () => {
     );
     expect(navigationForRole("viewer").map(({ path }) => path)).toEqual([
       "/dashboard",
+      "/ui-kit",
     ]);
   });
 
   it("filters links with the same role policy used by route access", () => {
     expect(navigationForRole("admin").map(({ path }) => path)).toEqual([
       "/dashboard",
+      "/ui-kit",
       "/access-control",
     ]);
     expect(navigationForRole("manager").map(({ path }) => path)).toEqual([
       "/dashboard",
+      "/ui-kit",
     ]);
   });
 

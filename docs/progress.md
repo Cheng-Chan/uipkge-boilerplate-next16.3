@@ -27,24 +27,30 @@ Last updated: 2026-09-24
 | S01    | Complete | Centralized available-route navigation plus restoring/anonymous/allowed/forbidden/unknown client guard decisions verified                           |
 | S02    | Complete | Responsive protected shell with filtered navigation, breadcrumbs, account controls, theme, role, skip link, and warning verified                    |
 | S03    | Complete | Admin policy inspector and explicit frontend-only 403 states verified for admin, manager, and viewer                                                |
+| LAB01  | Complete | Hash-backed 713-ID React snapshot/provenance plus 611 exact CAT tickets generated and reconciled                                                    |
+| LAB02  | Complete | Typed schemas and offline registry gate reject route, dependency, path, reference, evidence, preview, and count drift                               |
+| LAB03  | Complete | Searchable/filterable permission-aware catalogue browser exports from metadata without preview imports                                              |
+| LAB04  | Complete | All tracked slugs export through an isolated explicit lazy-preview runtime with contained errors and honest unavailable states                      |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
 
 ## Catalogue coverage
 
-The T00 working discovery count is 713 deduplicated React catalogue candidates. It is not yet a
-tracked, dated, hash-backed snapshot, so category totals and item-level status are intentionally not
-asserted here. LAB01 must reproduce and persist the inventory before catalogue implementation.
+The dated 2026-09-24 React snapshot contains 713 deduplicated IDs: 704 visual catalogue items and 9
+nonvisual foundation records. Of the visual items, 666 have live manifests and remain discovered;
+38 documentation-only map IDs are blocked because their raw manifests are unavailable. The three
+verified records are previously completed nonvisual foundation items and do not increase visual
+catalogue coverage.
 
-| Status             | Count | Note                                                        |
-| ------------------ | ----: | ----------------------------------------------------------- |
-| Discovered         |   713 | Provisional T00 working count; snapshot persistence pending |
-| Installed          |     0 | No catalogue item installation approved yet                 |
-| Demo-ready         |     0 | No catalogue preview implemented yet                        |
-| Verified           |     0 | No catalogue evidence recorded yet                          |
-| Blocked            |     0 | Item-level classification awaits the snapshot               |
-| Approved exception |     0 | No exceptions approved                                      |
+| Visual status      | Count | Note                                                    |
+| ------------------ | ----: | ------------------------------------------------------- |
+| Discovered         |   666 | Manifest-backed but not installed                       |
+| Installed          |     0 | No visual catalogue item installation approved yet      |
+| Demo-ready         |     0 | No real visual catalogue preview implemented yet        |
+| Verified           |     0 | No visual catalogue evidence recorded yet               |
+| Blocked            |    38 | Published map links whose raw manifests are unavailable |
+| Approved exception |     0 | No exceptions approved                                  |
 
 ## Verification log
 
@@ -355,11 +361,45 @@ asserted here. LAB01 must reproduce and persist the inventory before catalogue i
   not-found output. Chromium used temporary official Ubuntu extracts for the host's three missing
   runtime libraries.
 
+### LAB01–LAB04 — catalogue laboratory
+
+- Captured and hashed the live React aggregate registry, `llms-full-react.txt`, components, blocks,
+  charts, maps, and public GitHub tree at revision
+  `744eb7902473a05c42f8bf707847fc6c89b0096e`. Their union contains 713 IDs: 675 live manifests plus
+  38 documentation-only map IDs. The classification is 134 components, 436 blocks, 60 charts, 74
+  maps, and 9 nonvisual foundation records.
+- Recorded package/registry dependencies, target and installed paths, per-entry hashes, public source
+  paths/blob hashes, external Mapbox/Leaflet requirements, routes, adaptations, evidence, and exact
+  gaps. Only 210 matching public source definitions exist at the captured revision; absent evidence
+  is explicit.
+- Generated 611 exact CAT tickets: simple related records use batches of at most five; every block,
+  chart, and map uses a one-item ticket. The ledger has 571 planned, 38 upstream-blocked, and 2
+  already-complete foundation tickets, allocating all 713 records exactly once.
+- Added typed Zod schemas and `pnpm registry:check`. Fixture tests deliberately reject duplicate IDs,
+  missing/wrong routes, unknown dependencies/references, unsafe paths, and unsupported demo-ready or
+  verified claims. The gate also validates the formatted snapshot hash, schema files, evidence paths,
+  lazy preview keys, totals, and ticket constraints without network access.
+- Added the protected `/ui-kit` browser with combined search, category, kind, and status filters,
+  URL-persisted pagination, coverage counts, provenance/install details, permission-aware links, and
+  disabled prefetch. All 713 item routes are statically generated from tracked metadata.
+- Added an explicit lazy-component map, Suspense state, isolation marker, and local error boundary.
+  Since no visual CAT ticket is approved, every visual record truthfully renders “Preview not
+  installed”; the validator prevents that state from counting as demo-ready or verified.
+- `pnpm install --frozen-lockfile` and `pnpm peers check` passed. Final `pnpm check` passed formatting,
+  lint, generated route types, 151 tests across 34 files, the offline registry gate, and a 722-page
+  static build containing all 713 slugs.
+- `pnpm test:coverage` passed at 85.81% statements, 75.16% branches, 85.10% functions, and 88.99%
+  lines. All 9 Chromium tests passed against the production static preview; catalogue search,
+  query persistence, direct item navigation, refresh, and local-origin-only requests were observed.
+  The host required temporary official Ubuntu extracts for its missing Chromium runtime libraries.
+- Built-output inspection found 713 slug directories with none missing and no ECharts, Mapbox,
+  Tiptap, or React Leaflet marker in emitted JavaScript. `git diff --check` passed.
+
 ## Known constraints
 
 - ESLint 9 remains pinned because the installed Next.js ESLint peer stack does not accept ESLint 10.
 - Playwright Chromium on Linux needs its documented system packages.
-- The catalogue count is provisional until LAB01 records provenance and content hashes.
+- Thirty-eight published map IDs have no live raw manifest and remain blocked upstream.
 - Visual catalogue components, business feature pages, and complex workbenches do not exist yet.
   Installed nonvisual registry foundation is tracked separately in `docs/registry.md`.
 

@@ -1,0 +1,140 @@
+{
+  "$schema": "./schema/provenance.schema.json",
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24T00:00:00.000Z",
+  "framework": "react",
+  "repository": {
+    "url": "https://github.com/uday-a/uipkge-registry",
+    "revision": "744eb7902473a05c42f8bf707847fc6c89b0096e",
+    "committedAt": "2026-09-22T03:27:18Z",
+    "treeSha": "744eb7902473a05c42f8bf707847fc6c89b0096e"
+  },
+  "sources": [
+    {
+      "id": "registry-manifest",
+      "url": "https://uipkge.dev/r/react/registry.json",
+      "purpose": "Authoritative install metadata and registry IDs",
+      "sha256": "071c8dbeabe9e1c3e1576d44ed4fb089cbebba8666e8fe0246471f45da342912",
+      "bytes": 832772
+    },
+    {
+      "id": "llms-full-react",
+      "url": "https://uipkge.dev/llms-full-react.txt",
+      "purpose": "Independent generated manifest/source cross-check",
+      "sha256": "cb12e20b6cb7be72a1328448ec2d29bb92ab339931780307648417399e3e52d2",
+      "bytes": 13394415
+    },
+    {
+      "id": "components-documentation",
+      "url": "https://uipkge.dev/react/components/",
+      "purpose": "Published components discovery page",
+      "sha256": "75af8da285021eefb1c291bc6968d70ec0766f686da48c45b608f175bfac58d6",
+      "bytes": 424763
+    },
+    {
+      "id": "blocks-documentation",
+      "url": "https://uipkge.dev/react/blocks/",
+      "purpose": "Published blocks discovery page",
+      "sha256": "96f9ab50956587187ef6db921638d239e95cd42af1c3f7c7aac9939492a73ea3",
+      "bytes": 2399056
+    },
+    {
+      "id": "charts-documentation",
+      "url": "https://uipkge.dev/react/charts/",
+      "purpose": "Published charts discovery page",
+      "sha256": "cec390317feac8eb16e3f82b083ef32c1616f9a10c0847787cd0a6e0919e0fcb",
+      "bytes": 311271
+    },
+    {
+      "id": "maps-documentation",
+      "url": "https://uipkge.dev/react/maps/",
+      "purpose": "Published maps discovery page",
+      "sha256": "70e2cb5baca0dabcd5a436d5ca6da7ca92945924d265360d28ad5af9cf492752",
+      "bytes": 454225
+    },
+    {
+      "id": "public-source-tree",
+      "url": "https://api.github.com/repos/uday-a/uipkge-registry/git/trees/main?recursive=1",
+      "purpose": "Public source availability and blob revisions",
+      "sha256": "f4e83d7c8516a3e047ec619312eaacd139b12332c7f939f260c51e769cc87a86",
+      "bytes": 917776
+    }
+  ],
+  "reconciliation": {
+    "registryIds": 675,
+    "llmsManifestIds": 675,
+    "documentation": {
+      "components": 128,
+      "blocks": 436,
+      "charts": 66,
+      "maps": 74,
+      "union": 698
+    },
+    "deduplicatedTotal": 713,
+    "manifestAvailable": 675,
+    "manifestUnavailable": 38,
+    "publicSourceAvailable": 210,
+    "missingManifestIds": [
+      "leaflet-bubble-map",
+      "leaflet-choropleth-map-chart",
+      "leaflet-hexbin-map",
+      "leaflet-map-controls-toolbar",
+      "leaflet-map-dark",
+      "leaflet-map-light",
+      "leaflet-map-marker-popups",
+      "leaflet-map-muted",
+      "leaflet-map-navigation-day",
+      "leaflet-map-navigation-night",
+      "leaflet-map-network-topology",
+      "leaflet-map-outdoors",
+      "leaflet-map-point-clustering",
+      "leaflet-map-route-layer",
+      "leaflet-map-satellite-hybrid",
+      "leaflet-map-satellite-pure",
+      "leaflet-map-streets",
+      "leaflet-map-turn-by-turn-hud",
+      "leaflet-route-flow-map",
+      "map-3d-buildings",
+      "map-3d-terrain",
+      "map-controls-toolbar",
+      "map-dark",
+      "map-globe-3d",
+      "map-light",
+      "map-marker-popups",
+      "map-muted",
+      "map-navigation-day",
+      "map-navigation-night",
+      "map-network-topology",
+      "map-outdoors",
+      "map-point-clustering",
+      "map-route-layer",
+      "map-satellite-hybrid",
+      "map-satellite-pure",
+      "map-standard-3d",
+      "map-streets",
+      "map-turn-by-turn-hud"
+    ],
+    "undocumentedRegistryIds": [
+      "charts",
+      "data-explorer",
+      "data-table",
+      "data-table-page",
+      "init",
+      "kanban-data",
+      "motion-list",
+      "table",
+      "tailwind",
+      "tree-table",
+      "use-board",
+      "use-kanban",
+      "use-month-grid",
+      "use-theme",
+      "utils"
+    ]
+  },
+  "knownGaps": [
+    "The maps page links 74 distinct React IDs while its visible headline reports 40; all linked IDs are retained and the 38 without manifests are explicitly unavailable.",
+    "The public repository revision contains matching registry definition files for only 210 of the 713 discovered IDs; the live manifest and llms-full source cover more items than the repository tree.",
+    "The live registry schema publishes no environment-variable or external-service metadata. External requirements are propagated only from declared Mapbox and Leaflet package dependencies; every item still requires source review before installation."
+  ]
+}

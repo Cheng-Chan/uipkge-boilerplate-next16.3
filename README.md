@@ -21,6 +21,7 @@ pnpm format:check
 pnpm test
 pnpm test:coverage
 pnpm test:e2e
+pnpm registry:check
 pnpm check
 pnpm build
 pnpm preview
@@ -29,7 +30,8 @@ pnpm preview
 `pnpm build` writes the static site to `out/`. Both `pnpm preview` and `pnpm start` serve
 that directory; this project does not use `next start`.
 
-The current export includes `/`, `/login`, `/signup`, `/dashboard`, `/access-control`, and `/403`.
+The current export includes `/`, `/login`, `/signup`, `/dashboard`, `/access-control`, `/403`, the
+searchable `/ui-kit`, and a generated item record route for every tracked catalogue slug.
 Login uses the deliberately public demo accounts shown on the page and stores only a versioned
 fixture identity reference in `sessionStorage`. Sign-up is a form simulation and does not create an
 account. Protected routes and permissions demonstrate browser-side presentation behavior only.
@@ -64,6 +66,7 @@ existing `out/` directory; rebuild the application instead. Never put secrets in
 - [Demo security](docs/demo-security.md)
 - [Demo permission matrix](docs/permission-matrix.md)
 - [UIPKGE registry](docs/registry.md)
+- [Catalogue discovery and reconciliation](docs/catalogue-discovery.md)
 - [Backlog](docs/backlog.md)
 - [Progress and verification evidence](docs/progress.md)
 - [Reusing the application foundation](docs/reuse.md)

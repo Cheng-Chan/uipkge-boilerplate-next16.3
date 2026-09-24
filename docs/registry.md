@@ -17,6 +17,10 @@ following namespace:
 The default application does not contact this registry. Registry access is an explicit development
 or maintenance action and is never part of `dev`, `build`, `test`, or `check`.
 
+The dated inventory, per-entry metadata hashes, source revision, reconciliation, and exact CAT
+ticket allocation live in `catalogue/`. `pnpm registry:check` validates them entirely offline. See
+[catalogue discovery](catalogue-discovery.md) for the 713-ID reconciliation and known upstream gaps.
+
 ## Canonical paths
 
 The shadcn aliases establish these project roots:

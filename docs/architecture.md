@@ -170,13 +170,19 @@ public, so they cannot protect confidential data. See [demo security](demo-secur
 
 ## Catalogue model
 
-The future snapshot separates metadata from preview modules. Every item record will include its
+The dated snapshot separates metadata from preview modules. Every item record includes its
 verified ID, category, upstream URL and revision/hash, registry dependencies, installed paths,
 route, adaptations, external requirements, status, and evidence.
 
 Allowed statuses are `discovered`, `installed`, `demo-ready`, `verified`, `blocked`, and
 `approved-exception`. Status only advances when its evidence exists; installation alone is never
 verification.
+
+`/ui-kit` reads snapshot metadata without importing preview modules. Every deduplicated ID has a
+statically generated `/ui-kit/[slug]` record route. The client preview runtime consults one explicit
+lazy-loader map only on that item route, contains module errors locally, and renders an honest
+unavailable state until an exact CAT ticket supplies the real source and evidence. See
+[catalogue discovery](catalogue-discovery.md) for counts and upstream gaps.
 
 ## External network policy
 

@@ -270,7 +270,7 @@ after inspecting relevant registry manifests.
 
 ## Catalogue laboratory
 
-### LAB01 — dated catalogue snapshot and provenance — Planned
+### LAB01 — dated catalogue snapshot and provenance — Complete
 
 - **Goal:** Replace the provisional count with an auditable exact React inventory.
 - **Description:** Re-discover published docs, registry manifests, and public source; deduplicate by
@@ -286,7 +286,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Independent total/dedup/reference checks and schema validation.
 - **Review:** Compare sources, counts, hashes, React-only classification, and generated batch sizes.
 
-### LAB02 — catalogue schema and registry checks — Planned
+### LAB02 — catalogue schema and registry checks — Complete
 
 - **Goal:** Make invalid coverage claims fail locally and in CI.
 - **Description:** Add typed schema, `registry:check`, route/import/evidence validation, and count
@@ -298,7 +298,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Fixture-based failure tests, `pnpm registry:check`, `pnpm check`.
 - **Review:** Deliberately trigger each invariant and inspect actionable errors.
 
-### LAB03 — searchable catalogue browser — Planned
+### LAB03 — searchable catalogue browser — Complete
 
 - **Goal:** Navigate the tracked snapshot without eagerly loading previews.
 - **Description:** Add category/status/search filters, coverage summary, provenance/install details,
@@ -310,7 +310,7 @@ after inspecting relevant registry manifests.
 - **Verification:** Unit tests, Playwright filter/deep-link checks, bundle inspection.
 - **Review:** Search by ID/name, filter every status/category, and compare counts.
 
-### LAB04 — isolated lazy preview runtime — Planned
+### LAB04 — isolated lazy preview runtime — Complete
 
 - **Goal:** Render real item previews without cross-preview interference or eager imports.
 - **Description:** Generate static preview slugs, explicit lazy mapping, isolation boundaries,
@@ -394,10 +394,11 @@ the named static-preview interaction; every ticket also runs `pnpm check`.
 
 ## Complete catalogue coverage gate
 
-### CAT-EXPAND — exact item implementation tickets — Blocked on LAB01
+### CAT001–CAT611 — exact item implementation tickets — Ready for exact approval
 
 - **Goal:** Account for every persisted snapshot item without representative-only shortcuts.
-- **Description:** LAB01 replaces this gate with exact `CAT-*` entries containing item IDs. Each
+- **Description:** The authoritative `catalogue/tickets.json` ledger contains every exact `CAT*`
+  ticket and item ID. Each
   ticket groups at most five closely related simple primitives. Each complex block, map, editor,
   feature composition, or external capability receives its own ticket. Items unavailable for local
   execution remain `blocked` or require an explicit `approved-exception`; a simulation cannot verify
@@ -405,7 +406,7 @@ the named static-preview interaction; every ticket also runs `pnpm check`.
 - **Proposed files:** Exact registry targets, isolated preview modules, manifest records, focused
   tests, evidence artifacts, lockfile only where dependencies change.
 - **Dependencies:** LAB01, LAB02, LAB04 and any named foundation dependency.
-- **Acceptance:** All 713 provisional candidates are reconciled to the final snapshot and then to one
+- **Acceptance:** All 713 discovered IDs are reconciled to the final snapshot and then to one
   exact ticket/status; installed source, real preview, variants/interactions, provenance, routes,
   adaptations, and evidence agree.
 - **Verification:** `pnpm registry:check`, focused tests, static build, manifest-driven smoke, manual
@@ -414,7 +415,8 @@ the named static-preview interaction; every ticket also runs `pnpm check`.
   interactions, keyboard/focus behavior, network use, and evidence before status promotion.
 
 No catalogue installation ticket may use this family label as approval. The exact LAB01-generated
-ticket ID and listed item IDs must be approved.
+ticket ID and listed item IDs must be approved. The next proposed ticket is **CAT001**, covering
+exactly `theme-switch`, `toggle`, and `toggle-group`.
 
 ## Maintenance and final validation
 

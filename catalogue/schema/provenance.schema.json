@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provenance.schema.json",
+  "title": "UIPKGE React catalogue provenance",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "capturedAt",
+    "framework",
+    "repository",
+    "sources",
+    "reconciliation"
+  ]
+}

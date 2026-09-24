@@ -18,11 +18,11 @@ The exact deduplicated inventory is **713 IDs**:
 | Nonvisual foundation |       9 | Bootstrap, hook, data, style, and utility records tracked separately             |
 | **Total**            | **713** | Each ID occurs once                                                              |
 
-The visual catalogue total is **704**: 666 manifest-backed items are `discovered` and 38
-documentation-only items are `blocked` because their install manifests are absent. No visual item is
-installed, demo-ready, or verified. Three of the nine nonvisual foundation records (`tailwind`,
-`utils`, and `use-theme`) are `verified` through their prior design-system tickets and retain their
-local evidence.
+The visual catalogue total is **704**: 660 manifest-backed items are `discovered`, 3 transitive
+dependencies are `installed`, 3 CAT001 action components are `verified`, and 38 documentation-only
+items are `blocked` because their install manifests are absent. Three of the nine nonvisual
+foundation records (`tailwind`, `utils`, and `use-theme`) are also `verified` through their prior
+design-system tickets and retain their local evidence.
 
 ## Reconciliation
 
@@ -50,18 +50,20 @@ manifests, not 713 installable items.
 
 `catalogue/tickets.json` assigns every snapshot ID exactly once across **611 exact CAT tickets**:
 
-- 571 planned tickets;
+- 570 planned tickets;
 - 38 one-item tickets blocked on an absent upstream manifest; and
-- 2 completed tickets that account for the 3 previously verified foundation items.
+- 3 completed tickets that account for the 3 verified CAT001 items and 3 previously verified
+  foundation items.
 
 Simple components/foundation records are grouped only when they share a primary category and status,
 with a maximum of five items. Every block, chart, and map has its own one-item ticket. The offline
 validator rejects duplicate or omitted allocations, mixed groups, oversized batches, and multi-item
 complex tickets.
 
-The first unblocked ticket is `CAT001`, covering exactly `theme-switch`, `toggle`, and `toggle-group`.
-Approving a family label or the full ledger does not authorize installation; approve the exact ticket
-and item IDs after reviewing their current manifests.
+`CAT001`, covering exactly `theme-switch`, `toggle`, and `toggle-group`, is complete. The next
+unblocked ticket is `CAT002`, covering exactly `charts`. Approving a family label or the full ledger
+does not authorize installation; approve the exact ticket and item IDs after reviewing its current
+manifest.
 
 ## Status semantics
 

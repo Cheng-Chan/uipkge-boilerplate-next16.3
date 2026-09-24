@@ -108,6 +108,26 @@ Local adaptations are intentional and reviewable:
 - Added a project-owned switcher under `components/shared` whose server snapshot stays neutral until
   hydration, avoiding theme-dependent server/client markup while preserving the pre-paint class.
 
+## Installed visual catalogue items
+
+CAT001 installed and verified the three approved action components on 2026-09-24. `theme-switch`
+also required three reviewed registry dependencies; those dependencies are tracked as `installed`
+only and do not claim previews or completion of their own CAT tickets.
+
+| Item            | Role                | Raw manifest SHA-256                                               | Local status |
+| --------------- | ------------------- | ------------------------------------------------------------------ | ------------ |
+| `theme-switch`  | CAT001 item         | `fd2b579812b6b76029d157392ac080f2fc8449ed4383fdcf06fd15ee911a9aca` | Verified     |
+| `toggle`        | CAT001 item         | `db915c541923acdba9edd8538a7e728ec3e98c0ae15e6337ca22fa58ea423cc9` | Verified     |
+| `toggle-group`  | CAT001 item         | `2c4a31c65d822b87961cd3de67baaf99bcdc9be6e8e09f1fe33b261686ad9e43` | Verified     |
+| `card`          | Transitive registry | `46e6615bd3281dc4158a3c024241e91912f374903ad93b9f4213b6303caffa01` | Installed    |
+| `dropdown-menu` | Transitive registry | `953b8506fbf8e4255f5c9e8c13010157861021a46950d55b02bf2fe8fec56908` | Installed    |
+| `section-card`  | Transitive registry | `0bfc12a7bb4acde6fb9bc5ec4d06cb0be75a7265387226d14e49fc0eba2777f2` | Installed    |
+
+The local Theme Switch intentionally supports the project's established `light`, `dark`, and
+`system` contract. The upstream `black` value and `pill-4` variant were omitted rather than adding an
+unapproved fourth global theme. Package additions are pinned exactly. Full hashes, paths,
+adaptations, and command evidence are recorded in `catalogue/evidence/CAT001.json` and the snapshot.
+
 ## Sources and licensing
 
 - UIPKGE React registry: <https://uipkge.dev/r/react/{name}.json>

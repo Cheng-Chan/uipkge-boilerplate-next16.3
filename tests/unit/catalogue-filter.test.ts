@@ -9,7 +9,7 @@ describe("catalogue filters", () => {
       category: "action",
       kind: "component",
       query: "toggle",
-      status: "discovered",
+      status: "verified",
     });
     expect(result.map(({ id }) => id)).toEqual([
       "theme-switch",

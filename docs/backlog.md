@@ -394,7 +394,7 @@ the named static-preview interaction; every ticket also runs `pnpm check`.
 
 ## Complete catalogue coverage gate
 
-### CAT001–CAT611 — exact item implementation tickets — Ready for exact approval
+### CAT001–CAT611 — exact item implementation tickets — In progress
 
 - **Goal:** Account for every persisted snapshot item without representative-only shortcuts.
 - **Description:** The authoritative `catalogue/tickets.json` ledger contains every exact `CAT*`
@@ -415,8 +415,10 @@ the named static-preview interaction; every ticket also runs `pnpm check`.
   interactions, keyboard/focus behavior, network use, and evidence before status promotion.
 
 No catalogue installation ticket may use this family label as approval. The exact LAB01-generated
-ticket ID and listed item IDs must be approved. The next proposed ticket is **CAT001**, covering
-exactly `theme-switch`, `toggle`, and `toggle-group`.
+ticket ID and listed item IDs must be approved. **CAT001 is complete** for `theme-switch`, `toggle`,
+and `toggle-group`; its required `card`, `dropdown-menu`, and `section-card` sources remain
+dependency-only installations until their own exact tickets are approved. The next proposed ticket
+is **CAT002**, covering exactly `charts`.
 
 ## Maintenance and final validation
 
@@ -476,6 +478,6 @@ exactly `theme-switch`, `toggle`, and `toggle-group`.
 
 ## Next approval boundary
 
-After FE01 is verified, the next proposed ticket is **CAT001 — Theme Switch, Toggle, Toggle Group
-catalogue coverage**. Approval must name CAT001 and authorizes only `theme-switch`, `toggle`, and
-`toggle-group`; it does not authorize another catalogue batch.
+After CAT001 is verified, the next proposed ticket is **CAT002 — Charts catalogue coverage**.
+Approval must name CAT002 and authorizes only `charts`; it does not authorize another catalogue
+batch.

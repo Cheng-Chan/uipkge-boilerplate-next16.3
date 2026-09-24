@@ -8,10 +8,10 @@ export type LazyPreview = LazyExoticComponent<ComponentType>;
 // Keeping this map separate from snapshot metadata prevents the browser page
 // from importing every preview and lets the registry checker compare claims
 // with real lazy modules.
-export const PREVIEW_COMPONENTS = {} satisfies Record<string, LazyPreview>;
+export const PREVIEW_COMPONENTS = {
+  "theme-switch": lazy(() => import("./theme-switch")),
+  toggle: lazy(() => import("./toggle")),
+  "toggle-group": lazy(() => import("./toggle-group")),
+} satisfies Record<string, LazyPreview>;
 
 export const PREVIEW_SLUGS = Object.freeze(Object.keys(PREVIEW_COMPONENTS));
-
-// Keep `lazy` used in this intentionally empty initial map. The first CAT
-// ticket replaces this sentinel with `slug: lazy(() => import("./slug"))`.
-void lazy;

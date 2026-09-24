@@ -419,13 +419,44 @@ catalogue coverage.
 - Desktop and mobile full-page visual inspection confirmed readable hierarchy, intact coverage bars,
   visible safety copy, responsive stacking, and no horizontal overflow.
 
+### CAT001 — Theme Switch, Toggle, Toggle Group catalogue coverage
+
+- Inspected the exact live manifests, source, dependencies, and 14 proposed writes for
+  `theme-switch`, `toggle`, and `toggle-group`. Captured raw manifest hashes before installation.
+- Installed the three approved components with the pinned CLI. Their reviewed transitive registry
+  dependencies (`card`, `dropdown-menu`, and `section-card`) are tracked as `installed` only; their
+  own CAT tickets remain planned.
+- Added explicit lazy preview modules. Theme Switch renders all six locally supported variants,
+  Toggle covers both variants, three sizes, pressed state, and disabled state, and Toggle Group
+  covers controlled single and multiple selection with its animated indicator.
+- Preserved the D03 light/dark/system contract by omitting upstream `black` and `pill-4`. Also
+  avoided unnecessary `matchMedia` work when view transitions are disabled and removed the
+  dropdown's duplicate selection callback. All five new package dependencies are exactly pinned.
+- Advanced only the three CAT001 items to `verified`, advanced the three required dependency items
+  to `installed`, completed CAT001 in the ledger, and reconciled the visual catalogue to 660
+  discovered, 3 installed, 3 verified, and 38 blocked records.
+- `pnpm check` passed formatting, lint, TypeScript, 155 unit tests across 35 files, offline registry
+  reconciliation, and all 722 static pages. Frozen offline install, peer checks, and
+  `git diff --check` also passed.
+- `pnpm test:coverage` passed at 82.13% statements, 69.50% branches, 77.80% functions, and 84.90%
+  lines. All 11 Chromium tests passed against the production static preview using the existing
+  temporary official Ubuntu runtime-library workaround.
+- Desktop review at 1440px confirmed every Theme Switch variant and Toggle state is readable and
+  aligned. Mobile review at 390px confirmed both Toggle Group modes stack within the content
+  viewport. Built-output inspection found CAT001 markers only in dedicated chunks, not root-linked
+  scripts.
+
 ## Known constraints
 
 - ESLint 9 remains pinned because the installed Next.js ESLint peer stack does not accept ESLint 10.
 - Playwright Chromium on Linux needs its documented system packages.
 - Thirty-eight published map IDs have no live raw manifest and remain blocked upstream.
-- Visual catalogue components, business feature pages, and complex workbenches do not exist yet.
-  Installed nonvisual registry foundation is tracked separately in `docs/registry.md`.
+- Only the three CAT001 visual catalogue items are verified; business feature pages and complex
+  workbenches do not exist yet. Installed foundation and catalogue dependencies are tracked in
+  `docs/registry.md`.
+- At 390px, the previously implemented protected-shell header extends 123px beyond the viewport;
+  CAT001 preview content remains responsive, but the shell overflow should be corrected under an
+  explicitly approved shell-maintenance ticket.
 
 Append ticket evidence here only after commands have actually run. Link richer evidence from the
 future catalogue manifest rather than converting planned checks into claims.

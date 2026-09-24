@@ -4,19 +4,19 @@
   "generatedFrom": {
     "capturedAt": "2026-09-24T00:00:00.000Z",
     "upstreamRevision": "744eb7902473a05c42f8bf707847fc6c89b0096e",
-    "snapshotSha256": "0b5af891fe191e7cece8099bdaefdbccade9d777c7caf1dcae086d6ed0ef08cb"
+    "snapshotSha256": "79a255b220051e0e067ce46753c06ab48a040479d0769a844966b98fea4f8753"
   },
   "summary": {
     "tickets": 611,
-    "planned": 571,
+    "planned": 570,
     "blockedUpstream": 38,
-    "complete": 2,
+    "complete": 3,
     "items": 713
   },
   "tickets": [
     {
       "id": "CAT001",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "action",
       "complex": false,

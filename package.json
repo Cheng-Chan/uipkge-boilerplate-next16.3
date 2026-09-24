@@ -21,7 +21,12 @@
     "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm registry:check && pnpm build"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "2.1.24",
+    "@radix-ui/react-toggle": "1.1.18",
+    "@radix-ui/react-toggle-group": "1.1.19",
+    "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
+    "lucide-react": "1.47.0",
     "next": "16.3.6",
     "next-themes": "0.4.6",
     "react": "19.3.0",

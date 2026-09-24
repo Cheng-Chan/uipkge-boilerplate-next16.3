@@ -21,12 +21,15 @@
     },
     "byStatus": {
       "blocked": 38,
-      "discovered": 672,
-      "verified": 3
+      "discovered": 666,
+      "installed": 3,
+      "verified": 6
     },
     "catalogueByStatus": {
       "blocked": 38,
-      "discovered": 666
+      "discovered": 660,
+      "installed": 3,
+      "verified": 3
     },
     "foundationByStatus": {
       "discovered": 6,
@@ -2990,7 +2993,7 @@
       "kind": "component",
       "categories": ["layout"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/card.json",
       "manifestEntrySha256": "941cd8d202acf26ea566ad8710b863eb67b54bc39bcdcca5275344946dcc3286",
       "documentationUrl": "https://uipkge.dev/react/components/card/",
@@ -3011,13 +3014,20 @@
         "components/ui/card/card.variants.ts",
         "components/ui/card/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/card/card.tsx",
+        "components/ui/card/card.variants.ts",
+        "components/ui/card/index.ts"
+      ],
       "demoRoute": "/ui-kit/card",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT001.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT001; preview and ticket verification remain deferred.",
+        "Formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -7566,7 +7576,7 @@
       "kind": "component",
       "categories": ["overlay"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/dropdown-menu.json",
       "manifestEntrySha256": "7f73e0c24208e37d9bc10b73d73ece371f00b7227f1a638774a98e32a85a7e99",
       "documentationUrl": "https://uipkge.dev/react/components/dropdown-menu/",
@@ -7586,13 +7596,19 @@
         "components/ui/dropdown-menu/dropdown-menu.tsx",
         "components/ui/dropdown-menu/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/dropdown-menu/dropdown-menu.tsx",
+        "components/ui/dropdown-menu/index.ts"
+      ],
       "demoRoute": "/ui-kit/dropdown-menu",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT001.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT001; preview and ticket verification remain deferred.",
+        "Formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -22442,7 +22458,7 @@
       "kind": "component",
       "categories": ["layout"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/section-card.json",
       "manifestEntrySha256": "de87dbffe8ba5f4ea1ef95c90e2f5d15b43647b92e8376848e2353181f688787",
       "documentationUrl": "https://uipkge.dev/react/components/section-card/",
@@ -22462,13 +22478,19 @@
         "components/ui/section-card/index.ts",
         "components/ui/section-card/section-card.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/section-card/index.ts",
+        "components/ui/section-card/section-card.tsx"
+      ],
       "demoRoute": "/ui-kit/section-card",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT001.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT001; preview and ticket verification remain deferred.",
+        "Formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -25845,7 +25867,7 @@
       "kind": "component",
       "categories": ["action"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/theme-switch.json",
       "manifestEntrySha256": "0551a38e0649d2c6e8f59c07d17657917f4a5dc3d0ff5d2b2c1b8cdad24efa1c",
       "documentationUrl": "https://uipkge.dev/react/components/theme-switch/",
@@ -25865,13 +25887,24 @@
         "components/ui/theme-switch/index.ts",
         "components/ui/theme-switch/theme-switch.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/theme-switch/index.ts",
+        "components/ui/theme-switch/theme-switch.tsx"
+      ],
       "demoRoute": "/ui-kit/theme-switch",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/theme-switch.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT001.json",
+        "tests/unit/catalogue-action-components.test.tsx",
+        "tests/e2e/catalogue-laboratory.spec.ts"
+      ],
+      "adaptations": [
+        "Omitted the upstream black theme value and pill-4 variant to preserve the project light/dark/system theme contract.",
+        "Skipped matchMedia work when view transitions are disabled and removed the duplicate dropdown selection callback.",
+        "Formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -26089,7 +26122,7 @@
       "kind": "component",
       "categories": ["action"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/toggle.json",
       "manifestEntrySha256": "9700e8f11661e2c5b6f12131dc635ee6fd5fc6a85818c2b950dfdff43c41e446",
       "documentationUrl": "https://uipkge.dev/react/components/toggle/",
@@ -26110,13 +26143,21 @@
         "components/ui/toggle/toggle.tsx",
         "components/ui/toggle/toggle.variants.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/toggle/index.ts",
+        "components/ui/toggle/toggle.tsx",
+        "components/ui/toggle/toggle.variants.ts"
+      ],
       "demoRoute": "/ui-kit/toggle",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/toggle.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT001.json",
+        "tests/unit/catalogue-action-components.test.tsx",
+        "tests/e2e/catalogue-laboratory.spec.ts"
+      ],
+      "adaptations": ["Formatted with the repository Prettier configuration."],
       "gaps": []
     },
     {
@@ -26127,7 +26168,7 @@
       "kind": "component",
       "categories": ["action"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/toggle-group.json",
       "manifestEntrySha256": "b8fbfcb72d559e26774406d343b55e5ba243311731fbd1a31c7bea7a106f24a1",
       "documentationUrl": "https://uipkge.dev/react/components/toggle-group/",
@@ -26147,13 +26188,20 @@
         "components/ui/toggle-group/index.ts",
         "components/ui/toggle-group/toggle-group.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/toggle-group/index.ts",
+        "components/ui/toggle-group/toggle-group.tsx"
+      ],
       "demoRoute": "/ui-kit/toggle-group",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/toggle-group.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT001.json",
+        "tests/unit/catalogue-action-components.test.tsx",
+        "tests/e2e/catalogue-laboratory.spec.ts"
+      ],
+      "adaptations": ["Formatted with the repository Prettier configuration."],
       "gaps": []
     },
     {

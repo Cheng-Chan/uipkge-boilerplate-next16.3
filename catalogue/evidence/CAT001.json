@@ -1,0 +1,72 @@
+{
+  "ticket": "CAT001",
+  "reviewedAt": "2026-09-24",
+  "approvedItems": ["theme-switch", "toggle", "toggle-group"],
+  "transitiveRegistryItems": ["card", "dropdown-menu", "section-card"],
+  "liveManifestSha256": {
+    "theme-switch": "fd2b579812b6b76029d157392ac080f2fc8449ed4383fdcf06fd15ee911a9aca",
+    "toggle": "db915c541923acdba9edd8538a7e728ec3e98c0ae15e6337ca22fa58ea423cc9",
+    "toggle-group": "2c4a31c65d822b87961cd3de67baaf99bcdc9be6e8e09f1fe33b261686ad9e43",
+    "card": "46e6615bd3281dc4158a3c024241e91912f374903ad93b9f4213b6303caffa01",
+    "dropdown-menu": "953b8506fbf8e4255f5c9e8c13010157861021a46950d55b02bf2fe8fec56908",
+    "section-card": "0bfc12a7bb4acde6fb9bc5ec4d06cb0be75a7265387226d14e49fc0eba2777f2"
+  },
+  "licenses": {
+    "UIPKGE registry source": "MIT",
+    "@radix-ui/react-dropdown-menu@2.1.24": "MIT",
+    "@radix-ui/react-toggle@1.1.18": "MIT",
+    "@radix-ui/react-toggle-group@1.1.19": "MIT",
+    "class-variance-authority@0.7.1": "Apache-2.0",
+    "lucide-react@1.47.0": "ISC"
+  },
+  "review": {
+    "targetsInsideRepository": true,
+    "browserOnly": true,
+    "externalRuntimeRequests": false,
+    "serverBehaviorAdded": false,
+    "dependencyItemsPromotedBeyondInstalled": false,
+    "manualViewports": ["1440x1000", "390x844"],
+    "previewContentResponsive": true,
+    "knownShellRisk": "At 390px, the previously implemented protected-shell header extends 123px beyond the viewport; CAT001 preview content itself remains within the viewport."
+  },
+  "adaptations": [
+    "Pinned every newly introduced package dependency to its exact resolved version.",
+    "Aligned Theme Switch with the project's light, dark, and system contract by omitting the upstream black value and pill-4 variant.",
+    "Skipped matchMedia work when view transitions are disabled and removed the duplicate dropdown selection callback.",
+    "Formatted registry source with the repository's Prettier configuration."
+  ],
+  "verification": [
+    {
+      "command": "pnpm exec vitest run tests/unit/catalogue-action-components.test.tsx tests/unit/preview-runtime.test.tsx",
+      "result": "passed: 2 files, 6 tests"
+    },
+    {
+      "command": "pnpm typecheck",
+      "result": "passed"
+    },
+    {
+      "command": "pnpm check",
+      "result": "passed: formatting, lint, TypeScript, 155 tests across 35 files, offline registry reconciliation, and 722-page static export"
+    },
+    {
+      "command": "LD_LIBRARY_PATH=<temporary-official-Ubuntu-library-directory> pnpm exec playwright test",
+      "result": "passed: 11 Chromium tests"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline && pnpm peers check",
+      "result": "passed"
+    },
+    {
+      "command": "pnpm test:coverage",
+      "result": "passed: 82.13% statements, 69.50% branches, 77.80% functions, 84.90% lines"
+    },
+    {
+      "command": "built-output root-script marker inspection",
+      "result": "passed: CAT001 preview markers occur in dedicated chunks and no root-linked script contains them"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ]
+}

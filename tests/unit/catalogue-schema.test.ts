@@ -9,6 +9,7 @@ import {
   type CatalogueTickets,
   validateCatalogueData,
 } from "@/catalogue/schema";
+import { PREVIEW_SLUGS } from "@/features/showcase/previews/preview-loaders";
 
 function fixtures() {
   return {
@@ -27,7 +28,9 @@ function expectIssue(
   const data = fixtures();
   change(data);
   expect(() =>
-    validateCatalogueData(data.snapshot, data.provenance, data.tickets),
+    validateCatalogueData(data.snapshot, data.provenance, data.tickets, {
+      previewSlugs: PREVIEW_SLUGS,
+    }),
   ).toThrowError(new RegExp(message));
 }
 
@@ -38,6 +41,7 @@ describe("catalogue schema and invariants", () => {
       data.snapshot,
       data.provenance,
       data.tickets,
+      { previewSlugs: PREVIEW_SLUGS },
     );
     expect(parsed.snapshot.summary).toMatchObject({
       total: 713,

@@ -32,6 +32,16 @@ Last updated: 2026-09-24
 | LAB03  | Complete | Searchable/filterable permission-aware catalogue browser exports from metadata without preview imports                                              |
 | LAB04  | Complete | All tracked slugs export through an isolated explicit lazy-preview runtime with contained errors and honest unavailable states                      |
 | FE01   | Complete | Responsive root composition links auth and UI-kit flows, renders live coverage, preserves warnings, and keeps lab code out of root payloads         |
+| CAT001 | Complete | Theme Switch, Toggle, and Toggle Group installed with real lazy previews, interaction coverage, and dependency-only transitive tracking             |
+| CAT002 | Complete | Charts meta-bundle installed with a real isolated ECharts preview, responsive/theme checks, and provider-safe default behavior                      |
+| CAT003 | Complete | Button, Cascade Select, FAB, Float Label, and Input installed with real lazy previews, accessibility checks, and responsive interactions            |
+| CAT004 | Complete | Password Input, Select, Signature Pad, Speed Dial, and Tree Select installed with local-only previews and interaction coverage                      |
+| CAT005 | Complete | Board, Data Table, and Tree Table installed with isolated previews, real data interactions, and responsive verification                             |
+| CAT006 | Complete | Attachment, Avatar, Badge, Carousel, and Chip installed with isolated previews and interaction coverage                                             |
+| CAT007 | Complete | Code Block, Data List, Gantt, Icon Box, and Icons installed with local-only previews and interaction coverage                                       |
+| CAT008 | Complete | Kanban, Kbd, Labeled Value, Lazy Image, and List installed with responsive previews and interaction coverage                                        |
+| CAT009 | Complete | Payment Card, QR Code, Table, Timeline, and Transfer installed with synthetic/local-only previews and interaction coverage                          |
+| CAT010 | Complete | Tree View and Virtual List installed with isolated previews, scrolling, and selection coverage                                                      |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -39,17 +49,17 @@ catalogue is complete.
 ## Catalogue coverage
 
 The dated 2026-09-24 React snapshot contains 713 deduplicated IDs: 704 visual catalogue items and 9
-nonvisual foundation records. Of the visual items, 666 have live manifests and remain discovered;
-38 documentation-only map IDs are blocked because their raw manifests are unavailable. The three
-verified records are previously completed nonvisual foundation items and do not increase visual
-catalogue coverage.
+nonvisual foundation records. Of the visual items, 666 have live manifests; CAT001–CAT010 have
+advanced 39 to `verified` and 77 transitive dependencies to `installed`, leaving 550 `discovered`.
+Thirty-eight documentation-only map IDs are blocked because their raw manifests are unavailable.
+Three additional verified records are previously completed nonvisual foundation items.
 
 | Visual status      | Count | Note                                                    |
 | ------------------ | ----: | ------------------------------------------------------- |
-| Discovered         |   666 | Manifest-backed but not installed                       |
-| Installed          |     0 | No visual catalogue item installation approved yet      |
-| Demo-ready         |     0 | No real visual catalogue preview implemented yet        |
-| Verified           |     0 | No visual catalogue evidence recorded yet               |
+| Discovered         |   550 | Manifest-backed but not installed                       |
+| Installed          |    77 | Transitive source; own preview not yet verified         |
+| Demo-ready         |     0 | No item currently stops at the intermediate status      |
+| Verified           |    39 | Completed CAT001–CAT010 items                           |
 | Blocked            |    38 | Published map links whose raw manifests are unavailable |
 | Approved exception |     0 | No exceptions approved                                  |
 
@@ -446,17 +456,179 @@ catalogue coverage.
   viewport. Built-output inspection found CAT001 markers only in dedicated chunks, not root-linked
   scripts.
 
+### CAT002 — Charts catalogue coverage
+
+- Audited the live `charts` meta-manifest plus its 62 chart-wrapper dependencies and shared `map`
+  dependency before applying them. The 64 manifests declared 238 files resolving to 130 unique,
+  repository-contained targets; the only two collisions were byte-identical shared helpers. Raw
+  manifest hashes and target mappings are preserved in `catalogue/evidence/CAT002-manifests.json`.
+- Installed the approved meta-bundle through pinned shadcn 4.21.0 and pinned ECharts 6.1.0,
+  echarts-for-react 3.0.6, react-map-gl 8.1.3, and mapbox-gl 3.31.0 exactly. Mapbox's provider terms,
+  public-token requirement, and external-network boundary remain explicit.
+- Added an isolated lazy preview using real Area, Bar, Pie, Segmented Gauge, and Category
+  Distribution components. Seven-/30-day range and overlaid/stacked series controls update visible
+  state and the chart's accessible label; the preview does not import either Mapbox-backed wrapper.
+- Adapted the shared theme/option helpers, accessibility forwarding, hook dependencies, and map
+  readiness handling for this React/TypeScript/lint contract. The map primitive uses the existing
+  explicit `NEXT_PUBLIC_MAPBOX_ENABLED` opt-in, requires a `pk.` public token, and retains provider
+  attribution. Registry-specific `any` interoperability is narrowly exempted only within the
+  installed charts/map directories.
+- Advanced only `charts` to `verified`; its 62 wrapper dependencies plus `map` remain `installed`
+  pending their own tickets. Visual coverage is now 596 discovered, 66 installed, 4 verified, and
+  38 blocked. The ledger now has 569 planned, 38 blocked-upstream, and 4 complete tickets.
+- `pnpm check` passed formatting, lint, TypeScript, 157 tests across 36 files, offline registry
+  reconciliation, and the 722-page static export. Frozen offline installation, peer checks, and
+  `git diff --check` passed. A repeated instrumented run passed at 38.50% statements, 26.94%
+  branches, 33.68% functions, and 39.33% lines; its first run had one unrelated five-second timeout.
+- All 12 Chromium tests passed against the production static preview. The CAT002 flow observed real
+  canvas output, changed both controls, retained accessible summaries, emitted no browser errors,
+  and made no external requests.
+- Light/dark desktop inspection and a live resize to 390px confirmed clear rendering and canvas
+  widths changing from 934/434px to 316px. The 1,017,317-byte chart preview chunk was requested by
+  `/ui-kit/charts` but not `/`; no Mapbox environment/provider marker was emitted in built chunks.
+
+### CAT003 — Button, Cascade Select, FAB, Float Label, Input catalogue coverage
+
+- Audited the five approved live manifests plus Cascade Select's required Popover dependency before
+  installation. The six manifests resolved to 19 unique, repository-contained targets with no
+  collisions, external requests, unsafe evaluation, geolocation, or server behavior. Raw hashes and
+  path mappings are preserved in `catalogue/evidence/CAT003-manifests.json`.
+- Installed all source through pinned shadcn 4.21.0 and pinned the new Radix Popover 1.1.23 and
+  Radix Slot 1.3.3 dependencies exactly. Popover remains dependency-only and its optional storage
+  persistence is not enabled by CAT003.
+- Added five explicit lazy previews covering Button variants, sizes, disabled and attached groups;
+  searchable/clearable Cascade Select plus disabled/loading states; FAB variants, sizes, extended
+  and contained positioning; empty, prefilled, required, and disabled Float Labels; and Input
+  variants, validation, clear, password, count, addon, and group behavior.
+- Added stable Cascade Select naming and controlled-popup semantics, non-submitting FAB defaults,
+  observable InputGroup addon alignment, fixed optional Popover persistence wiring, and narrow
+  Input/InputGroup flex sizing. The latter was found during the 390px visual review and removed a
+  51px overflow from the preview.
+- Advanced only the five approved items to `verified`; Popover remains `installed`. Visual coverage
+  is now 590 discovered, 67 installed, 9 verified, and 38 blocked. The ledger now has 568 planned,
+  38 blocked-upstream, and 5 complete tickets.
+- Focused component/runtime verification passed 7 tests across 2 files. It covers non-submitting
+  defaults, click behavior, Cascade Select search and selection, popup relationships, Float Label
+  association/floating, controlled Input clearing, and password visibility.
+- `pnpm check` passed formatting, lint, TypeScript, 161 tests across 37 files, offline registry
+  reconciliation, and the 722-page static export. Coverage passed at 41.46% statements, 31.24%
+  branches, 35.71% functions, and 42.49% lines overall. All 13 production Chromium tests passed;
+  the CAT003 flow exercised all five routes, retained local-only behavior, and observed no browser
+  or external-network errors.
+- Desktop light and dark inspection confirmed readable states and contained FAB positioning. At
+  390px, all five preview isolation containers fit their 358px content width after the Input sizing
+  correction.
+
+### CAT004 — Password Input, Select, Signature Pad, Speed Dial, Tree Select catalogue coverage
+
+- Audited all five approved live manifests and 16 own targets. Speed Dial and Tree Select proposed
+  five additional FAB/Popover dependency writes; those reviewed CAT003 files were explicitly
+  preserved rather than overwritten. Raw hashes and target mappings are retained in
+  `catalogue/evidence/CAT004-manifests.json`.
+- Installed the five approved sources through pinned shadcn 4.21.0 and pinned the only new package,
+  Radix Select 2.3.7, exactly. The controls and previews use transient browser state only; the
+  Signature Pad PNG data URL is neither stored nor uploaded.
+- Added five explicit lazy previews covering password strength/visibility and states; custom and
+  native selection; real pointer-driven canvas drawing/clearing; click Speed Dial actions; and
+  searchable single/multiple Tree Select behavior.
+- Adapted Signature Pad for narrow responsive rendering while retaining logical/high-DPI drawing,
+  aligned Speed Dial's menu semantics, and gave Tree Select stable naming/dialog relationships
+  without a nested interactive clear control.
+- Advanced only the five approved items to `verified`. Visual coverage is now 585 discovered, 67
+  installed, 14 verified, and 38 blocked. The ledger now has 567 planned, 38 blocked-upstream, and
+  6 complete tickets.
+- Focused component/runtime verification passed 8 tests across 2 files. `pnpm check` passed
+  formatting, lint, TypeScript, 166 tests across 38 files, offline registry reconciliation, and all
+  722 static pages. Coverage passed at 44.81% statements, 35.36% branches, 38.04% functions, and
+  46.09% lines.
+- All 14 Chromium tests passed. CAT004 exercised all five routes, actual pointer drawing and clear,
+  popup/menu selection, password state, local-only requests, and browser-error capture. At 390px,
+  all five preview containers matched their 358px content width; the responsive Signature Pad was
+  also inspected visually.
+- Built-output inspection found five independent preview chunks of 9,829, 29,033, 9,094, 28,082,
+  and 32,377 bytes, with their identifying markers absent from root-linked chunks.
+
+### CAT005 — Board, Data Table, Tree Table catalogue coverage
+
+- Audited the three approved manifests plus 14 transitive manifests before installation. Their 53
+  unique repository-contained targets had no collisions or unsafe paths; 37 were new and all 16
+  proposed overwrites of reviewed Button, Dropdown Menu, Input, Popover, and Select files were
+  declined. Full hashes and path decisions are in `catalogue/evidence/CAT005-manifests.json`.
+- Installed Board, Data Table, and Tree Table plus nine dependency-only registry items through
+  pinned shadcn 4.21.0. Added seven exact package dependencies; TanStack React Table is deliberately
+  pinned to compatible v8.21.3 because the upstream manifest's unbounded range resolved to a
+  source-incompatible v9 release.
+- Added explicit lazy previews for keyboard/pointer Board movement; Data Table search, sort, filter,
+  density, visibility, pagination, row selection, and local export; and Tree Table expansion,
+  selection, loading, and empty states. No network, server, geolocation, socket, or dynamic-code
+  behavior was found or added.
+- Added accessible region/table naming and treegrid/loading semantics, synchronized filter drafts
+  on popover opening, and confined necessary TanStack interoperability/compiler exceptions to the
+  registry table boundaries.
+- Advanced only the three approved items to `verified`; nine new registry dependencies remain
+  `installed`. Visual coverage is now 573 discovered, 76 installed, 17 verified, and 38 blocked.
+  The ledger now has 566 planned, 38 blocked-upstream, and 7 complete tickets.
+- Focused component/runtime verification passed 6 tests across 2 files. `pnpm check` passed
+  formatting, lint, TypeScript, 169 tests across 39 files, offline registry reconciliation, and all
+  722 static pages. Coverage passed at 43.79% statements, 34.85% branches, 37.33% functions, and
+  45.23% lines. Frozen offline installation and peer checks also passed.
+- All 15 Chromium tests passed. CAT005 exercised all three production routes and their meaningful
+  interactions without external requests or browser errors. At 390px, every preview isolation
+  container matched its 358px content width; the wide tables remain usable through intentional
+  internal scrolling.
+- Built-output inspection found independent Board, Data Table, and Tree Table preview chunks of
+  10,073, 203,353, and 36,901 bytes, with their identifying markers absent from root-linked chunks.
+
+### CAT006–CAT010 — display-component catalogue batch
+
+- Audited all 28 approved and transitive manifests before installation. Their 80 unique,
+  repository-contained targets had no collisions, unsafe paths, fetch/XHR, sockets, geolocation,
+  dynamic-code evaluation, or server behavior. Sixty-three new targets were accepted and 17
+  proposed overwrites of reviewed components were preserved. Per-ticket hashes and target decisions
+  are in `catalogue/evidence/CAT006-manifests.json` through `CAT010-manifests.json`.
+- CAT006 verified `attachment`, `avatar`, `badge`, `carousel`, and `chip`; CAT007 verified
+  `code-block`, `data-list`, `gantt`, `icon-box`, and `icons`; CAT008 verified `kanban`, `kbd`,
+  `labeled-value`, `lazy-image`, and `list`; CAT009 verified `payment-card`, `qr-code`, `table`,
+  `timeline`, and `transfer`; CAT010 verified `tree-view` and `virtual-list`.
+- Installed dependency-only `context-menu`, `skeleton`, and `scroll-area`. Pinned Radix Avatar
+  1.2.6, Context Menu 2.3.7, and Scroll Area 1.2.18; TanStack React Virtual 3.14.13; Embla Carousel
+  React 8.6.0; QR Code 1.5.4 and its types 1.5.6; and Shiki 4.4.3. All eight packages are MIT.
+- Added 22 explicit lazy previews with transient local state. Lazy Image uses inline data URLs, QR
+  Code encodes a reserved `.invalid` URL locally, and Payment Card uses fixed synthetic values; no
+  preview requires credentials or an external request.
+- Corrected Carousel lifecycle and semantics, rendered Gantt assignees, corrected disabled List
+  propagation, narrowed Virtual List generics, and confined necessary state/ref/compiler lint
+  exceptions to affected registry boundaries. Wide Gantt, Kanban, and Transfer content scrolls
+  internally.
+- Advanced only the 22 approved items to `verified`; three new registry dependencies remain
+  `installed`. Visual coverage is now 550 discovered, 77 installed, 39 verified, and 38 blocked.
+  The ledger now has 561 planned, 38 blocked-upstream, and 12 complete tickets.
+- Focused component/runtime verification passed 8 tests across 2 files. `pnpm check` passed
+  formatting, lint, TypeScript, 174 tests across 40 files, offline registry reconciliation, and all
+  722 static pages. Coverage passed at 47.57% statements, 38.17% branches, 42.78% functions, and
+  49.51% lines. Frozen offline installation and peer checks also passed.
+- All 20 Chromium tests passed. The five CAT006–CAT010 flows exercised all 22 production routes and
+  meaningful interactions without external requests or browser errors. At 390px, every preview
+  isolation container matched its 358px content width; representative complex previews were also
+  inspected visually.
+- Built-output inspection found independent lazy chunks for all 22 previews, ranging from 1,289
+  bytes for Kbd to 126,218 bytes for Code Block, with their identifying markers absent from
+  root-linked chunks. Complete bundle measurements and verification evidence are in
+  `catalogue/evidence/CAT006.json` through `CAT010.json`.
+
 ## Known constraints
 
 - ESLint 9 remains pinned because the installed Next.js ESLint peer stack does not accept ESLint 10.
 - Playwright Chromium on Linux needs its documented system packages.
 - Thirty-eight published map IDs have no live raw manifest and remain blocked upstream.
-- Only the three CAT001 visual catalogue items are verified; business feature pages and complex
-  workbenches do not exist yet. Installed foundation and catalogue dependencies are tracked in
-  `docs/registry.md`.
+- Thirty-nine visual catalogue items are verified through CAT001–CAT010; business feature pages and
+  complex workbenches do not exist yet. CAT002's 62 chart wrappers and shared map source plus
+  CAT003's Popover, CAT005's remaining dependency-only sources, and CAT007–CAT009's Context Menu,
+  Skeleton, and Scroll Area are installed dependencies, not individually verified components.
+  Installed foundation and catalogue dependencies are tracked in `docs/registry.md`.
 - At 390px, the previously implemented protected-shell header extends 123px beyond the viewport;
-  CAT001 preview content remains responsive, but the shell overflow should be corrected under an
-  explicitly approved shell-maintenance ticket.
+  CAT001–CAT010 preview content remains responsive, but the shell overflow should be corrected under
+  an explicitly approved shell-maintenance ticket.
 
 Append ticket evidence here only after commands have actually run. Link richer evidence from the
 future catalogue manifest rather than converting planned checks into claims.

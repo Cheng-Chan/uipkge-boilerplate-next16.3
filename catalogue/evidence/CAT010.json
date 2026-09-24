@@ -1,0 +1,61 @@
+{
+  "ticket": "CAT010",
+  "reviewedAt": "2026-09-24",
+  "approvedItems": ["tree-view", "virtual-list"],
+  "manifestEvidence": "catalogue/evidence/CAT010-manifests.json",
+  "review": {
+    "manifests": 2,
+    "declaredFiles": 6,
+    "uniqueTargets": 6,
+    "newTargets": 6,
+    "preservedTargets": 0,
+    "unsafeTargets": 0,
+    "targetCollisions": 0,
+    "fetchOrXhrCalls": 0,
+    "webSockets": 0,
+    "geolocationCalls": 0,
+    "dynamicCodeEvaluation": 0,
+    "serverBehaviorAdded": false
+  },
+  "packages": { "@tanstack/react-virtual@3.14.13": "MIT" },
+  "browserBoundary": {
+    "externalRequestsExpected": false,
+    "directStorageUse": false,
+    "submittedDataBehavior": "Tree selection/expansion and virtual scrolling remain local browser state."
+  },
+  "bundleEvidence": {
+    "previewChunksBytes": { "tree-view": 9333, "virtual-list": 37156 },
+    "previewMarkersFoundInRootLinkedChunks": false,
+    "externalRequestsObserved": 0
+  },
+  "adaptations": [
+    "Pinned TanStack React Virtual exactly.",
+    "Replaced explicit any constraints with unknown record constraints and confined the React Compiler compatibility exception to Virtual List.",
+    "Kept Tree View's controlled-selection synchronization in a narrow lint boundary.",
+    "Formatted all newly installed registry source."
+  ],
+  "verification": [
+    { "command": "pnpm lint && pnpm typecheck", "result": "passed" },
+    {
+      "command": "pnpm exec vitest run tests/unit/catalogue-display-components.test.tsx tests/unit/preview-runtime.test.tsx",
+      "result": "passed: 2 files, 8 tests"
+    },
+    { "command": "pnpm build", "result": "passed: 722-page static export" },
+    {
+      "command": "pnpm check && pnpm test:coverage",
+      "result": "passed: 40 files / 174 unit tests; coverage 47.57% statements, 38.17% branches, 42.78% functions, and 49.51% lines"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline && pnpm peers check",
+      "result": "passed"
+    },
+    {
+      "command": "pnpm exec playwright test",
+      "result": "passed: 20 Chromium tests, including all CAT006–CAT010 production routes with no external requests or browser errors"
+    },
+    {
+      "command": "390px responsive and built-output inspection",
+      "result": "passed: both preview containers matched their 358px content width; independent lazy chunks were absent from root-linked scripts"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "ticket": "CAT008",
+  "summary": {
+    "manifests": 6,
+    "declaredFiles": 14,
+    "uniqueTargets": 14,
+    "newTargets": 14,
+    "preservedTargets": 0
+  },
+  "manifests": [
+    {
+      "id": "kanban",
+      "role": "approved",
+      "sha256": "4079cf3b13a3b035eadc7638c5ef6d60366812955cd7b10e66e95c546cec555a",
+      "targetCount": 3
+    },
+    {
+      "id": "kbd",
+      "role": "approved",
+      "sha256": "4356cd89d54f7a4d3f80a667936962a38d0d20b229992241f1300c2c2d91be6f",
+      "targetCount": 2
+    },
+    {
+      "id": "labeled-value",
+      "role": "approved",
+      "sha256": "15d85778e421db05bc78a372a383deab8a17286ef1b3c9177347a8677b1eee12",
+      "targetCount": 2
+    },
+    {
+      "id": "lazy-image",
+      "role": "approved",
+      "sha256": "2e8b449f8917c6e24db062c31ccda17e66d6b425769b4fb4b8bedf97493b3951",
+      "targetCount": 2
+    },
+    {
+      "id": "list",
+      "role": "approved",
+      "sha256": "f6763552cd79edc1898c880e265fa4fac3fec76fe2307fff772b960512d4a171",
+      "targetCount": 2
+    },
+    {
+      "id": "skeleton",
+      "role": "dependency-new",
+      "sha256": "f7c34bbabb676b4e8f7fd3631cbab6773918cf04d650f23d0bb1fdcdc49488f2",
+      "targetCount": 3
+    }
+  ],
+  "approvedTargets": [
+    "components/ui/kanban/Kanban.tsx",
+    "components/ui/kanban/kanban.variants.ts",
+    "components/ui/kanban/index.ts",
+    "components/ui/kbd/kbd.tsx",
+    "components/ui/kbd/index.ts",
+    "components/ui/labeled-value/labeled-value.tsx",
+    "components/ui/labeled-value/index.ts",
+    "components/ui/lazy-image/Img.tsx",
+    "components/ui/lazy-image/index.ts",
+    "components/ui/list/list.tsx",
+    "components/ui/list/index.ts"
+  ],
+  "newDependencyTargets": [
+    "components/ui/skeleton/skeleton.tsx",
+    "components/ui/skeleton/skeleton.variants.ts",
+    "components/ui/skeleton/index.ts"
+  ],
+  "preservedTargets": []
+}

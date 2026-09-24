@@ -30,7 +30,7 @@ it("contains lazy preview failures", async () => {
 });
 
 it("does not treat a tracked record as a completed preview", () => {
-  render(<CataloguePreview itemId="button" status="discovered" />);
+  render(<CataloguePreview itemId="accordion" status="discovered" />);
   expect(screen.getByText("Preview not installed")).toBeVisible();
   expect(screen.getByText(/does not substitute a placeholder/i)).toBeVisible();
 });

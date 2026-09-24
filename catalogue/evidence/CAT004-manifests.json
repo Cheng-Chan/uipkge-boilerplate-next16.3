@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "ticket": "CAT004",
+  "summary": {
+    "manifests": 5,
+    "declaredFiles": 16,
+    "uniqueTargets": 16,
+    "preservedDependencyTargets": 5
+  },
+  "uniqueTargets": [
+    "components/ui/password-input/PasswordInput.tsx",
+    "components/ui/password-input/index.ts",
+    "components/ui/password-input/password-input.variants.ts",
+    "components/ui/select/NativeSelect.tsx",
+    "components/ui/select/index.ts",
+    "components/ui/select/select.tsx",
+    "components/ui/signature-pad/SignaturePad.tsx",
+    "components/ui/signature-pad/index.ts",
+    "components/ui/signature-pad/signature-pad.variants.ts",
+    "components/ui/speed-dial/SpeedDial.tsx",
+    "components/ui/speed-dial/index.ts",
+    "components/ui/tree-select/TreeSelect.tsx",
+    "components/ui/tree-select/TreeSelectNode.tsx",
+    "components/ui/tree-select/index.ts",
+    "components/ui/tree-select/tree-select.variants.ts",
+    "components/ui/tree-select/types.ts"
+  ],
+  "preservedDependencyTargets": [
+    "components/ui/fab/Fab.tsx",
+    "components/ui/fab/fab.variants.ts",
+    "components/ui/fab/index.ts",
+    "components/ui/popover/index.ts",
+    "components/ui/popover/popover.tsx"
+  ],
+  "manifests": [
+    {
+      "id": "password-input",
+      "url": "https://uipkge.dev/r/react/password-input.json",
+      "sha256": "8367419965888d54d3c83cfb2ea612644bb8a2a3bae669191876a7d63b3d4e67",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority", "lucide-react"],
+      "registryDependencies": [],
+      "targetPaths": [
+        "components/ui/password-input/PasswordInput.tsx",
+        "components/ui/password-input/password-input.variants.ts",
+        "components/ui/password-input/index.ts"
+      ]
+    },
+    {
+      "id": "select",
+      "url": "https://uipkge.dev/r/react/select.json",
+      "sha256": "5c8465cac6f16306446c98f51d44f2dc0ff15c1e94102d194c9ccf4c66d23afa",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
+      "registryDependencies": [],
+      "targetPaths": [
+        "components/ui/select/select.tsx",
+        "components/ui/select/NativeSelect.tsx",
+        "components/ui/select/index.ts"
+      ]
+    },
+    {
+      "id": "signature-pad",
+      "url": "https://uipkge.dev/r/react/signature-pad.json",
+      "sha256": "b5b20855a9d50d46270d7b34e724594993473cf602f364544af45a761165bbcd",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority", "lucide-react"],
+      "registryDependencies": [],
+      "targetPaths": [
+        "components/ui/signature-pad/SignaturePad.tsx",
+        "components/ui/signature-pad/signature-pad.variants.ts",
+        "components/ui/signature-pad/index.ts"
+      ]
+    },
+    {
+      "id": "speed-dial",
+      "url": "https://uipkge.dev/r/react/speed-dial.json",
+      "sha256": "470d429185feee07bf9435a80405f9301721acc747dca8f84e86bb748caa8095",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["fab", "popover"],
+      "targetPaths": [
+        "components/ui/speed-dial/SpeedDial.tsx",
+        "components/ui/speed-dial/index.ts"
+      ]
+    },
+    {
+      "id": "tree-select",
+      "url": "https://uipkge.dev/r/react/tree-select.json",
+      "sha256": "04cf366cea9b80912c16b0214d8b917c783ddfaceca7ec08d41c95922fa43690",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority", "lucide-react"],
+      "registryDependencies": ["popover"],
+      "targetPaths": [
+        "components/ui/tree-select/TreeSelect.tsx",
+        "components/ui/tree-select/TreeSelectNode.tsx",
+        "components/ui/tree-select/tree-select.variants.ts",
+        "components/ui/tree-select/types.ts",
+        "components/ui/tree-select/index.ts"
+      ]
+    }
+  ]
+}

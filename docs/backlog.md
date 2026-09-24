@@ -417,8 +417,19 @@ the named static-preview interaction; every ticket also runs `pnpm check`.
 No catalogue installation ticket may use this family label as approval. The exact LAB01-generated
 ticket ID and listed item IDs must be approved. **CAT001 is complete** for `theme-switch`, `toggle`,
 and `toggle-group`; its required `card`, `dropdown-menu`, and `section-card` sources remain
-dependency-only installations until their own exact tickets are approved. The next proposed ticket
-is **CAT002**, covering exactly `charts`.
+dependency-only installations until their own exact tickets are approved. **CAT002 is complete**
+for `charts`; its 62 chart wrappers and shared `map` source likewise remain dependency-only
+installations. **CAT003 is complete** for `button`, `cascade-select`, `fab`, `float-label`, and
+`input`; its required `popover` remains dependency-only. **CAT004 is complete** for
+`password-input`, `select`, `signature-pad`, `speed-dial`, and `tree-select`; its reused `fab` and
+`popover` files retain their earlier statuses. **CAT005 is complete** for `board`, `data-table`, and
+`tree-table`; its nine newly installed registry dependencies remain dependency-only. **CAT006**
+through **CAT010** are also complete: they verify `attachment`, `avatar`,
+`badge`, `carousel`, `chip`, `code-block`, `data-list`, `gantt`, `icon-box`, `icons`, `kanban`, `kbd`,
+`labeled-value`, `lazy-image`, `list`, `payment-card`, `qr-code`, `table`, `timeline`, `transfer`,
+`tree-view`, and `virtual-list`. Their `context-menu`, `skeleton`, and `scroll-area` sources remain
+dependency-only. The next proposed ticket is **CAT011**, covering exactly `calendar`, `date-picker`,
+`range-calendar`, and `time-picker`.
 
 ## Maintenance and final validation
 
@@ -478,6 +489,7 @@ is **CAT002**, covering exactly `charts`.
 
 ## Next approval boundary
 
-After CAT001 is verified, the next proposed ticket is **CAT002 — Charts catalogue coverage**.
-Approval must name CAT002 and authorizes only `charts`; it does not authorize another catalogue
-batch.
+After CAT010 is verified, the next proposed ticket is **CAT011 — Calendar, Date Picker, Range
+Calendar, and Time Picker catalogue coverage**. Approval must name CAT011 and authorizes only
+`calendar`, `date-picker`, `range-calendar`, and `time-picker`; it does not authorize another
+catalogue batch.

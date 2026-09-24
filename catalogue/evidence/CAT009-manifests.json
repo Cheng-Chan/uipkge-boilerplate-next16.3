@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "ticket": "CAT009",
+  "summary": {
+    "manifests": 9,
+    "declaredFiles": 26,
+    "uniqueTargets": 26,
+    "newTargets": 12,
+    "preservedTargets": 14
+  },
+  "manifests": [
+    {
+      "id": "payment-card",
+      "role": "approved",
+      "sha256": "082dc1fd5dd6165f644e9b437230296051121019d2c0cd539ec5d30129d213b2",
+      "targetCount": 2
+    },
+    {
+      "id": "qr-code",
+      "role": "approved",
+      "sha256": "337914cb7b082fccdfbdafae6782a2049f457937b70b60600b2fbe853dc5cbfe",
+      "targetCount": 2
+    },
+    {
+      "id": "table",
+      "role": "approved-preserved",
+      "sha256": "91750049257fa006d714be213fff31542164f758615f71d7e62ab4e128113246",
+      "targetCount": 3
+    },
+    {
+      "id": "timeline",
+      "role": "approved",
+      "sha256": "6f160e8a83e555180ade28636df90904372e368bad8f0f40e2f2e9dc429a7cf0",
+      "targetCount": 4
+    },
+    {
+      "id": "transfer",
+      "role": "approved",
+      "sha256": "cde7f7188abee25c767843bd19772806a54dbc83db9e915190b5cb2865239f66",
+      "targetCount": 2
+    },
+    {
+      "id": "button",
+      "role": "dependency-preserved",
+      "sha256": "bab403f66bbcf6526646e5ea8079b838775f3dfe5540720abd0e2cffbad5cc3c",
+      "targetCount": 4
+    },
+    {
+      "id": "checkbox",
+      "role": "dependency-preserved",
+      "sha256": "5348557d099c6c8e25e7a1afa86d1a83f8c3699bf780c4fba7ec9d86aaf9c311",
+      "targetCount": 2
+    },
+    {
+      "id": "input",
+      "role": "dependency-preserved",
+      "sha256": "bb5d78409546544cefe788d8b389fd2cb4887a723fd14fb68d607be70b2f4c39",
+      "targetCount": 5
+    },
+    {
+      "id": "scroll-area",
+      "role": "dependency-new",
+      "sha256": "d0715448abb991977285ac56ed6218a0f0bcc08402a8d7ad6ec2c680c85ffa73",
+      "targetCount": 2
+    }
+  ],
+  "approvedTargets": [
+    "components/ui/payment-card/payment-card.tsx",
+    "components/ui/payment-card/index.ts",
+    "components/ui/qr-code/QrCode.tsx",
+    "components/ui/qr-code/index.ts",
+    "components/ui/table/table.tsx",
+    "components/ui/table/utils.ts",
+    "components/ui/table/index.ts",
+    "components/ui/timeline/timeline.tsx",
+    "components/ui/timeline/context.ts",
+    "components/ui/timeline/timeline.variants.ts",
+    "components/ui/timeline/index.ts",
+    "components/ui/transfer/transfer.tsx",
+    "components/ui/transfer/index.ts"
+  ],
+  "newDependencyTargets": [
+    "components/ui/scroll-area/scroll-area.tsx",
+    "components/ui/scroll-area/index.ts"
+  ],
+  "preservedTargets": [
+    "components/ui/table/table.tsx",
+    "components/ui/table/utils.ts",
+    "components/ui/table/index.ts",
+    "components/ui/button/Button.tsx",
+    "components/ui/button/ButtonGroup.tsx",
+    "components/ui/button/button.variants.ts",
+    "components/ui/button/index.ts",
+    "components/ui/checkbox/checkbox.tsx",
+    "components/ui/checkbox/index.ts",
+    "components/ui/input/Input.tsx",
+    "components/ui/input/InputGroup.tsx",
+    "components/ui/input/InputGroupAddon.tsx",
+    "components/ui/input/InputGroupButton.tsx",
+    "components/ui/input/index.ts"
+  ]
+}

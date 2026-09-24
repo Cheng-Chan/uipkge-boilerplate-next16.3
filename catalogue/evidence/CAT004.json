@@ -1,0 +1,92 @@
+{
+  "ticket": "CAT004",
+  "reviewedAt": "2026-09-24",
+  "approvedItems": [
+    "password-input",
+    "select",
+    "signature-pad",
+    "speed-dial",
+    "tree-select"
+  ],
+  "reusedRegistryItems": ["fab", "popover"],
+  "manifestEvidence": "catalogue/evidence/CAT004-manifests.json",
+  "review": {
+    "manifests": 5,
+    "declaredFiles": 16,
+    "uniqueInstalledTargets": 16,
+    "preservedDependencyTargets": 5,
+    "unsafeTargets": 0,
+    "targetCollisions": 0,
+    "fetchOrXhrCalls": 0,
+    "webSockets": 0,
+    "geolocationCalls": 0,
+    "dynamicCodeEvaluation": 0,
+    "serverBehaviorAdded": false,
+    "dependencyItemsPromotedBeyondInstalled": false
+  },
+  "packages": {
+    "@radix-ui/react-select@2.3.7": "MIT",
+    "class-variance-authority@0.7.1": "Apache-2.0",
+    "lucide-react@1.47.0": "ISC"
+  },
+  "browserBoundary": {
+    "externalRequestsExpected": false,
+    "directStorageUseByApprovedItems": false,
+    "canvasBehavior": "Signature drawing and its PNG data URL remain in transient browser state and are never uploaded.",
+    "submittedDataBehavior": "All controls mutate local preview state only; no backend, upload, email, or delivery behavior exists."
+  },
+  "bundleEvidence": {
+    "previewChunksBytes": {
+      "password-input": 9829,
+      "select": 29033,
+      "signature-pad": 9094,
+      "speed-dial": 28082,
+      "tree-select": 32377
+    },
+    "previewMarkersFoundInRootLinkedChunks": false,
+    "externalRequestsObserved": 0
+  },
+  "adaptations": [
+    "Pinned the newly introduced Radix Select dependency to its exact resolved version.",
+    "Made Signature Pad responsive inside narrow containers while preserving logical drawing coordinates and high-DPI output.",
+    "Removed unsupported canvas accessibility state and exposed only model-value presence, never its data URL.",
+    "Added Speed Dial menu semantics matching the trigger's popup declaration.",
+    "Added stable accessible naming and controlled-dialog relationships to Tree Select, removing its nested interactive clear control while retaining keyboard clearing.",
+    "Declined five proposed overwrites so CAT003's reviewed FAB and Popover adaptations remained intact.",
+    "Formatted registry source with the repository Prettier configuration."
+  ],
+  "verification": [
+    {
+      "command": "pnpm lint && pnpm typecheck",
+      "result": "passed for all installed source and preview modules"
+    },
+    {
+      "command": "pnpm exec vitest run tests/unit/catalogue-advanced-controls.test.tsx tests/unit/preview-runtime.test.tsx",
+      "result": "passed: 2 files, 8 tests"
+    },
+    {
+      "command": "pnpm check",
+      "result": "passed: formatting, lint, TypeScript, 166 tests across 38 files, offline registry reconciliation, and 722-page static export"
+    },
+    {
+      "command": "LD_LIBRARY_PATH=<temporary-official-Ubuntu-library-directory> pnpm exec playwright test",
+      "result": "passed: all 14 Chromium tests, including all five CAT004 routes with local-origin-only requests and no browser errors"
+    },
+    {
+      "command": "pnpm test:coverage",
+      "result": "passed: 166 tests; 44.81% statements, 35.36% branches, 38.04% functions, and 46.09% lines overall"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline && pnpm peers check",
+      "result": "passed: lockfile is reproducible offline and no peer dependency issues were found"
+    },
+    {
+      "command": "production-preview visual and responsive review",
+      "result": "passed: all five preview containers matched their 358-pixel content width at a 390-pixel viewport; responsive Signature Pad states were visually inspected"
+    },
+    {
+      "command": "built-output inspection",
+      "result": "passed: five independent preview chunks measured 9,829, 29,033, 9,094, 28,082, and 32,377 bytes; their markers were absent from root-linked chunks"
+    }
+  ]
+}

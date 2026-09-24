@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "ticket": "CAT007",
+  "summary": {
+    "manifests": 7,
+    "declaredFiles": 24,
+    "uniqueTargets": 24,
+    "newTargets": 20,
+    "preservedTargets": 4
+  },
+  "manifests": [
+    {
+      "id": "code-block",
+      "role": "approved",
+      "sha256": "dff87d9e665377ecbb491ce2a6ee0f7895efdf62ebd2b6ebf6189d209938b83c",
+      "targetCount": 2
+    },
+    {
+      "id": "data-list",
+      "role": "approved",
+      "sha256": "c026d5b75b8589069ae939ce4ec44c11049eceabe2791311abf9842fd18e5f43",
+      "targetCount": 2
+    },
+    {
+      "id": "gantt",
+      "role": "approved",
+      "sha256": "e1a6c87c9508322cff3c60d973c2c9738d8c1a6e68dd9e767e9e9d2c2076cb23",
+      "targetCount": 9
+    },
+    {
+      "id": "icon-box",
+      "role": "approved",
+      "sha256": "0bec6eaef9a9db79fe453870c27bd62c606a66bc0d3f40b78df6d623419c9bcc",
+      "targetCount": 3
+    },
+    {
+      "id": "icons",
+      "role": "approved",
+      "sha256": "b903557d037c0dc414068e1a226a623c7293db281444b1916cb3c2d456f7c8f7",
+      "targetCount": 2
+    },
+    {
+      "id": "button",
+      "role": "dependency-preserved",
+      "sha256": "bab403f66bbcf6526646e5ea8079b838775f3dfe5540720abd0e2cffbad5cc3c",
+      "targetCount": 4
+    },
+    {
+      "id": "context-menu",
+      "role": "dependency-new",
+      "sha256": "24a142adfb170acd592136c3f7db0f10849c2152f11a433f97d6a512aa9d258b",
+      "targetCount": 2
+    }
+  ],
+  "approvedTargets": [
+    "components/ui/code-block/CodeBlock.tsx",
+    "components/ui/code-block/index.ts",
+    "components/ui/data-list/data-list.tsx",
+    "components/ui/data-list/index.ts",
+    "components/ui/gantt/Gantt.tsx",
+    "components/ui/gantt/GanttHeader.tsx",
+    "components/ui/gantt/GanttTree.tsx",
+    "components/ui/gantt/GanttTimeline.tsx",
+    "components/ui/gantt/GanttBar.tsx",
+    "components/ui/gantt/GanttMilestone.tsx",
+    "components/ui/gantt/GanttContextMenu.tsx",
+    "components/ui/gantt/types.ts",
+    "components/ui/gantt/index.ts",
+    "components/ui/icon-box/icon-box.tsx",
+    "components/ui/icon-box/IconStack.tsx",
+    "components/ui/icon-box/index.ts",
+    "components/ui/icons/icons.tsx",
+    "components/ui/icons/index.ts"
+  ],
+  "newDependencyTargets": [
+    "components/ui/context-menu/context-menu.tsx",
+    "components/ui/context-menu/index.ts"
+  ],
+  "preservedTargets": [
+    "components/ui/button/Button.tsx",
+    "components/ui/button/ButtonGroup.tsx",
+    "components/ui/button/button.variants.ts",
+    "components/ui/button/index.ts"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "ticket": "CAT010",
+  "summary": {
+    "manifests": 2,
+    "declaredFiles": 6,
+    "uniqueTargets": 6,
+    "newTargets": 6,
+    "preservedTargets": 0
+  },
+  "manifests": [
+    {
+      "id": "tree-view",
+      "role": "approved",
+      "sha256": "9739e75497320988d5a37de16b673d8524947dfd81c60e0e9fef902de294fc6c",
+      "targetCount": 4
+    },
+    {
+      "id": "virtual-list",
+      "role": "approved",
+      "sha256": "2048ddd0dca921bbfbabd030e16fc0c88f43c56e1126cf2a4e54ae3c99d449c8",
+      "targetCount": 2
+    }
+  ],
+  "approvedTargets": [
+    "components/ui/tree-view/tree-view.tsx",
+    "components/ui/tree-view/context.ts",
+    "components/ui/tree-view/types.ts",
+    "components/ui/tree-view/index.ts",
+    "components/ui/virtual-list/virtual-list.tsx",
+    "components/ui/virtual-list/index.ts"
+  ],
+  "preservedTargets": []
+}

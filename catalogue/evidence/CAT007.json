@@ -1,0 +1,73 @@
+{
+  "ticket": "CAT007",
+  "reviewedAt": "2026-09-24",
+  "approvedItems": ["code-block", "data-list", "gantt", "icon-box", "icons"],
+  "newRegistryDependencies": ["context-menu"],
+  "reusedRegistryItems": ["button"],
+  "manifestEvidence": "catalogue/evidence/CAT007-manifests.json",
+  "review": {
+    "manifests": 7,
+    "declaredFiles": 24,
+    "uniqueTargets": 24,
+    "newTargets": 20,
+    "preservedTargets": 4,
+    "unsafeTargets": 0,
+    "targetCollisions": 0,
+    "fetchOrXhrCalls": 0,
+    "webSockets": 0,
+    "geolocationCalls": 0,
+    "dynamicCodeEvaluation": 0,
+    "serverBehaviorAdded": false
+  },
+  "packages": {
+    "@radix-ui/react-context-menu@2.3.7": "MIT",
+    "shiki@4.4.3": "MIT"
+  },
+  "browserBoundary": {
+    "externalRequestsExpected": false,
+    "directStorageUse": false,
+    "optionalLocalEffects": "Code Block and Gantt expose clipboard writes only after explicit user actions.",
+    "submittedDataBehavior": "Scale selection, task selection, highlighting, and icon rotation remain local browser state."
+  },
+  "bundleEvidence": {
+    "previewChunksBytes": {
+      "code-block": 126218,
+      "data-list": 11801,
+      "gantt": 34821,
+      "icon-box": 7757,
+      "icons": 14553
+    },
+    "previewMarkersFoundInRootLinkedChunks": false,
+    "externalRequestsObserved": 0
+  },
+  "adaptations": [
+    "Declined four proposed overwrites of the reviewed Button source.",
+    "Pinned Shiki and Radix Context Menu exactly.",
+    "Rendered Gantt assignee metadata rather than leaving the public prop unused.",
+    "Formatted all newly installed registry source."
+  ],
+  "verification": [
+    { "command": "pnpm lint && pnpm typecheck", "result": "passed" },
+    {
+      "command": "pnpm exec vitest run tests/unit/catalogue-display-components.test.tsx tests/unit/preview-runtime.test.tsx",
+      "result": "passed: 2 files, 8 tests"
+    },
+    { "command": "pnpm build", "result": "passed: 722-page static export" },
+    {
+      "command": "pnpm check && pnpm test:coverage",
+      "result": "passed: 40 files / 174 unit tests; coverage 47.57% statements, 38.17% branches, 42.78% functions, and 49.51% lines"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline && pnpm peers check",
+      "result": "passed"
+    },
+    {
+      "command": "pnpm exec playwright test",
+      "result": "passed: 20 Chromium tests, including all CAT006–CAT010 production routes with no external requests or browser errors"
+    },
+    {
+      "command": "390px responsive and built-output inspection",
+      "result": "passed: all five preview containers matched their 358px content width; independent lazy chunks were absent from root-linked scripts"
+    }
+  ]
+}

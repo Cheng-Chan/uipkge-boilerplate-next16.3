@@ -70,7 +70,15 @@ export default async function CatalogueItemPage({
           />
           <Record
             label="Target paths"
-            value={item.targetPaths.join(", ") || "Unknown"}
+            value={item.targetPaths.join(", ") || "None declared by manifest"}
+          />
+          <Record
+            label="Installed paths"
+            value={
+              item.installedPaths.length
+                ? `${item.installedPaths.length} tracked local path${item.installedPaths.length === 1 ? "" : "s"}`
+                : "None"
+            }
           />
           <Record
             label="Registry dependencies"
@@ -96,6 +104,16 @@ export default async function CatalogueItemPage({
             <ul className="text-muted-foreground mt-2 list-disc space-y-1 pl-5 text-sm">
               {item.gaps.map((gap) => (
                 <li key={gap}>{gap}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {item.adaptations.length ? (
+          <div className="border-border bg-muted/30 mt-5 rounded-lg border p-4">
+            <h3 className="font-medium">Local adaptations</h3>
+            <ul className="text-muted-foreground mt-2 list-disc space-y-1 pl-5 text-sm">
+              {item.adaptations.map((adaptation) => (
+                <li key={adaptation}>{adaptation}</li>
               ))}
             </ul>
           </div>

@@ -128,6 +128,106 @@ The local Theme Switch intentionally supports the project's established `light`,
 unapproved fourth global theme. Package additions are pinned exactly. Full hashes, paths,
 adaptations, and command evidence are recorded in `catalogue/evidence/CAT001.json` and the snapshot.
 
+CAT002 installed and verified the `charts` meta-item on 2026-09-24. The live meta-manifest delegates
+to 62 chart wrappers; their shared map primitive is also installed. Those 63 dependency records stay
+`installed`, not `verified`, until their own exact tickets exercise their complete APIs and any
+provider behavior.
+
+| Item              | Role                | Raw manifest SHA-256 or evidence                                   | Local status |
+| ----------------- | ------------------- | ------------------------------------------------------------------ | ------------ |
+| `charts`          | CAT002 item         | `29b19ff835ecfccf47d7d9e27a71a6fb0f2d0aa79a8330aabe1f3476e86989a5` | Verified     |
+| 62 chart wrappers | Transitive registry | `catalogue/evidence/CAT002-manifests.json`                         | Installed    |
+| `map`             | Transitive registry | `catalogue/evidence/CAT002-manifests.json`                         | Installed    |
+
+The reconciled dependency graph declared 238 files and produced 130 unique in-repository targets;
+its only two target collisions were byte-identical shared chart helpers. CAT002 pins ECharts
+6.1.0, echarts-for-react 3.0.6, react-map-gl 8.1.3, and mapbox-gl 3.31.0. The preview imports five
+local chart components and makes no map or provider request. Mapbox-backed sources honor the
+project's explicit public environment opt-in, retain attribution, and remain dependency-only until
+separate provider-aware verification. Full audit, license, adaptation, bundle, and verification
+evidence is in `catalogue/evidence/CAT002.json`.
+
+CAT003 installed and verified five control components on 2026-09-24. Cascade Select required the
+reviewed Popover registry dependency, which remains `installed` without claiming completion of its
+own ticket.
+
+| Item             | Role                | Raw manifest SHA-256                                               | Local status |
+| ---------------- | ------------------- | ------------------------------------------------------------------ | ------------ |
+| `button`         | CAT003 item         | `bab403f66bbcf6526646e5ea8079b838775f3dfe5540720abd0e2cffbad5cc3c` | Verified     |
+| `cascade-select` | CAT003 item         | `d039ec13dcb4d753fa73125558c0d533e56e244ed250ba70cecbd82645dd43bf` | Verified     |
+| `fab`            | CAT003 item         | `281915b86affa1839c3413ed57ec3014593e9ba631b6c2acbf6bbeeb24a8befa` | Verified     |
+| `float-label`    | CAT003 item         | `f3ce747937137d431375ef8c0e69ba72204b90fdc56adc8dfe172763d8dfb5e5` | Verified     |
+| `input`          | CAT003 item         | `bb5d78409546544cefe788d8b389fd2cb4887a723fd14fb68d607be70b2f4c39` | Verified     |
+| `popover`        | Transitive registry | `282e2e0a79d937e8b775415f22c995d5073d2c26ff2dfcfc5dbd8eda27507a49` | Installed    |
+
+The install adds exact Radix Popover 1.1.23 and Radix Slot 1.3.3 dependencies. Local adaptations add
+stable Cascade Select naming/popup semantics, non-submitting FAB defaults, usable InputGroup addon
+metadata, narrow-container input sizing, and correct opt-in Popover persistence state wiring. The
+CAT003 preview does not enable persistence or perform any network request. Full hashes, paths,
+adaptations, and verification are recorded in `catalogue/evidence/CAT003.json`.
+
+CAT004 installed and verified five advanced control components on 2026-09-24. Speed Dial and Tree
+Select reuse the already reviewed FAB and Popover sources; their five proposed dependency overwrites
+were declined so the CAT003 adaptations remain intact.
+
+| Item             | Role        | Raw manifest SHA-256                                               | Local status |
+| ---------------- | ----------- | ------------------------------------------------------------------ | ------------ |
+| `password-input` | CAT004 item | `8367419965888d54d3c83cfb2ea612644bb8a2a3bae669191876a7d63b3d4e67` | Verified     |
+| `select`         | CAT004 item | `5c8465cac6f16306446c98f51d44f2dc0ff15c1e94102d194c9ccf4c66d23afa` | Verified     |
+| `signature-pad`  | CAT004 item | `b5b20855a9d50d46270d7b34e724594993473cf602f364544af45a761165bbcd` | Verified     |
+| `speed-dial`     | CAT004 item | `470d429185feee07bf9435a80405f9301721acc747dca8f84e86bb748caa8095` | Verified     |
+| `tree-select`    | CAT004 item | `04cf366cea9b80912c16b0214d8b917c783ddfaceca7ec08d41c95922fa43690` | Verified     |
+
+CAT004 adds exactly pinned Radix Select 2.3.7. Its previews keep all values transient and make no
+external request; Signature Pad never stores or uploads its data URL. Responsive canvas sizing,
+popup/menu semantics, dependency preservation, and complete verification are recorded in
+`catalogue/evidence/CAT004.json`.
+
+CAT005 installed and verified three data components on 2026-09-24. Its 17 reviewed manifests
+proposed 53 unique targets: 37 new files were accepted and 16 overwrites of previously adapted
+Button, Dropdown Menu, Input, Popover, and Select files were declined.
+
+| Item             | Role        | Raw manifest SHA-256                                               | Local status |
+| ---------------- | ----------- | ------------------------------------------------------------------ | ------------ |
+| `board`          | CAT005 item | `ad0439b2e3b694ecf1d27d07056a90d4de3c8c91db7671fe95c80a24204b74ba` | Verified     |
+| `data-table`     | CAT005 item | `e4657c979f6018e9233d0e8786fb5f700c3e2e3428c66ba02aea894b90d8d478` | Verified     |
+| `tree-table`     | CAT005 item | `f1135ed4fdd7a3f6a07f67086d579d1e8222fed9b0ec2f96c115114b0ed2924e` | Verified     |
+| `badge`          | Dependency  | `d77e1550edc6307fd01dd9d995843be7341d400040d425451a07cf443cea02fd` | Installed    |
+| `checkbox`       | Dependency  | `5348557d099c6c8e25e7a1afa86d1a83f8c3699bf780c4fba7ec9d86aaf9c311` | Installed    |
+| `command`        | Dependency  | `81754ca535b55d7b81a81850c9b0990dcc7f2a9712b4c838ee98d2481d8bfc20` | Installed    |
+| `label`          | Dependency  | `997abc437941e6520b24fe7f1bcbe4dae31b10f90566ff67113131ed472bab5a` | Installed    |
+| `range-calendar` | Dependency  | `3ee474878b5544fbd65eb22167b6da756fda55541a32dbc83cc2ed20f923d0b7` | Installed    |
+| `separator`      | Dependency  | `b2bff791da166e49734d717af40010798c2991ace3072617cb47656d1c0b333e` | Installed    |
+| `sheet`          | Dependency  | `852281106e3404bf461d9e70d5ce2998dfe8022658ccc9b18682d2346e7fd51c` | Installed    |
+| `spinner`        | Dependency  | `51def49b7a2aec99d535608526d322d8532b9adb68407ea7ddf75c5ced324c55` | Installed    |
+| `table`          | Dependency  | `91750049257fa006d714be213fff31542164f758615f71d7e62ab4e128113246` | Installed    |
+
+CAT005 adds exact Radix Checkbox 1.3.11, Dialog 1.1.23, Label 2.1.15, Separator 1.1.15, TanStack
+React Table 8.21.3, cmdk 1.1.1, and React Day Picker 10.0.1 dependencies. The previews retain data
+in local component state; export uses a short-lived local Blob URL and explicit copy can use the
+clipboard. Full path decisions, adaptations, and verification are recorded in
+`catalogue/evidence/CAT005.json`.
+
+CAT006 through CAT010 installed and verified 22 display components on 2026-09-24. All 28 approved
+and transitive manifests were inspected before installation; their 80 unique targets comprised 63
+new files and 17 preserved reviewed files.
+
+| Ticket | Verified items                                             | Dependency-only items |
+| ------ | ---------------------------------------------------------- | --------------------- |
+| CAT006 | `attachment`, `avatar`, `badge`, `carousel`, `chip`        | None                  |
+| CAT007 | `code-block`, `data-list`, `gantt`, `icon-box`, `icons`    | `context-menu`        |
+| CAT008 | `kanban`, `kbd`, `labeled-value`, `lazy-image`, `list`     | `skeleton`            |
+| CAT009 | `payment-card`, `qr-code`, `table`, `timeline`, `transfer` | `scroll-area`         |
+| CAT010 | `tree-view`, `virtual-list`                                | None                  |
+
+The batch adds exact Radix Avatar 1.2.6, Context Menu 2.3.7, and Scroll Area 1.2.18; TanStack React
+Virtual 3.14.13; Embla Carousel React 8.6.0; QR Code 1.5.4 and its types 1.5.6; and Shiki 4.4.3.
+All are MIT-licensed. Previews use only transient local state and local/synthetic data; explicit
+copy actions may access the clipboard, but no preview requires an external request. Full raw hashes,
+target decisions, adaptations, bundle measurements, and verification are recorded in
+`catalogue/evidence/CAT006-manifests.json` through `CAT010-manifests.json` and
+`catalogue/evidence/CAT006.json` through `CAT010.json`.
+
 ## Sources and licensing
 
 - UIPKGE React registry: <https://uipkge.dev/r/react/{name}.json>

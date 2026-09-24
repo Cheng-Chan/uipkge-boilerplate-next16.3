@@ -1,0 +1,107 @@
+{
+  "ticket": "CAT002",
+  "reviewedAt": "2026-09-24",
+  "approvedItems": ["charts"],
+  "transitiveRegistryItems": {
+    "chartWrappers": 62,
+    "sharedDependencies": ["map"]
+  },
+  "manifestEvidence": "catalogue/evidence/CAT002-manifests.json",
+  "liveManifestSha256": "29b19ff835ecfccf47d7d9e27a71a6fb0f2d0aa79a8330aabe1f3476e86989a5",
+  "review": {
+    "manifests": 64,
+    "declaredFiles": 238,
+    "uniqueInstalledTargets": 130,
+    "unsafeTargets": 0,
+    "sharedTargetCollisions": 2,
+    "sharedTargetContentsIdentical": true,
+    "fetchOrXhrCalls": 0,
+    "webSockets": 0,
+    "geolocationCalls": 0,
+    "browserStorageCalls": 0,
+    "dynamicCodeEvaluation": 0,
+    "serverBehaviorAdded": false,
+    "dependencyItemsPromotedBeyondInstalled": false
+  },
+  "packages": {
+    "echarts@6.1.0": "Apache-2.0",
+    "echarts-for-react@3.0.6": "MIT",
+    "react-map-gl@8.1.3": "MIT",
+    "mapbox-gl@3.31.0": "Mapbox Web SDK terms; provider account and product terms apply"
+  },
+  "externalBoundary": {
+    "defaultTokenRequired": false,
+    "defaultProviderRequests": false,
+    "mapModulesImportedByPreview": false,
+    "environmentOptIn": "NEXT_PUBLIC_MAPBOX_ENABLED=true with NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN beginning pk.",
+    "deferredCapability": "The two Mapbox-backed chart wrappers and map primitive are installed dependencies only; their behavior remains unverified until the separately approved Mapbox workbench/tickets."
+  },
+  "bundleEvidence": {
+    "chartPreviewChunk": "out/_next/static/chunks/25gzqi3ud4yz3.js",
+    "chartPreviewChunkBytes": 1017317,
+    "chartPreviewChunkRequestedByRoot": false,
+    "chartPreviewChunkRequestedByChartsRoute": true,
+    "emittedMapboxTokenMarkers": 0,
+    "externalRequestsObserved": 0
+  },
+  "adaptations": [
+    "Pinned all four newly introduced package dependencies to exact resolved versions.",
+    "Aligned the map primitive with the project's existing explicit Mapbox opt-in and public-token environment names.",
+    "Restored Mapbox attribution controls instead of suppressing provider attribution.",
+    "Exported MapVariant from the concrete map module because both installed map chart wrappers import it there.",
+    "Added a requestAnimationFrame fallback for non-visual browser/test environments.",
+    "Corrected the chart option merge helper type to accept the nested partial overrides its implementation supports.",
+    "Forwarded the category distribution chart's declared ariaLabel to its chart frame.",
+    "Aliased the ECharts module registration import, removed unused wrapper imports, and corrected memo/effect dependencies so all normal lint rules pass.",
+    "Scoped the no-explicit-any lint exception to the installed chart and map source where ECharts option/event unions and Mapbox expression interop require the upstream escape hatch.",
+    "Deferred synchronous map readiness state transitions to cancellable browser tasks so the installed map primitive obeys React effect rules without changing its external contract.",
+    "Made declared dotted-map and choropleth metadata observable while retaining the installed wrappers as unverified dependency-only source.",
+    "Formatted registry source with the repository Prettier configuration."
+  ],
+  "verification": [
+    {
+      "command": "pnpm exec vitest run tests/unit/catalogue-charts.test.tsx tests/unit/preview-runtime.test.tsx",
+      "result": "passed: 2 files, 5 tests"
+    },
+    {
+      "command": "pnpm typecheck",
+      "result": "passed for all 130 installed source files and application code"
+    },
+    {
+      "command": "pnpm build",
+      "result": "passed: 722-page static export"
+    },
+    {
+      "command": "LD_LIBRARY_PATH=<temporary-official-Ubuntu-library-directory> pnpm exec playwright test tests/e2e/catalogue-laboratory.spec.ts --grep CAT002",
+      "result": "passed: real chart canvases, control updates, and local-origin-only requests"
+    },
+    {
+      "command": "pnpm check",
+      "result": "passed: formatting, lint, TypeScript, 157 tests across 36 files, offline registry reconciliation, and 722-page static export"
+    },
+    {
+      "command": "LD_LIBRARY_PATH=<temporary-official-Ubuntu-library-directory> pnpm exec playwright test",
+      "result": "passed: all 12 Chromium tests"
+    },
+    {
+      "command": "pnpm test:coverage",
+      "result": "passed on repeat after one unrelated instrumentation-timeout run: 157 tests; 38.50% statements, 26.94% branches, 33.68% functions, and 39.33% lines overall"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline && pnpm peers check",
+      "result": "passed: lockfile is reproducible offline and no peer dependency issues were found"
+    },
+    {
+      "command": "production-preview visual and resize review",
+      "result": "passed: light and dark renders were legible; stacked and range controls settled correctly; canvases resized from 934/434 pixels to 316 pixels on a 390-pixel viewport"
+    },
+    {
+      "command": "built-output and browser resource inspection",
+      "result": "passed: the 1,017,317-byte chart preview chunk was absent from the root route, present on the charts route, and no Mapbox environment/provider marker was emitted"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ]
+}

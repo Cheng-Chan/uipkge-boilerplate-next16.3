@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "ticket": "CAT006",
+  "summary": {
+    "manifests": 6,
+    "declaredFiles": 18,
+    "uniqueTargets": 18,
+    "newTargets": 11,
+    "preservedTargets": 7
+  },
+  "manifests": [
+    {
+      "id": "attachment",
+      "role": "approved",
+      "sha256": "4d41e45619b6553de83234387661b49722c9211436b925fd93cff07ade6e92bb",
+      "targetCount": 3
+    },
+    {
+      "id": "avatar",
+      "role": "approved",
+      "sha256": "cbdcf15d83e2f3078ffc82fb0079a1afc4958608e232481f09cacaff4acbe628",
+      "targetCount": 3
+    },
+    {
+      "id": "badge",
+      "role": "approved-preserved",
+      "sha256": "d77e1550edc6307fd01dd9d995843be7341d400040d425451a07cf443cea02fd",
+      "targetCount": 3
+    },
+    {
+      "id": "carousel",
+      "role": "approved",
+      "sha256": "d516b675c5c7ce659bd0b8f17894846fe9cd0dd6ea459ae558fdbd86698fb694",
+      "targetCount": 2
+    },
+    {
+      "id": "chip",
+      "role": "approved",
+      "sha256": "b84f376709b083609a5fb2e17a46e8add9fdf16eb792c9927cb61bdd61860388",
+      "targetCount": 3
+    },
+    {
+      "id": "button",
+      "role": "dependency-preserved",
+      "sha256": "bab403f66bbcf6526646e5ea8079b838775f3dfe5540720abd0e2cffbad5cc3c",
+      "targetCount": 4
+    }
+  ],
+  "approvedTargets": [
+    "components/ui/attachment/attachment.tsx",
+    "components/ui/attachment/attachment.variants.ts",
+    "components/ui/attachment/index.ts",
+    "components/ui/avatar/avatar.tsx",
+    "components/ui/avatar/avatar.variants.ts",
+    "components/ui/avatar/index.ts",
+    "components/ui/badge/Badge.tsx",
+    "components/ui/badge/badge.variants.ts",
+    "components/ui/badge/index.ts",
+    "components/ui/carousel/carousel.tsx",
+    "components/ui/carousel/index.ts",
+    "components/ui/chip/chip.tsx",
+    "components/ui/chip/chip.variants.ts",
+    "components/ui/chip/index.ts"
+  ],
+  "preservedTargets": [
+    "components/ui/badge/Badge.tsx",
+    "components/ui/badge/badge.variants.ts",
+    "components/ui/badge/index.ts",
+    "components/ui/button/Button.tsx",
+    "components/ui/button/ButtonGroup.tsx",
+    "components/ui/button/button.variants.ts",
+    "components/ui/button/index.ts"
+  ]
+}

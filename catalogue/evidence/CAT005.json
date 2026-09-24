@@ -1,0 +1,102 @@
+{
+  "ticket": "CAT005",
+  "reviewedAt": "2026-09-24",
+  "approvedItems": ["board", "data-table", "tree-table"],
+  "newRegistryDependencies": [
+    "badge",
+    "checkbox",
+    "command",
+    "label",
+    "range-calendar",
+    "separator",
+    "sheet",
+    "spinner",
+    "table"
+  ],
+  "reusedRegistryItems": [
+    "button",
+    "dropdown-menu",
+    "input",
+    "popover",
+    "select"
+  ],
+  "manifestEvidence": "catalogue/evidence/CAT005-manifests.json",
+  "review": {
+    "manifests": 17,
+    "declaredFiles": 53,
+    "uniqueTargets": 53,
+    "newTargets": 37,
+    "preservedTargets": 16,
+    "unsafeTargets": 0,
+    "targetCollisions": 0,
+    "fetchOrXhrCalls": 0,
+    "webSockets": 0,
+    "geolocationCalls": 0,
+    "dynamicCodeEvaluation": 0,
+    "serverBehaviorAdded": false,
+    "dependencyItemsPromotedBeyondInstalled": false
+  },
+  "packages": {
+    "@radix-ui/react-checkbox@1.3.11": "MIT",
+    "@radix-ui/react-dialog@1.1.23": "MIT",
+    "@radix-ui/react-label@2.1.15": "MIT",
+    "@radix-ui/react-separator@1.1.15": "MIT",
+    "@tanstack/react-table@8.21.3": "MIT",
+    "cmdk@1.1.1": "MIT",
+    "react-day-picker@10.0.1": "MIT"
+  },
+  "browserBoundary": {
+    "externalRequestsExpected": false,
+    "directStorageUseByApprovedItems": false,
+    "optionalLocalEffects": "Data Table export creates and immediately revokes a local Blob URL; explicit copy actions may write table text to the browser clipboard.",
+    "submittedDataBehavior": "Board moves, table filters, selection, sorting, and pagination remain local browser state; no backend or delivery behavior exists."
+  },
+  "bundleEvidence": {
+    "previewChunksBytes": {
+      "board": 10073,
+      "data-table": 203353,
+      "tree-table": 36901
+    },
+    "previewMarkersFoundInRootLinkedChunks": false,
+    "externalRequestsObserved": 0
+  },
+  "adaptations": [
+    "Declined all 16 proposed overwrites of previously reviewed Button, Dropdown Menu, Input, Popover, and Select files.",
+    "Pinned seven newly introduced packages exactly and selected TanStack React Table 8.21.3 because the manifest's unbounded dependency otherwise resolved incompatible v9 APIs.",
+    "Added an accessible label to Data Table's interactive region and removed unused filter-surface props.",
+    "Moved column text-filter draft synchronization into the Popover open transition rather than synchronously setting state in an effect.",
+    "Applied treegrid semantics to the actual table and added stable table naming and loading status.",
+    "Confined registry-defined open-ended TanStack filter and row interoperability plus the compiler skip to the Data Table and Tree Table source boundaries.",
+    "Formatted all installed registry source with the repository Prettier configuration."
+  ],
+  "verification": [
+    {
+      "command": "pnpm lint && pnpm typecheck",
+      "result": "passed after the exact TanStack v8 compatibility correction and local adaptations"
+    },
+    {
+      "command": "pnpm exec vitest run tests/unit/catalogue-data-components.test.tsx tests/unit/preview-runtime.test.tsx",
+      "result": "passed: 2 files, 6 tests"
+    },
+    {
+      "command": "pnpm check",
+      "result": "passed: formatting, lint, TypeScript, 39 files / 169 unit tests, registry reconciliation, and 722-page static export"
+    },
+    {
+      "command": "pnpm test:coverage",
+      "result": "passed: 43.79% statements, 34.85% branches, 37.33% functions, and 45.23% lines"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline && pnpm peers check",
+      "result": "passed"
+    },
+    {
+      "command": "pnpm exec playwright test",
+      "result": "passed: 15 Chromium tests, including all CAT005 production interactions with no external requests or browser errors"
+    },
+    {
+      "command": "390px responsive visual and overflow inspection",
+      "result": "passed: each preview isolation container matched its 358px content width; wide tables scroll internally"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "ticket": "CAT009",
+  "reviewedAt": "2026-09-24",
+  "approvedItems": ["payment-card", "qr-code", "table", "timeline", "transfer"],
+  "newRegistryDependencies": ["scroll-area"],
+  "reusedRegistryItems": ["button", "checkbox", "input"],
+  "manifestEvidence": "catalogue/evidence/CAT009-manifests.json",
+  "review": {
+    "manifests": 9,
+    "declaredFiles": 26,
+    "uniqueTargets": 26,
+    "newTargets": 12,
+    "preservedTargets": 14,
+    "unsafeTargets": 0,
+    "targetCollisions": 0,
+    "fetchOrXhrCalls": 0,
+    "webSockets": 0,
+    "geolocationCalls": 0,
+    "dynamicCodeEvaluation": 0,
+    "serverBehaviorAdded": false
+  },
+  "packages": {
+    "@radix-ui/react-scroll-area@1.2.18": "MIT",
+    "qrcode@1.5.4": "MIT",
+    "@types/qrcode@1.5.6": "MIT"
+  },
+  "browserBoundary": {
+    "externalRequestsExpected": false,
+    "directStorageUse": false,
+    "localGeneration": "QR output is generated locally from a reserved .invalid value; Payment Card uses fixed synthetic display values.",
+    "submittedDataBehavior": "Sorting, density, transfer, QR status, and card flipping remain local browser state."
+  },
+  "bundleEvidence": {
+    "previewChunksBytes": {
+      "payment-card": 24986,
+      "qr-code": 27982,
+      "table": 15947,
+      "timeline": 22127,
+      "transfer": 67922
+    },
+    "previewMarkersFoundInRootLinkedChunks": false,
+    "externalRequestsObserved": 0
+  },
+  "adaptations": [
+    "Declined 14 proposed overwrites of reviewed Table, Button, Checkbox, and Input files.",
+    "Pinned QR Code, its types, and Radix Scroll Area exactly.",
+    "Kept Transfer's stable drag/drop state ref and pagination synchronization in narrow lint boundaries.",
+    "Formatted all newly installed registry source."
+  ],
+  "verification": [
+    { "command": "pnpm lint && pnpm typecheck", "result": "passed" },
+    {
+      "command": "pnpm exec vitest run tests/unit/catalogue-display-components.test.tsx tests/unit/preview-runtime.test.tsx",
+      "result": "passed: 2 files, 8 tests"
+    },
+    { "command": "pnpm build", "result": "passed: 722-page static export" },
+    {
+      "command": "pnpm check && pnpm test:coverage",
+      "result": "passed: 40 files / 174 unit tests; coverage 47.57% statements, 38.17% branches, 42.78% functions, and 49.51% lines"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline && pnpm peers check",
+      "result": "passed"
+    },
+    {
+      "command": "pnpm exec playwright test",
+      "result": "passed: 20 Chromium tests, including all CAT006–CAT010 production routes with no external requests or browser errors"
+    },
+    {
+      "command": "390px responsive and built-output inspection",
+      "result": "passed: all five preview containers matched their 358px content width; wide Transfer content scrolls internally and lazy chunks were absent from root-linked scripts"
+    }
+  ]
+}

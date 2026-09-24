@@ -1,0 +1,71 @@
+{
+  "ticket": "CAT006",
+  "reviewedAt": "2026-09-24",
+  "approvedItems": ["attachment", "avatar", "badge", "carousel", "chip"],
+  "reusedRegistryItems": ["button"],
+  "manifestEvidence": "catalogue/evidence/CAT006-manifests.json",
+  "review": {
+    "manifests": 6,
+    "declaredFiles": 18,
+    "uniqueTargets": 18,
+    "newTargets": 11,
+    "preservedTargets": 7,
+    "unsafeTargets": 0,
+    "targetCollisions": 0,
+    "fetchOrXhrCalls": 0,
+    "webSockets": 0,
+    "geolocationCalls": 0,
+    "dynamicCodeEvaluation": 0,
+    "serverBehaviorAdded": false
+  },
+  "packages": {
+    "@radix-ui/react-avatar@1.2.6": "MIT",
+    "embla-carousel-react@8.6.0": "MIT"
+  },
+  "browserBoundary": {
+    "externalRequestsExpected": false,
+    "directStorageUse": false,
+    "submittedDataBehavior": "Attachment removal, chip selection, and carousel state remain transient local UI state."
+  },
+  "bundleEvidence": {
+    "previewChunksBytes": {
+      "attachment": 16681,
+      "avatar": 13360,
+      "badge": 9885,
+      "carousel": 36102,
+      "chip": 8505
+    },
+    "previewMarkersFoundInRootLinkedChunks": false,
+    "externalRequestsObserved": 0
+  },
+  "adaptations": [
+    "Declined seven proposed overwrites of reviewed Badge and Button files.",
+    "Pinned two new packages exactly.",
+    "Corrected Carousel event cleanup, deferred initial Embla state synchronization, and removed an unsupported aria-orientation attribute.",
+    "Formatted all newly installed registry source."
+  ],
+  "verification": [
+    { "command": "pnpm lint && pnpm typecheck", "result": "passed" },
+    {
+      "command": "pnpm exec vitest run tests/unit/catalogue-display-components.test.tsx tests/unit/preview-runtime.test.tsx",
+      "result": "passed: 2 files, 8 tests"
+    },
+    { "command": "pnpm build", "result": "passed: 722-page static export" },
+    {
+      "command": "pnpm check && pnpm test:coverage",
+      "result": "passed: 40 files / 174 unit tests; coverage 47.57% statements, 38.17% branches, 42.78% functions, and 49.51% lines"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline && pnpm peers check",
+      "result": "passed"
+    },
+    {
+      "command": "pnpm exec playwright test",
+      "result": "passed: 20 Chromium tests, including all CAT006–CAT010 production routes with no external requests or browser errors"
+    },
+    {
+      "command": "390px responsive and built-output inspection",
+      "result": "passed: all five preview containers matched their 358px content width; independent lazy chunks were absent from root-linked scripts"
+    }
+  ]
+}

@@ -1,0 +1,893 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "rootItem": "charts",
+  "summary": {
+    "manifests": 64,
+    "declaredFiles": 238,
+    "uniqueTargets": 130
+  },
+  "uniqueTargets": [
+    "components/ui/charts/alluvial-chart/AlluvialChart.tsx",
+    "components/ui/charts/alluvial-chart/index.ts",
+    "components/ui/charts/area-chart/AreaChart.tsx",
+    "components/ui/charts/area-chart/index.ts",
+    "components/ui/charts/bar-chart/BarChart.tsx",
+    "components/ui/charts/bar-chart/index.ts",
+    "components/ui/charts/bar-race-chart/BarRaceChart.tsx",
+    "components/ui/charts/bar-race-chart/index.ts",
+    "components/ui/charts/beeswarm-chart/BeeswarmChart.tsx",
+    "components/ui/charts/beeswarm-chart/index.ts",
+    "components/ui/charts/boxplot-chart/BoxplotChart.tsx",
+    "components/ui/charts/boxplot-chart/index.ts",
+    "components/ui/charts/bubble-chart/BubbleChart.tsx",
+    "components/ui/charts/bubble-chart/index.ts",
+    "components/ui/charts/bullet-chart/BulletChart.tsx",
+    "components/ui/charts/bullet-chart/index.ts",
+    "components/ui/charts/calendar-heatmap/CalendarHeatmap.tsx",
+    "components/ui/charts/calendar-heatmap/index.ts",
+    "components/ui/charts/candlestick-chart/CandlestickChart.tsx",
+    "components/ui/charts/candlestick-chart/index.ts",
+    "components/ui/charts/category-distribution-chart/CategoryDistributionChart.tsx",
+    "components/ui/charts/category-distribution-chart/index.ts",
+    "components/ui/charts/chord-chart/ChordChart.tsx",
+    "components/ui/charts/chord-chart/index.ts",
+    "components/ui/charts/choropleth-map-chart/ChoroplethMapChart.tsx",
+    "components/ui/charts/choropleth-map-chart/index.ts",
+    "components/ui/charts/combo-chart/ComboChart.tsx",
+    "components/ui/charts/combo-chart/index.ts",
+    "components/ui/charts/control-chart/ControlChart.tsx",
+    "components/ui/charts/control-chart/index.ts",
+    "components/ui/charts/donut-chart/DonutChart.tsx",
+    "components/ui/charts/donut-chart/index.ts",
+    "components/ui/charts/dotted-map-chart/DottedMapChart.tsx",
+    "components/ui/charts/dotted-map-chart/index.ts",
+    "components/ui/charts/dumbbell-chart/DumbbellChart.tsx",
+    "components/ui/charts/dumbbell-chart/index.ts",
+    "components/ui/charts/effect-scatter-chart/EffectScatterChart.tsx",
+    "components/ui/charts/effect-scatter-chart/index.ts",
+    "components/ui/charts/error-bar-chart/ErrorBarChart.tsx",
+    "components/ui/charts/error-bar-chart/index.ts",
+    "components/ui/charts/funnel-chart/FunnelChart.tsx",
+    "components/ui/charts/funnel-chart/index.ts",
+    "components/ui/charts/gantt-chart/GanttChart.tsx",
+    "components/ui/charts/gantt-chart/index.ts",
+    "components/ui/charts/gauge-chart/GaugeChart.tsx",
+    "components/ui/charts/gauge-chart/index.ts",
+    "components/ui/charts/graph-chart/GraphChart.tsx",
+    "components/ui/charts/graph-chart/index.ts",
+    "components/ui/charts/heatmap/Heatmap.tsx",
+    "components/ui/charts/heatmap/index.ts",
+    "components/ui/charts/heikin-ashi-chart/HeikinAshiChart.tsx",
+    "components/ui/charts/heikin-ashi-chart/index.ts",
+    "components/ui/charts/histogram-chart/HistogramChart.tsx",
+    "components/ui/charts/histogram-chart/index.ts",
+    "components/ui/charts/icicle-chart/IcicleChart.tsx",
+    "components/ui/charts/icicle-chart/index.ts",
+    "components/ui/charts/line-chart/LineChart.tsx",
+    "components/ui/charts/line-chart/index.ts",
+    "components/ui/charts/liquid-fill-chart/LiquidFillChart.tsx",
+    "components/ui/charts/liquid-fill-chart/index.ts",
+    "components/ui/charts/lollipop-chart/LollipopChart.tsx",
+    "components/ui/charts/lollipop-chart/index.ts",
+    "components/ui/charts/marimekko-chart/MarimekkoChart.tsx",
+    "components/ui/charts/marimekko-chart/index.ts",
+    "components/ui/charts/nightingale-chart/NightingaleChart.tsx",
+    "components/ui/charts/nightingale-chart/index.ts",
+    "components/ui/charts/parallel-chart/ParallelChart.tsx",
+    "components/ui/charts/parallel-chart/index.ts",
+    "components/ui/charts/pareto-chart/ParetoChart.tsx",
+    "components/ui/charts/pareto-chart/index.ts",
+    "components/ui/charts/pictorial-bar-chart/PictorialBarChart.tsx",
+    "components/ui/charts/pictorial-bar-chart/index.ts",
+    "components/ui/charts/pie-chart/PieChart.tsx",
+    "components/ui/charts/pie-chart/index.ts",
+    "components/ui/charts/polar-bar-chart/PolarBarChart.tsx",
+    "components/ui/charts/polar-bar-chart/index.ts",
+    "components/ui/charts/population-pyramid-chart/PopulationPyramidChart.tsx",
+    "components/ui/charts/population-pyramid-chart/index.ts",
+    "components/ui/charts/progress-ring-chart/ProgressRingChart.tsx",
+    "components/ui/charts/progress-ring-chart/index.ts",
+    "components/ui/charts/quadrant-chart/QuadrantChart.tsx",
+    "components/ui/charts/quadrant-chart/index.ts",
+    "components/ui/charts/radar-chart/RadarChart.tsx",
+    "components/ui/charts/radar-chart/index.ts",
+    "components/ui/charts/range-area-chart/RangeAreaChart.tsx",
+    "components/ui/charts/range-area-chart/index.ts",
+    "components/ui/charts/range-bar-chart/RangeBarChart.tsx",
+    "components/ui/charts/range-bar-chart/index.ts",
+    "components/ui/charts/raw-chart/RawChart.tsx",
+    "components/ui/charts/raw-chart/index.ts",
+    "components/ui/charts/sankey-chart/SankeyChart.tsx",
+    "components/ui/charts/sankey-chart/index.ts",
+    "components/ui/charts/scatter-chart/ScatterChart.tsx",
+    "components/ui/charts/scatter-chart/index.ts",
+    "components/ui/charts/segmented-gauge/SegmentedGauge.tsx",
+    "components/ui/charts/segmented-gauge/index.ts",
+    "components/ui/charts/shared.tsx",
+    "components/ui/charts/slope-chart/SlopeChart.tsx",
+    "components/ui/charts/slope-chart/index.ts",
+    "components/ui/charts/smooth-funnel/SmoothFunnel.tsx",
+    "components/ui/charts/smooth-funnel/index.ts",
+    "components/ui/charts/sparkline/Sparkline.tsx",
+    "components/ui/charts/sparkline/index.ts",
+    "components/ui/charts/stacked-area-chart/StackedAreaChart.tsx",
+    "components/ui/charts/stacked-area-chart/index.ts",
+    "components/ui/charts/stacked-bar-chart/StackedBarChart.tsx",
+    "components/ui/charts/stacked-bar-chart/index.ts",
+    "components/ui/charts/sunburst-chart/SunburstChart.tsx",
+    "components/ui/charts/sunburst-chart/index.ts",
+    "components/ui/charts/theme-river/ThemeRiver.tsx",
+    "components/ui/charts/theme-river/index.ts",
+    "components/ui/charts/tree-chart/TreeChart.tsx",
+    "components/ui/charts/tree-chart/index.ts",
+    "components/ui/charts/treemap-chart/TreemapChart.tsx",
+    "components/ui/charts/treemap-chart/index.ts",
+    "components/ui/charts/uptime-tracker-chart/UptimeTrackerChart.tsx",
+    "components/ui/charts/uptime-tracker-chart/index.ts",
+    "components/ui/charts/useChartTheme.ts",
+    "components/ui/charts/violin-chart/ViolinChart.tsx",
+    "components/ui/charts/violin-chart/index.ts",
+    "components/ui/charts/waffle-chart/WaffleChart.tsx",
+    "components/ui/charts/waffle-chart/index.ts",
+    "components/ui/charts/waterfall-chart/WaterfallChart.tsx",
+    "components/ui/charts/waterfall-chart/index.ts",
+    "components/ui/charts/word-cloud-chart/WordCloudChart.tsx",
+    "components/ui/charts/word-cloud-chart/index.ts",
+    "components/ui/map/index.ts",
+    "components/ui/map/map.css",
+    "components/ui/map/map.tsx",
+    "components/ui/map/map.variants.ts"
+  ],
+  "items": [
+    {
+      "id": "charts",
+      "manifestUrl": "https://uipkge.dev/r/react/charts.json",
+      "sha256": "29b19ff835ecfccf47d7d9e27a71a6fb0f2d0aa79a8330aabe1f3476e86989a5",
+      "fileCount": 0,
+      "targets": []
+    },
+    {
+      "id": "alluvial-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/alluvial-chart.json",
+      "sha256": "636af9226e1083435d4007544652b5cfb7283799f3111ee610eeeee82e112e91",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/alluvial-chart/AlluvialChart.tsx",
+        "components/ui/charts/alluvial-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "area-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/area-chart.json",
+      "sha256": "83081201b6245dec23c7f80800cc916e7e7ff7f5a969cd98c7b320bbf2cd819f",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/area-chart/AreaChart.tsx",
+        "components/ui/charts/area-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "bar-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/bar-chart.json",
+      "sha256": "192678868347f24575787a83679a2073a732956fe5b02ad5674561af20a31691",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/bar-chart/BarChart.tsx",
+        "components/ui/charts/bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "bar-race-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/bar-race-chart.json",
+      "sha256": "e3c8c411118f8875b48800043588cb64a976d6a4b65ae548d7d56d33d6205361",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/bar-race-chart/BarRaceChart.tsx",
+        "components/ui/charts/bar-race-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "beeswarm-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/beeswarm-chart.json",
+      "sha256": "9496c1557dedb3eae29cd4c84a1959897fc0987e5c8832b336bec8b024180be9",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/beeswarm-chart/BeeswarmChart.tsx",
+        "components/ui/charts/beeswarm-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "boxplot-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/boxplot-chart.json",
+      "sha256": "65c7e4203a55d59cca56b2556773bab285002662f277b029dc2faae121f10e78",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/boxplot-chart/BoxplotChart.tsx",
+        "components/ui/charts/boxplot-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "bubble-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/bubble-chart.json",
+      "sha256": "05552fc357b9eb6dedb09777e11c3a7dc3e9b6910d7b765bb9d4e2167114a25e",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/bubble-chart/BubbleChart.tsx",
+        "components/ui/charts/bubble-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "bullet-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/bullet-chart.json",
+      "sha256": "32569399e7fc043eedd74e07eb5e3fc227103e2bfc166bb20c77731f8bf8c5a6",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/bullet-chart/BulletChart.tsx",
+        "components/ui/charts/bullet-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "calendar-heatmap",
+      "manifestUrl": "https://uipkge.dev/r/react/calendar-heatmap.json",
+      "sha256": "bb129336b3a2ea5801ecd8108e97b786260e38a8bb691a05573b5081ca1fde0f",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/calendar-heatmap/CalendarHeatmap.tsx",
+        "components/ui/charts/calendar-heatmap/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "candlestick-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/candlestick-chart.json",
+      "sha256": "24df55ede969f089bfe9136c42d11f5d7ebf3d11eb16ac05371ece63d4db9095",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/candlestick-chart/CandlestickChart.tsx",
+        "components/ui/charts/candlestick-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "category-distribution-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/category-distribution-chart.json",
+      "sha256": "7a8a00a9604345da33d69a3c7a7e26056d74b33005ae5ef151b8bf2c10e6811c",
+      "fileCount": 3,
+      "targets": [
+        "components/ui/charts/category-distribution-chart/CategoryDistributionChart.tsx",
+        "components/ui/charts/category-distribution-chart/index.ts",
+        "components/ui/charts/shared.tsx"
+      ]
+    },
+    {
+      "id": "chord-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/chord-chart.json",
+      "sha256": "2abb2ad137116490f9836203d31b4a4236a7ab68e1b80d8f6ec8f35040c7ce00",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/chord-chart/ChordChart.tsx",
+        "components/ui/charts/chord-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "choropleth-map-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/choropleth-map-chart.json",
+      "sha256": "6ab44e0607011257f6951df481632d8b6b11de83570aa2e1ead764dc26bce7c6",
+      "fileCount": 2,
+      "targets": [
+        "components/ui/charts/choropleth-map-chart/ChoroplethMapChart.tsx",
+        "components/ui/charts/choropleth-map-chart/index.ts"
+      ]
+    },
+    {
+      "id": "combo-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/combo-chart.json",
+      "sha256": "9691c9cbfd30280397ed97881fe777f5a2a76a6c61c2656e68005fcae3ebb964",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/combo-chart/ComboChart.tsx",
+        "components/ui/charts/combo-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "control-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/control-chart.json",
+      "sha256": "470a905e9984751cc9015ca46db70215738ed0d35afa88f57b78faa4d657d4be",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/control-chart/ControlChart.tsx",
+        "components/ui/charts/control-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "donut-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/donut-chart.json",
+      "sha256": "853e5d3f29210fd8c3f8d93dac6c9a88a3e41eeab9834befbfb27bbf170a2ef5",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/donut-chart/DonutChart.tsx",
+        "components/ui/charts/donut-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "dotted-map-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/dotted-map-chart.json",
+      "sha256": "c4abfcc2291471ab2ed16c7263aec2da827a7a73f98a759ac25d05fa717a9000",
+      "fileCount": 2,
+      "targets": [
+        "components/ui/charts/dotted-map-chart/DottedMapChart.tsx",
+        "components/ui/charts/dotted-map-chart/index.ts"
+      ]
+    },
+    {
+      "id": "dumbbell-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/dumbbell-chart.json",
+      "sha256": "e048b6fdc63411f1b6d62d5557232fbff0cdb0408bb4e53e621250bf0ff500ca",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/dumbbell-chart/DumbbellChart.tsx",
+        "components/ui/charts/dumbbell-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "effect-scatter-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/effect-scatter-chart.json",
+      "sha256": "0a6a24c8866f35284b149c98cf805c22c6ba121bd7dd32a232d99ab5f9ecb23a",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/effect-scatter-chart/EffectScatterChart.tsx",
+        "components/ui/charts/effect-scatter-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "error-bar-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/error-bar-chart.json",
+      "sha256": "c868dd8b8f4e260efba94a5dec338cd05af8d67dac2ad1440458c996a7c1d382",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/error-bar-chart/ErrorBarChart.tsx",
+        "components/ui/charts/error-bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "funnel-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/funnel-chart.json",
+      "sha256": "318952950ead6dfb355e936aca0d31b55a28a61d7dc5deb302a1bfc217184621",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/funnel-chart/FunnelChart.tsx",
+        "components/ui/charts/funnel-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "gantt-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/gantt-chart.json",
+      "sha256": "dbf6d329f32b0873063ef60019361513ed8605b676740a9b7cf3c338083a952f",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/gantt-chart/GanttChart.tsx",
+        "components/ui/charts/gantt-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "gauge-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/gauge-chart.json",
+      "sha256": "a684d675d9e5ca8bdeeb1a8acbba8ef17c6cc2648ff118e17f34a7998078f9e7",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/gauge-chart/GaugeChart.tsx",
+        "components/ui/charts/gauge-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "graph-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/graph-chart.json",
+      "sha256": "7e8e62e78f5566bb072d93958f8aa2ce47762b3b3add5f74dfadae8036625766",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/graph-chart/GraphChart.tsx",
+        "components/ui/charts/graph-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "heatmap",
+      "manifestUrl": "https://uipkge.dev/r/react/heatmap.json",
+      "sha256": "1b3ce5f045dbf635cd65a00ec5c96a72d27fa6714a08276ed9649792f0e32349",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/heatmap/Heatmap.tsx",
+        "components/ui/charts/heatmap/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "heikin-ashi-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/heikin-ashi-chart.json",
+      "sha256": "7258c393242ed8597c2e4613f85c628739e6b8ecb51fec02e8f07d54965aab4b",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/heikin-ashi-chart/HeikinAshiChart.tsx",
+        "components/ui/charts/heikin-ashi-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "histogram-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/histogram-chart.json",
+      "sha256": "c8c99626e818f87452d1f5891ce40fb829bcd9be370769b524fd75c07f83563f",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/histogram-chart/HistogramChart.tsx",
+        "components/ui/charts/histogram-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "icicle-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/icicle-chart.json",
+      "sha256": "b913b22844ebe89e569b0f0c9c165815eadd6a7c71ac8e9289eeeb811b493ce6",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/icicle-chart/IcicleChart.tsx",
+        "components/ui/charts/icicle-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "line-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/line-chart.json",
+      "sha256": "db12656a0c0695c549ae5bf28830e4b1d24bc27f07bf7a0a27cd77c244649289",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/line-chart/LineChart.tsx",
+        "components/ui/charts/line-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "liquid-fill-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/liquid-fill-chart.json",
+      "sha256": "3b7b8496984903972e6faf003abc9843c2b4a376a4d3d7588a1b808a621b6a17",
+      "fileCount": 3,
+      "targets": [
+        "components/ui/charts/liquid-fill-chart/LiquidFillChart.tsx",
+        "components/ui/charts/liquid-fill-chart/index.ts",
+        "components/ui/charts/shared.tsx"
+      ]
+    },
+    {
+      "id": "lollipop-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/lollipop-chart.json",
+      "sha256": "592839508a3fab544f45e299979534158c4d6adb8aad5c9d6c6a6e06e273b7eb",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/lollipop-chart/LollipopChart.tsx",
+        "components/ui/charts/lollipop-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "marimekko-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/marimekko-chart.json",
+      "sha256": "69e684dd363a6882eb843793de1d53213953e271552ae4ee0a1a5d4d520944d7",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/marimekko-chart/MarimekkoChart.tsx",
+        "components/ui/charts/marimekko-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "nightingale-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/nightingale-chart.json",
+      "sha256": "0e762e6a202fe1397741352b568f91bdd57366965e9e7dde7b5566132777587c",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/nightingale-chart/NightingaleChart.tsx",
+        "components/ui/charts/nightingale-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "parallel-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/parallel-chart.json",
+      "sha256": "e473d75502a72f4371013342fcb87b20c020530ecdb5c7d1247cdcafc19b92ad",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/parallel-chart/ParallelChart.tsx",
+        "components/ui/charts/parallel-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "pareto-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/pareto-chart.json",
+      "sha256": "b159e602f4af51f944774c3e3af2e70b499deb134847f7539a2938735494a088",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/pareto-chart/ParetoChart.tsx",
+        "components/ui/charts/pareto-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "pictorial-bar-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/pictorial-bar-chart.json",
+      "sha256": "de0fd36f172d83f49330a92037e60ea5bba16073f4e971b851d5960edf022f32",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/pictorial-bar-chart/PictorialBarChart.tsx",
+        "components/ui/charts/pictorial-bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "pie-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/pie-chart.json",
+      "sha256": "4cdf870f8d37ec5ee267d4ea6c857156a10f5d830eb5ea462526eecb96c82a7b",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/pie-chart/PieChart.tsx",
+        "components/ui/charts/pie-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "polar-bar-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/polar-bar-chart.json",
+      "sha256": "206e7870b906fa7e9708a82da68ec18117bdb577c71929f856542e033fddbfa1",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/polar-bar-chart/PolarBarChart.tsx",
+        "components/ui/charts/polar-bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "population-pyramid-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/population-pyramid-chart.json",
+      "sha256": "4032b1efcf704af39f268658f10ac27979b09df219cae129f5c44b3efcebeb45",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/population-pyramid-chart/PopulationPyramidChart.tsx",
+        "components/ui/charts/population-pyramid-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "progress-ring-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/progress-ring-chart.json",
+      "sha256": "d8180a6798f5bf330c49c5424b7ca5084c62e0445deb83a19a5c115702252e94",
+      "fileCount": 3,
+      "targets": [
+        "components/ui/charts/progress-ring-chart/ProgressRingChart.tsx",
+        "components/ui/charts/progress-ring-chart/index.ts",
+        "components/ui/charts/shared.tsx"
+      ]
+    },
+    {
+      "id": "quadrant-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/quadrant-chart.json",
+      "sha256": "7eddb9df7a0e5693eb2bc0c7bf7eb5508551f6579be7ee7f3783579a47733162",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/quadrant-chart/QuadrantChart.tsx",
+        "components/ui/charts/quadrant-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "radar-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/radar-chart.json",
+      "sha256": "ea172259b247bd513b49cc68ac2e51035c50b366d8c4034a30a90bc2fe0d2dad",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/radar-chart/RadarChart.tsx",
+        "components/ui/charts/radar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "range-area-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/range-area-chart.json",
+      "sha256": "e1d67e7cca2ef0c6aa6bbde5a9460554cc0f43175609bca9bef7136b949b4a7d",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/range-area-chart/RangeAreaChart.tsx",
+        "components/ui/charts/range-area-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "range-bar-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/range-bar-chart.json",
+      "sha256": "b678f1e735eed2632092ef44cfceebb9b23f41267b799e4c1b1e5ed229431797",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/range-bar-chart/RangeBarChart.tsx",
+        "components/ui/charts/range-bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "raw-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/raw-chart.json",
+      "sha256": "42021e90d904b78d8e045bd7a4bff532e21e2d60b68119534056afb09c291b2a",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/raw-chart/RawChart.tsx",
+        "components/ui/charts/raw-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "sankey-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/sankey-chart.json",
+      "sha256": "992d6376313924a26b671ba817c038a8c2097c2db8160f99b6616941745049aa",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/sankey-chart/SankeyChart.tsx",
+        "components/ui/charts/sankey-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "scatter-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/scatter-chart.json",
+      "sha256": "a4dcd35b044d048d4b105dddcd8305a0a566570fc6eead9e516e39e41fb570df",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/scatter-chart/ScatterChart.tsx",
+        "components/ui/charts/scatter-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "segmented-gauge",
+      "manifestUrl": "https://uipkge.dev/r/react/segmented-gauge.json",
+      "sha256": "1eeb80483b30c44e2af6d434781a7f5f37bacd4a837215273fb72540f0e59f99",
+      "fileCount": 2,
+      "targets": [
+        "components/ui/charts/segmented-gauge/SegmentedGauge.tsx",
+        "components/ui/charts/segmented-gauge/index.ts"
+      ]
+    },
+    {
+      "id": "slope-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/slope-chart.json",
+      "sha256": "36684bd0b9070f11c51376fb4590656287b868763df1589df13f6636dd70f6f8",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/slope-chart/SlopeChart.tsx",
+        "components/ui/charts/slope-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "smooth-funnel",
+      "manifestUrl": "https://uipkge.dev/r/react/smooth-funnel.json",
+      "sha256": "94e060f64a838958e31a2b55986a970735d9b7a3de8c2f80dfb374a7b27a96ae",
+      "fileCount": 2,
+      "targets": [
+        "components/ui/charts/smooth-funnel/SmoothFunnel.tsx",
+        "components/ui/charts/smooth-funnel/index.ts"
+      ]
+    },
+    {
+      "id": "sparkline",
+      "manifestUrl": "https://uipkge.dev/r/react/sparkline.json",
+      "sha256": "66ab64513342718fb3959a640154f159d8551ac6ee87655a250e9da87367d046",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/sparkline/Sparkline.tsx",
+        "components/ui/charts/sparkline/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "stacked-area-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/stacked-area-chart.json",
+      "sha256": "031198e49d045d7cc294f2c24a12dbb34efff54c2134150eeeab3f11633bd80f",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/stacked-area-chart/StackedAreaChart.tsx",
+        "components/ui/charts/stacked-area-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "stacked-bar-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/stacked-bar-chart.json",
+      "sha256": "1f4f272818517dc5c53d75e0f9faa1c14376576ca2c653283f305560d62999bb",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/stacked-bar-chart/StackedBarChart.tsx",
+        "components/ui/charts/stacked-bar-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "sunburst-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/sunburst-chart.json",
+      "sha256": "4d572af85e43c57767bcf919b9c15a2e750afc217011023fe4d3fc77fd8dc784",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/sunburst-chart/SunburstChart.tsx",
+        "components/ui/charts/sunburst-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "theme-river",
+      "manifestUrl": "https://uipkge.dev/r/react/theme-river.json",
+      "sha256": "de895d0646544b918f8cc80389d854a705d4dd4098dc2f33a14d143080dd851c",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/theme-river/ThemeRiver.tsx",
+        "components/ui/charts/theme-river/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "tree-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/tree-chart.json",
+      "sha256": "3bf3eb900e416584515b7e50bee2ff283ce94891cde99b71193e2740f30ff3ea",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/tree-chart/TreeChart.tsx",
+        "components/ui/charts/tree-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "treemap-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/treemap-chart.json",
+      "sha256": "71360a76809557ea8c151ea47fa967a03412bc279c3b1fb8d62a181ba7111079",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/treemap-chart/TreemapChart.tsx",
+        "components/ui/charts/treemap-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ]
+    },
+    {
+      "id": "uptime-tracker-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/uptime-tracker-chart.json",
+      "sha256": "21d6dc539bf30a4f3f720537eb053998920e0f770efef9c0a31155398c219be3",
+      "fileCount": 3,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/uptime-tracker-chart/UptimeTrackerChart.tsx",
+        "components/ui/charts/uptime-tracker-chart/index.ts"
+      ]
+    },
+    {
+      "id": "violin-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/violin-chart.json",
+      "sha256": "79e0b108487035a88e0b39f946bc53102aed434bc1a3dd6c4d45fc8093f46202",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts",
+        "components/ui/charts/violin-chart/ViolinChart.tsx",
+        "components/ui/charts/violin-chart/index.ts"
+      ]
+    },
+    {
+      "id": "waffle-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/waffle-chart.json",
+      "sha256": "b02f84bdb31e7dcbece208d04c2a85dcddaee218eee64c2cc3a76beae4414a6b",
+      "fileCount": 3,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/waffle-chart/WaffleChart.tsx",
+        "components/ui/charts/waffle-chart/index.ts"
+      ]
+    },
+    {
+      "id": "waterfall-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/waterfall-chart.json",
+      "sha256": "db915df820ae3164d1e853ea58e224a5bb1f1692a68c20945674c5946da5e81d",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts",
+        "components/ui/charts/waterfall-chart/WaterfallChart.tsx",
+        "components/ui/charts/waterfall-chart/index.ts"
+      ]
+    },
+    {
+      "id": "word-cloud-chart",
+      "manifestUrl": "https://uipkge.dev/r/react/word-cloud-chart.json",
+      "sha256": "97ee09091fa85a72612881a649a379849c028f40d72f5cf5790d61f6b0b2deb9",
+      "fileCount": 3,
+      "targets": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/word-cloud-chart/WordCloudChart.tsx",
+        "components/ui/charts/word-cloud-chart/index.ts"
+      ]
+    },
+    {
+      "id": "map",
+      "manifestUrl": "https://uipkge.dev/r/react/map.json",
+      "sha256": "be63d7b9f3b95332b11ff2f5a5917f603194d6194eea1c3fc0a96c66d816cd76",
+      "fileCount": 4,
+      "targets": [
+        "components/ui/map/index.ts",
+        "components/ui/map/map.css",
+        "components/ui/map/map.tsx",
+        "components/ui/map/map.variants.ts"
+      ]
+    }
+  ]
+}

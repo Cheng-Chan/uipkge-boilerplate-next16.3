@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "ticket": "CAT003",
+  "summary": {
+    "manifests": 6,
+    "declaredFiles": 19,
+    "uniqueTargets": 19
+  },
+  "uniqueTargets": [
+    "components/ui/button/Button.tsx",
+    "components/ui/button/ButtonGroup.tsx",
+    "components/ui/button/button.variants.ts",
+    "components/ui/button/index.ts",
+    "components/ui/cascade-select/CascadeSelect.tsx",
+    "components/ui/cascade-select/index.ts",
+    "components/ui/cascade-select/types.ts",
+    "components/ui/fab/Fab.tsx",
+    "components/ui/fab/fab.variants.ts",
+    "components/ui/fab/index.ts",
+    "components/ui/float-label/FloatLabel.tsx",
+    "components/ui/float-label/index.ts",
+    "components/ui/input/Input.tsx",
+    "components/ui/input/InputGroup.tsx",
+    "components/ui/input/InputGroupAddon.tsx",
+    "components/ui/input/InputGroupButton.tsx",
+    "components/ui/input/index.ts",
+    "components/ui/popover/index.ts",
+    "components/ui/popover/popover.tsx"
+  ],
+  "manifests": [
+    {
+      "id": "button",
+      "url": "https://uipkge.dev/r/react/button.json",
+      "sha256": "bab403f66bbcf6526646e5ea8079b838775f3dfe5540720abd0e2cffbad5cc3c",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": [],
+      "targetPaths": [
+        "components/ui/button/Button.tsx",
+        "components/ui/button/ButtonGroup.tsx",
+        "components/ui/button/button.variants.ts",
+        "components/ui/button/index.ts"
+      ]
+    },
+    {
+      "id": "cascade-select",
+      "url": "https://uipkge.dev/r/react/cascade-select.json",
+      "sha256": "d039ec13dcb4d753fa73125558c0d533e56e244ed250ba70cecbd82645dd43bf",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["popover"],
+      "targetPaths": [
+        "components/ui/cascade-select/CascadeSelect.tsx",
+        "components/ui/cascade-select/types.ts",
+        "components/ui/cascade-select/index.ts"
+      ]
+    },
+    {
+      "id": "fab",
+      "url": "https://uipkge.dev/r/react/fab.json",
+      "sha256": "281915b86affa1839c3413ed57ec3014593e9ba631b6c2acbf6bbeeb24a8befa",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority", "@radix-ui/react-slot"],
+      "registryDependencies": [],
+      "targetPaths": [
+        "components/ui/fab/Fab.tsx",
+        "components/ui/fab/fab.variants.ts",
+        "components/ui/fab/index.ts"
+      ]
+    },
+    {
+      "id": "float-label",
+      "url": "https://uipkge.dev/r/react/float-label.json",
+      "sha256": "f3ce747937137d431375ef8c0e69ba72204b90fdc56adc8dfe172763d8dfb5e5",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "targetPaths": [
+        "components/ui/float-label/FloatLabel.tsx",
+        "components/ui/float-label/index.ts"
+      ]
+    },
+    {
+      "id": "input",
+      "url": "https://uipkge.dev/r/react/input.json",
+      "sha256": "bb5d78409546544cefe788d8b389fd2cb4887a723fd14fb68d607be70b2f4c39",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "targetPaths": [
+        "components/ui/input/Input.tsx",
+        "components/ui/input/InputGroup.tsx",
+        "components/ui/input/InputGroupAddon.tsx",
+        "components/ui/input/InputGroupButton.tsx",
+        "components/ui/input/index.ts"
+      ]
+    },
+    {
+      "id": "popover",
+      "url": "https://uipkge.dev/r/react/popover.json",
+      "sha256": "282e2e0a79d937e8b775415f22c995d5073d2c26ff2dfcfc5dbd8eda27507a49",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-popover"],
+      "registryDependencies": [],
+      "targetPaths": [
+        "components/ui/popover/popover.tsx",
+        "components/ui/popover/index.ts"
+      ]
+    }
+  ]
+}

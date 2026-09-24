@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-24",
+  "ticket": "CAT005",
+  "summary": {
+    "manifests": 17,
+    "declaredFiles": 53,
+    "uniqueTargets": 53,
+    "newTargets": 37,
+    "preservedTargets": 16
+  },
+  "approvedTargets": [
+    "components/ui/board/board.tsx",
+    "components/ui/board/board.variants.ts",
+    "components/ui/board/context.ts",
+    "components/ui/board/index.ts",
+    "components/ui/data-table/DataTable.tsx",
+    "components/ui/data-table/DataTableColumnHeader.tsx",
+    "components/ui/data-table/DataTableFilterPopover.tsx",
+    "components/ui/data-table/DataTableFilterSheet.tsx",
+    "components/ui/data-table/DataTablePagination.tsx",
+    "components/ui/data-table/DataTableToolbar.tsx",
+    "components/ui/data-table/date-utils.ts",
+    "components/ui/data-table/index.ts",
+    "components/ui/data-table/types.ts",
+    "components/ui/tree-table/TreeTable.tsx",
+    "components/ui/tree-table/index.ts",
+    "components/ui/tree-table/types.ts"
+  ],
+  "newDependencyTargets": [
+    "components/ui/badge/Badge.tsx",
+    "components/ui/badge/badge.variants.ts",
+    "components/ui/badge/index.ts",
+    "components/ui/checkbox/checkbox.tsx",
+    "components/ui/checkbox/index.ts",
+    "components/ui/command/command.tsx",
+    "components/ui/command/index.ts",
+    "components/ui/label/Label.tsx",
+    "components/ui/label/index.ts",
+    "components/ui/range-calendar/RangeCalendar.tsx",
+    "components/ui/range-calendar/index.ts",
+    "components/ui/separator/Separator.tsx",
+    "components/ui/separator/index.ts",
+    "components/ui/sheet/index.ts",
+    "components/ui/sheet/sheet.tsx",
+    "components/ui/spinner/Spinner.tsx",
+    "components/ui/spinner/index.ts",
+    "components/ui/spinner/spinner.variants.ts",
+    "components/ui/table/index.ts",
+    "components/ui/table/table.tsx",
+    "components/ui/table/utils.ts"
+  ],
+  "preservedTargets": [
+    "components/ui/button/Button.tsx",
+    "components/ui/button/ButtonGroup.tsx",
+    "components/ui/button/button.variants.ts",
+    "components/ui/button/index.ts",
+    "components/ui/dropdown-menu/dropdown-menu.tsx",
+    "components/ui/dropdown-menu/index.ts",
+    "components/ui/input/Input.tsx",
+    "components/ui/input/InputGroup.tsx",
+    "components/ui/input/InputGroupAddon.tsx",
+    "components/ui/input/InputGroupButton.tsx",
+    "components/ui/input/index.ts",
+    "components/ui/popover/popover.tsx",
+    "components/ui/popover/index.ts",
+    "components/ui/select/select.tsx",
+    "components/ui/select/NativeSelect.tsx",
+    "components/ui/select/index.ts"
+  ],
+  "manifests": [
+    {
+      "id": "board",
+      "sha256": "ad0439b2e3b694ecf1d27d07056a90d4de3c8c91db7671fe95c80a24204b74ba",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
+      "targetCount": 4
+    },
+    {
+      "id": "data-table",
+      "sha256": "e4657c979f6018e9233d0e8786fb5f700c3e2e3428c66ba02aea894b90d8d478",
+      "dependencies": [
+        "@tanstack/react-table",
+        "react-day-picker",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "command",
+        "dropdown-menu",
+        "input",
+        "label",
+        "popover",
+        "range-calendar",
+        "select",
+        "separator",
+        "sheet",
+        "table"
+      ],
+      "targetCount": 9
+    },
+    {
+      "id": "tree-table",
+      "sha256": "f1135ed4fdd7a3f6a07f67086d579d1e8222fed9b0ec2f96c115114b0ed2924e",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["table", "checkbox", "spinner"],
+      "targetCount": 3
+    },
+    {
+      "id": "badge",
+      "sha256": "d77e1550edc6307fd01dd9d995843be7341d400040d425451a07cf443cea02fd",
+      "targetCount": 3
+    },
+    {
+      "id": "button",
+      "sha256": "bab403f66bbcf6526646e5ea8079b838775f3dfe5540720abd0e2cffbad5cc3c",
+      "targetCount": 4,
+      "preserved": true
+    },
+    {
+      "id": "checkbox",
+      "sha256": "5348557d099c6c8e25e7a1afa86d1a83f8c3699bf780c4fba7ec9d86aaf9c311",
+      "targetCount": 2
+    },
+    {
+      "id": "command",
+      "sha256": "81754ca535b55d7b81a81850c9b0990dcc7f2a9712b4c838ee98d2481d8bfc20",
+      "targetCount": 2
+    },
+    {
+      "id": "dropdown-menu",
+      "sha256": "953b8506fbf8e4255f5c9e8c13010157861021a46950d55b02bf2fe8fec56908",
+      "targetCount": 2,
+      "preserved": true
+    },
+    {
+      "id": "input",
+      "sha256": "bb5d78409546544cefe788d8b389fd2cb4887a723fd14fb68d607be70b2f4c39",
+      "targetCount": 5,
+      "preserved": true
+    },
+    {
+      "id": "label",
+      "sha256": "997abc437941e6520b24fe7f1bcbe4dae31b10f90566ff67113131ed472bab5a",
+      "targetCount": 2
+    },
+    {
+      "id": "popover",
+      "sha256": "282e2e0a79d937e8b775415f22c995d5073d2c26ff2dfcfc5dbd8eda27507a49",
+      "targetCount": 2,
+      "preserved": true
+    },
+    {
+      "id": "range-calendar",
+      "sha256": "3ee474878b5544fbd65eb22167b6da756fda55541a32dbc83cc2ed20f923d0b7",
+      "targetCount": 2
+    },
+    {
+      "id": "select",
+      "sha256": "5c8465cac6f16306446c98f51d44f2dc0ff15c1e94102d194c9ccf4c66d23afa",
+      "targetCount": 3,
+      "preserved": true
+    },
+    {
+      "id": "separator",
+      "sha256": "b2bff791da166e49734d717af40010798c2991ace3072617cb47656d1c0b333e",
+      "targetCount": 2
+    },
+    {
+      "id": "sheet",
+      "sha256": "852281106e3404bf461d9e70d5ce2998dfe8022658ccc9b18682d2346e7fd51c",
+      "targetCount": 2
+    },
+    {
+      "id": "spinner",
+      "sha256": "51def49b7a2aec99d535608526d322d8532b9adb68407ea7ddf75c5ced324c55",
+      "targetCount": 3
+    },
+    {
+      "id": "table",
+      "sha256": "91750049257fa006d714be213fff31542164f758615f71d7e62ab4e128113246",
+      "targetCount": 3
+    }
+  ]
+}

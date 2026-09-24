@@ -20,16 +20,16 @@
       "map": 74
     },
     "byStatus": {
-      "blocked": 38,
-      "discovered": 666,
-      "installed": 3,
-      "verified": 6
+      "discovered": 556,
+      "installed": 77,
+      "verified": 42,
+      "blocked": 38
     },
     "catalogueByStatus": {
-      "blocked": 38,
-      "discovered": 660,
-      "installed": 3,
-      "verified": 3
+      "discovered": 550,
+      "installed": 77,
+      "verified": 39,
+      "blocked": 38
     },
     "foundationByStatus": {
       "discovered": 6,
@@ -667,7 +667,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/alluvial-chart.json",
       "manifestEntrySha256": "31959733a244d87ed1038aa1a768845ca7081ebb4684a5c925edb66840aa8336",
       "documentationUrl": "https://uipkge.dev/react/charts/alluvial-chart/",
@@ -689,13 +689,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/alluvial-chart/AlluvialChart.tsx",
+        "components/ui/charts/alluvial-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/alluvial-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -1081,7 +1093,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/area-chart.json",
       "manifestEntrySha256": "423eb8f8ae8487a1222a7f57f0fe29f1f1e5bbbaa979be3498cee61d5154e139",
       "documentationUrl": "https://uipkge.dev/react/charts/area-chart/",
@@ -1103,13 +1115,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/area-chart/AreaChart.tsx",
+        "components/ui/charts/area-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/area-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -1283,7 +1307,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/attachment.json",
       "manifestEntrySha256": "451e321889c19b9da0926b98d05d1573439dd209d756ce935314994480744abc",
       "documentationUrl": "https://uipkge.dev/react/components/attachment/",
@@ -1304,13 +1328,19 @@
         "components/ui/attachment/attachment.variants.ts",
         "components/ui/attachment/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/attachment/attachment.tsx",
+        "components/ui/attachment/attachment.variants.ts",
+        "components/ui/attachment/index.ts"
+      ],
       "demoRoute": "/ui-kit/attachment",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/attachment.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT006.json"],
+      "adaptations": [
+        "Formatted the audited registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -1648,7 +1678,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/avatar.json",
       "manifestEntrySha256": "19113e0158162db852221a8b839f48df7cdcd77fb8c0cc91babd8ebef6deca1d",
       "documentationUrl": "https://uipkge.dev/react/components/avatar/",
@@ -1669,13 +1699,19 @@
         "components/ui/avatar/avatar.variants.ts",
         "components/ui/avatar/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/avatar/avatar.tsx",
+        "components/ui/avatar/avatar.variants.ts",
+        "components/ui/avatar/index.ts"
+      ],
       "demoRoute": "/ui-kit/avatar",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/avatar.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT006.json"],
+      "adaptations": [
+        "Pinned Radix Avatar 1.2.6 exactly and formatted the audited registry source."
+      ],
       "gaps": []
     },
     {
@@ -1763,7 +1799,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/badge.json",
       "manifestEntrySha256": "1e38d31deea2e77fa222c1b182453ed29d700f18a5b4698f82131dde73da8802",
       "documentationUrl": "https://uipkge.dev/react/components/badge/",
@@ -1784,13 +1820,19 @@
         "components/ui/badge/badge.variants.ts",
         "components/ui/badge/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/badge/Badge.tsx",
+        "components/ui/badge/badge.variants.ts",
+        "components/ui/badge/index.ts"
+      ],
       "demoRoute": "/ui-kit/badge",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/badge.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT006.json"],
+      "adaptations": [
+        "Reused the reviewed CAT005 installation without overwriting it and added the item's own verified preview."
+      ],
       "gaps": []
     },
     {
@@ -1873,7 +1915,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/bar-chart.json",
       "manifestEntrySha256": "6f0bc219bcca5b836346dca35250ba3c5517f428576e021e075ad47869c1d496",
       "documentationUrl": "https://uipkge.dev/react/charts/bar-chart/",
@@ -1895,13 +1937,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/bar-chart/BarChart.tsx",
+        "components/ui/charts/bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/bar-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -1912,7 +1966,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/bar-race-chart.json",
       "manifestEntrySha256": "e4c6949edf78970b3fec8d7b9b2f12ecf100390b5f0ab989c052535d5c1ca9f8",
       "documentationUrl": "https://uipkge.dev/react/charts/bar-race-chart/",
@@ -1934,13 +1988,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/bar-race-chart/BarRaceChart.tsx",
+        "components/ui/charts/bar-race-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/bar-race-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -1951,7 +2017,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/beeswarm-chart.json",
       "manifestEntrySha256": "e584250749772ff11ee9482a31517d11e52a37223815afc062e277e291bd2850",
       "documentationUrl": "https://uipkge.dev/react/charts/beeswarm-chart/",
@@ -1973,13 +2039,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/beeswarm-chart/BeeswarmChart.tsx",
+        "components/ui/charts/beeswarm-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/beeswarm-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -2415,7 +2493,7 @@
       "kind": "component",
       "categories": ["data", "layout"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/board.json",
       "manifestEntrySha256": "42b942e00aa1bb6ab9dae163301d91c58980d5cee5fec7d5b8f59158dc11a780",
       "documentationUrl": "https://uipkge.dev/react/components/board/",
@@ -2437,13 +2515,20 @@
         "components/ui/board/context.ts",
         "components/ui/board/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/board/board.tsx",
+        "components/ui/board/board.variants.ts",
+        "components/ui/board/context.ts",
+        "components/ui/board/index.ts"
+      ],
       "demoRoute": "/ui-kit/board",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/board.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -2608,7 +2693,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/boxplot-chart.json",
       "manifestEntrySha256": "880c5da08b5bb2c6cb6583f2ffd51d51112fe633b77125e3dd169b6b1da314b8",
       "documentationUrl": "https://uipkge.dev/react/charts/boxplot-chart/",
@@ -2630,13 +2715,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/boxplot-chart/BoxplotChart.tsx",
+        "components/ui/charts/boxplot-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/boxplot-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -2684,7 +2781,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/bubble-chart.json",
       "manifestEntrySha256": "f2d56b05ca7337606e0b64ac5d4d9743927a6d06b381ae34b64c7c616ca8bfa8",
       "documentationUrl": "https://uipkge.dev/react/charts/bubble-chart/",
@@ -2706,13 +2803,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/bubble-chart/BubbleChart.tsx",
+        "components/ui/charts/bubble-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/bubble-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -2764,7 +2873,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/bullet-chart.json",
       "manifestEntrySha256": "55eb6f04efc531e58dbff5793e7add45848c053346bbec8b3580b9b399a27520",
       "documentationUrl": "https://uipkge.dev/react/charts/bullet-chart/",
@@ -2786,13 +2895,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/bullet-chart/BulletChart.tsx",
+        "components/ui/charts/bullet-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/bullet-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -2803,7 +2924,7 @@
       "kind": "component",
       "categories": ["control"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/button.json",
       "manifestEntrySha256": "5733a1dd71bae88986ee52ee6221ee62722d368adee81cde80a471a2b218cad7",
       "documentationUrl": "https://uipkge.dev/react/components/button/",
@@ -2825,13 +2946,20 @@
         "components/ui/button/button.variants.ts",
         "components/ui/button/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/button/Button.tsx",
+        "components/ui/button/ButtonGroup.tsx",
+        "components/ui/button/button.variants.ts",
+        "components/ui/button/index.ts"
+      ],
       "demoRoute": "/ui-kit/button",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/button.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT003.json"],
+      "adaptations": [
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -2879,7 +3007,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/calendar-heatmap.json",
       "manifestEntrySha256": "5e244fb2f88b1ee95dfa7ebc8afe8882ca8a4c506e42f1fdb43b9237546e4097",
       "documentationUrl": "https://uipkge.dev/react/charts/calendar-heatmap/",
@@ -2901,13 +3029,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/calendar-heatmap/CalendarHeatmap.tsx",
+        "components/ui/charts/calendar-heatmap/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/calendar-heatmap",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -2918,7 +3058,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/candlestick-chart.json",
       "manifestEntrySha256": "36e7c1c4f303f770776a84c6c1e1ab47cc154d3eef78c629029bbfcd2efa5050",
       "documentationUrl": "https://uipkge.dev/react/charts/candlestick-chart/",
@@ -2940,13 +3080,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/candlestick-chart/CandlestickChart.tsx",
+        "components/ui/charts/candlestick-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/candlestick-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -3074,7 +3226,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/carousel.json",
       "manifestEntrySha256": "bf9eeb15a0edfdeee40c138828930cc7c226435cc79afa5e8ebd44caeda8d762",
       "documentationUrl": "https://uipkge.dev/react/components/carousel/",
@@ -3094,13 +3246,19 @@
         "components/ui/carousel/carousel.tsx",
         "components/ui/carousel/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/carousel/carousel.tsx",
+        "components/ui/carousel/index.ts"
+      ],
       "demoRoute": "/ui-kit/carousel",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/carousel.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT006.json"],
+      "adaptations": [
+        "Pinned Embla Carousel React 8.6.0 exactly.",
+        "Deferred initial Embla selection synchronization to the next animation frame, cleaned up both registered events, and removed an invalid group aria-orientation attribute."
+      ],
       "gaps": []
     },
     {
@@ -3147,7 +3305,7 @@
       "kind": "component",
       "categories": ["control", "form"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/cascade-select.json",
       "manifestEntrySha256": "04b1048bec3bc51cc1341cfcbae54eb172f696c3cab4e39c24dbd4f4131e8f73",
       "documentationUrl": "https://uipkge.dev/react/components/cascade-select/",
@@ -3168,13 +3326,20 @@
         "components/ui/cascade-select/index.ts",
         "components/ui/cascade-select/types.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/cascade-select/CascadeSelect.tsx",
+        "components/ui/cascade-select/index.ts",
+        "components/ui/cascade-select/types.ts"
+      ],
       "demoRoute": "/ui-kit/cascade-select",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/cascade-select.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT003.json"],
+      "adaptations": [
+        "Added a stable accessible name and explicit aria-controls relationship using dialog semantics for the searchable multi-level chooser.",
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -3464,7 +3629,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/category-distribution-chart.json",
       "manifestEntrySha256": "7ebd87f9fc46b20246d46d3b5d8232ceb3580d69898c45c613b65e6acb927777",
       "documentationUrl": "https://uipkge.dev/react/charts/category-distribution-chart/",
@@ -3485,13 +3650,24 @@
         "components/ui/charts/category-distribution-chart/index.ts",
         "components/ui/charts/shared.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/category-distribution-chart/CategoryDistributionChart.tsx",
+        "components/ui/charts/category-distribution-chart/index.ts",
+        "components/ui/charts/shared.tsx"
+      ],
       "demoRoute": "/ui-kit/category-distribution-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The declared ariaLabel is forwarded to the shared chart frame."
+      ],
       "gaps": []
     },
     {
@@ -3690,7 +3866,7 @@
       "kind": "component",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/charts.json",
       "manifestEntrySha256": "09b3116aaa7afc5943b335d1e0910ded6027df6039980c79db626da148bf6bc0",
       "documentationUrl": "https://uipkge.dev/react/components/charts/",
@@ -3770,17 +3946,158 @@
         ]
       },
       "targetPaths": [],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/alluvial-chart/AlluvialChart.tsx",
+        "components/ui/charts/alluvial-chart/index.ts",
+        "components/ui/charts/area-chart/AreaChart.tsx",
+        "components/ui/charts/area-chart/index.ts",
+        "components/ui/charts/bar-chart/BarChart.tsx",
+        "components/ui/charts/bar-chart/index.ts",
+        "components/ui/charts/bar-race-chart/BarRaceChart.tsx",
+        "components/ui/charts/bar-race-chart/index.ts",
+        "components/ui/charts/beeswarm-chart/BeeswarmChart.tsx",
+        "components/ui/charts/beeswarm-chart/index.ts",
+        "components/ui/charts/boxplot-chart/BoxplotChart.tsx",
+        "components/ui/charts/boxplot-chart/index.ts",
+        "components/ui/charts/bubble-chart/BubbleChart.tsx",
+        "components/ui/charts/bubble-chart/index.ts",
+        "components/ui/charts/bullet-chart/BulletChart.tsx",
+        "components/ui/charts/bullet-chart/index.ts",
+        "components/ui/charts/calendar-heatmap/CalendarHeatmap.tsx",
+        "components/ui/charts/calendar-heatmap/index.ts",
+        "components/ui/charts/candlestick-chart/CandlestickChart.tsx",
+        "components/ui/charts/candlestick-chart/index.ts",
+        "components/ui/charts/category-distribution-chart/CategoryDistributionChart.tsx",
+        "components/ui/charts/category-distribution-chart/index.ts",
+        "components/ui/charts/chord-chart/ChordChart.tsx",
+        "components/ui/charts/chord-chart/index.ts",
+        "components/ui/charts/choropleth-map-chart/ChoroplethMapChart.tsx",
+        "components/ui/charts/choropleth-map-chart/index.ts",
+        "components/ui/charts/combo-chart/ComboChart.tsx",
+        "components/ui/charts/combo-chart/index.ts",
+        "components/ui/charts/control-chart/ControlChart.tsx",
+        "components/ui/charts/control-chart/index.ts",
+        "components/ui/charts/donut-chart/DonutChart.tsx",
+        "components/ui/charts/donut-chart/index.ts",
+        "components/ui/charts/dotted-map-chart/DottedMapChart.tsx",
+        "components/ui/charts/dotted-map-chart/index.ts",
+        "components/ui/charts/dumbbell-chart/DumbbellChart.tsx",
+        "components/ui/charts/dumbbell-chart/index.ts",
+        "components/ui/charts/effect-scatter-chart/EffectScatterChart.tsx",
+        "components/ui/charts/effect-scatter-chart/index.ts",
+        "components/ui/charts/error-bar-chart/ErrorBarChart.tsx",
+        "components/ui/charts/error-bar-chart/index.ts",
+        "components/ui/charts/funnel-chart/FunnelChart.tsx",
+        "components/ui/charts/funnel-chart/index.ts",
+        "components/ui/charts/gantt-chart/GanttChart.tsx",
+        "components/ui/charts/gantt-chart/index.ts",
+        "components/ui/charts/gauge-chart/GaugeChart.tsx",
+        "components/ui/charts/gauge-chart/index.ts",
+        "components/ui/charts/graph-chart/GraphChart.tsx",
+        "components/ui/charts/graph-chart/index.ts",
+        "components/ui/charts/heatmap/Heatmap.tsx",
+        "components/ui/charts/heatmap/index.ts",
+        "components/ui/charts/heikin-ashi-chart/HeikinAshiChart.tsx",
+        "components/ui/charts/heikin-ashi-chart/index.ts",
+        "components/ui/charts/histogram-chart/HistogramChart.tsx",
+        "components/ui/charts/histogram-chart/index.ts",
+        "components/ui/charts/icicle-chart/IcicleChart.tsx",
+        "components/ui/charts/icicle-chart/index.ts",
+        "components/ui/charts/line-chart/LineChart.tsx",
+        "components/ui/charts/line-chart/index.ts",
+        "components/ui/charts/liquid-fill-chart/LiquidFillChart.tsx",
+        "components/ui/charts/liquid-fill-chart/index.ts",
+        "components/ui/charts/lollipop-chart/LollipopChart.tsx",
+        "components/ui/charts/lollipop-chart/index.ts",
+        "components/ui/charts/marimekko-chart/MarimekkoChart.tsx",
+        "components/ui/charts/marimekko-chart/index.ts",
+        "components/ui/charts/nightingale-chart/NightingaleChart.tsx",
+        "components/ui/charts/nightingale-chart/index.ts",
+        "components/ui/charts/parallel-chart/ParallelChart.tsx",
+        "components/ui/charts/parallel-chart/index.ts",
+        "components/ui/charts/pareto-chart/ParetoChart.tsx",
+        "components/ui/charts/pareto-chart/index.ts",
+        "components/ui/charts/pictorial-bar-chart/PictorialBarChart.tsx",
+        "components/ui/charts/pictorial-bar-chart/index.ts",
+        "components/ui/charts/pie-chart/PieChart.tsx",
+        "components/ui/charts/pie-chart/index.ts",
+        "components/ui/charts/polar-bar-chart/PolarBarChart.tsx",
+        "components/ui/charts/polar-bar-chart/index.ts",
+        "components/ui/charts/population-pyramid-chart/PopulationPyramidChart.tsx",
+        "components/ui/charts/population-pyramid-chart/index.ts",
+        "components/ui/charts/progress-ring-chart/ProgressRingChart.tsx",
+        "components/ui/charts/progress-ring-chart/index.ts",
+        "components/ui/charts/quadrant-chart/QuadrantChart.tsx",
+        "components/ui/charts/quadrant-chart/index.ts",
+        "components/ui/charts/radar-chart/RadarChart.tsx",
+        "components/ui/charts/radar-chart/index.ts",
+        "components/ui/charts/range-area-chart/RangeAreaChart.tsx",
+        "components/ui/charts/range-area-chart/index.ts",
+        "components/ui/charts/range-bar-chart/RangeBarChart.tsx",
+        "components/ui/charts/range-bar-chart/index.ts",
+        "components/ui/charts/raw-chart/RawChart.tsx",
+        "components/ui/charts/raw-chart/index.ts",
+        "components/ui/charts/sankey-chart/SankeyChart.tsx",
+        "components/ui/charts/sankey-chart/index.ts",
+        "components/ui/charts/scatter-chart/ScatterChart.tsx",
+        "components/ui/charts/scatter-chart/index.ts",
+        "components/ui/charts/segmented-gauge/SegmentedGauge.tsx",
+        "components/ui/charts/segmented-gauge/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/slope-chart/SlopeChart.tsx",
+        "components/ui/charts/slope-chart/index.ts",
+        "components/ui/charts/smooth-funnel/SmoothFunnel.tsx",
+        "components/ui/charts/smooth-funnel/index.ts",
+        "components/ui/charts/sparkline/Sparkline.tsx",
+        "components/ui/charts/sparkline/index.ts",
+        "components/ui/charts/stacked-area-chart/StackedAreaChart.tsx",
+        "components/ui/charts/stacked-area-chart/index.ts",
+        "components/ui/charts/stacked-bar-chart/StackedBarChart.tsx",
+        "components/ui/charts/stacked-bar-chart/index.ts",
+        "components/ui/charts/sunburst-chart/SunburstChart.tsx",
+        "components/ui/charts/sunburst-chart/index.ts",
+        "components/ui/charts/theme-river/ThemeRiver.tsx",
+        "components/ui/charts/theme-river/index.ts",
+        "components/ui/charts/tree-chart/TreeChart.tsx",
+        "components/ui/charts/tree-chart/index.ts",
+        "components/ui/charts/treemap-chart/TreemapChart.tsx",
+        "components/ui/charts/treemap-chart/index.ts",
+        "components/ui/charts/uptime-tracker-chart/UptimeTrackerChart.tsx",
+        "components/ui/charts/uptime-tracker-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts",
+        "components/ui/charts/violin-chart/ViolinChart.tsx",
+        "components/ui/charts/violin-chart/index.ts",
+        "components/ui/charts/waffle-chart/WaffleChart.tsx",
+        "components/ui/charts/waffle-chart/index.ts",
+        "components/ui/charts/waterfall-chart/WaterfallChart.tsx",
+        "components/ui/charts/waterfall-chart/index.ts",
+        "components/ui/charts/word-cloud-chart/WordCloudChart.tsx",
+        "components/ui/charts/word-cloud-chart/index.ts",
+        "components/ui/map/index.ts",
+        "components/ui/map/map.css",
+        "components/ui/map/map.tsx",
+        "components/ui/map/map.variants.ts"
+      ],
       "demoRoute": "/ui-kit/charts",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/charts.tsx",
       "externalRequirements": [
         "mapbox-provider-terms",
         "mapbox-public-token",
         "mapbox-style-and-tile-network"
       ],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json",
+        "tests/unit/catalogue-charts.test.tsx",
+        "tests/e2e/catalogue-laboratory.spec.ts"
+      ],
+      "adaptations": [
+        "The meta-item declares no files of its own; installedPaths records the 130 unique targets installed through its 62 chart dependencies and shared map dependency.",
+        "The preview renders five real local wrappers while keeping Mapbox-backed modules outside the preview bundle and provider-disabled by default.",
+        "All newly introduced packages are pinned to exact versions.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -3863,7 +4180,7 @@
       "kind": "component",
       "categories": ["form"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/checkbox.json",
       "manifestEntrySha256": "2894c985cd66083beb7868116a0ce6ed26ced06dbf9f106f88ab76f6d2c7ec83",
       "documentationUrl": "https://uipkge.dev/react/components/checkbox/",
@@ -3883,13 +4200,19 @@
         "components/ui/checkbox/checkbox.tsx",
         "components/ui/checkbox/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/checkbox/checkbox.tsx",
+        "components/ui/checkbox/index.ts"
+      ],
       "demoRoute": "/ui-kit/checkbox",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT005; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -3942,7 +4265,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/chip.json",
       "manifestEntrySha256": "ce5c6f9a75b2de121a162c888f8712f29b803dc5f8545060f41817a7b3e83878",
       "documentationUrl": "https://uipkge.dev/react/components/chip/",
@@ -3963,13 +4286,19 @@
         "components/ui/chip/chip.variants.ts",
         "components/ui/chip/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/chip/chip.tsx",
+        "components/ui/chip/chip.variants.ts",
+        "components/ui/chip/index.ts"
+      ],
       "demoRoute": "/ui-kit/chip",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/chip.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT006.json"],
+      "adaptations": [
+        "Formatted the audited registry source; close and selection behavior remains local browser state."
+      ],
       "gaps": []
     },
     {
@@ -3980,7 +4309,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/chord-chart.json",
       "manifestEntrySha256": "4b9b4d8ba3789b2a6a924b1bc31ee4ddcfe1e1002b6b915e861e36e885e31af2",
       "documentationUrl": "https://uipkge.dev/react/charts/chord-chart/",
@@ -4002,13 +4331,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/chord-chart/ChordChart.tsx",
+        "components/ui/charts/chord-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/chord-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -4019,7 +4360,7 @@
       "kind": "map",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/choropleth-map-chart.json",
       "manifestEntrySha256": "4a54cd05852e9ea2c091e406c483b481b9b7dacc266459dc755d2c6418221771",
       "documentationUrl": "https://uipkge.dev/react/maps/choropleth-map-chart/",
@@ -4039,7 +4380,10 @@
         "components/ui/charts/choropleth-map-chart/ChoroplethMapChart.tsx",
         "components/ui/charts/choropleth-map-chart/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/choropleth-map-chart/ChoroplethMapChart.tsx",
+        "components/ui/charts/choropleth-map-chart/index.ts"
+      ],
       "demoRoute": "/ui-kit/choropleth-map-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
@@ -4048,8 +4392,14 @@
         "mapbox-public-token",
         "mapbox-style-and-tile-network"
       ],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -4179,7 +4529,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/code-block.json",
       "manifestEntrySha256": "e2ca73744393227650a3cd0312f59b4f9718b9c2e7547d9e6a234bd3fb3a90a8",
       "documentationUrl": "https://uipkge.dev/react/components/code-block/",
@@ -4199,13 +4549,18 @@
         "components/ui/code-block/CodeBlock.tsx",
         "components/ui/code-block/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/code-block/CodeBlock.tsx",
+        "components/ui/code-block/index.ts"
+      ],
       "demoRoute": "/ui-kit/code-block",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/code-block.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT007.json"],
+      "adaptations": [
+        "Pinned Shiki 4.4.3 exactly; highlighting is local and the explicit copy action is the only clipboard behavior."
+      ],
       "gaps": []
     },
     {
@@ -4549,7 +4904,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/combo-chart.json",
       "manifestEntrySha256": "8c98ce13f3361150fcaabb030651aa8a5ad5bfc24f096b9ec0c35bcdd37d4121",
       "documentationUrl": "https://uipkge.dev/react/charts/combo-chart/",
@@ -4571,13 +4926,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/combo-chart/ComboChart.tsx",
+        "components/ui/charts/combo-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/combo-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -4631,7 +4998,7 @@
       "kind": "component",
       "categories": ["overlay"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/command.json",
       "manifestEntrySha256": "0f24457a29fa66ad797634a68bc8920afcb1777a5bc6efb84ee5a868c455799f",
       "documentationUrl": "https://uipkge.dev/react/components/command/",
@@ -4651,13 +5018,19 @@
         "components/ui/command/command.tsx",
         "components/ui/command/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/command/command.tsx",
+        "components/ui/command/index.ts"
+      ],
       "demoRoute": "/ui-kit/command",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT005; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -5173,7 +5546,7 @@
       "kind": "component",
       "categories": ["overlay"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/context-menu.json",
       "manifestEntrySha256": "a501f31540ec954313eec780f0ef0ee2167cb253bda0fddcbed7a07478e8d332",
       "documentationUrl": "https://uipkge.dev/react/components/context-menu/",
@@ -5193,13 +5566,19 @@
         "components/ui/context-menu/context-menu.tsx",
         "components/ui/context-menu/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/context-menu/context-menu.tsx",
+        "components/ui/context-menu/index.ts"
+      ],
       "demoRoute": "/ui-kit/context-menu",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT007.json"],
+      "adaptations": [
+        "Pinned Radix Context Menu 2.3.7 exactly.",
+        "Registry source is formatted with the repository Prettier configuration; its own preview and ticket verification remain deferred."
+      ],
       "gaps": []
     },
     {
@@ -5298,7 +5677,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/control-chart.json",
       "manifestEntrySha256": "e10636f43989379bab6a2d389832e73cb612741ea5474008192b8d587a4b12cc",
       "documentationUrl": "https://uipkge.dev/react/charts/control-chart/",
@@ -5320,13 +5699,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/control-chart/ControlChart.tsx",
+        "components/ui/charts/control-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/control-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -6407,7 +6798,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/data-list.json",
       "manifestEntrySha256": "fdc65687217f00c677c52b31411f7a70b6dde4ce4f1ddea46559deff8cb8a5b5",
       "documentationUrl": "https://uipkge.dev/react/components/data-list/",
@@ -6427,13 +6818,18 @@
         "components/ui/data-list/data-list.tsx",
         "components/ui/data-list/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/data-list/data-list.tsx",
+        "components/ui/data-list/index.ts"
+      ],
       "demoRoute": "/ui-kit/data-list",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/data-list.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT007.json"],
+      "adaptations": [
+        "Formatted the audited registry source with no behavioral changes."
+      ],
       "gaps": []
     },
     {
@@ -6628,7 +7024,7 @@
       "kind": "component",
       "categories": ["data"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/data-table.json",
       "manifestEntrySha256": "c399ab3c5a7d1a7606ae748ce3590c9696371c9056f93abaf0b35c2190f7d3bc",
       "documentationUrl": "https://uipkge.dev/react/components/data-table/",
@@ -6672,13 +7068,28 @@
         "components/ui/data-table/index.ts",
         "components/ui/data-table/types.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/data-table/DataTable.tsx",
+        "components/ui/data-table/DataTableColumnHeader.tsx",
+        "components/ui/data-table/DataTableFilterPopover.tsx",
+        "components/ui/data-table/DataTableFilterSheet.tsx",
+        "components/ui/data-table/DataTablePagination.tsx",
+        "components/ui/data-table/DataTableToolbar.tsx",
+        "components/ui/data-table/date-utils.ts",
+        "components/ui/data-table/index.ts",
+        "components/ui/data-table/types.ts"
+      ],
       "demoRoute": "/ui-kit/data-table",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/data-table.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Pinned TanStack React Table to the exact compatible v8 release because the unversioned manifest otherwise resolved an incompatible v9 API.",
+        "Added an accessible name for the interactive table region and removed unused filter-surface props.",
+        "Moved text-filter draft synchronization into the Popover open transition to satisfy the React effect contract.",
+        "Kept open-ended TanStack filter and row interoperability narrowly scoped in ESLint and formatted registry source."
+      ],
       "gaps": []
     },
     {
@@ -7450,7 +7861,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/donut-chart.json",
       "manifestEntrySha256": "279252a2545e514592b5dec87dec09091504e5a6a37ba04eaac9246ce5a70786",
       "documentationUrl": "https://uipkge.dev/react/charts/donut-chart/",
@@ -7472,13 +7883,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/donut-chart/DonutChart.tsx",
+        "components/ui/charts/donut-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/donut-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -7489,7 +7912,7 @@
       "kind": "map",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/dotted-map-chart.json",
       "manifestEntrySha256": "fe26c8199ed6714710b7605d523bf48e7c2446099056c1ff436dffc4d4b95319",
       "documentationUrl": "https://uipkge.dev/react/maps/dotted-map-chart/",
@@ -7509,7 +7932,10 @@
         "components/ui/charts/dotted-map-chart/DottedMapChart.tsx",
         "components/ui/charts/dotted-map-chart/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/dotted-map-chart/DottedMapChart.tsx",
+        "components/ui/charts/dotted-map-chart/index.ts"
+      ],
       "demoRoute": "/ui-kit/dotted-map-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
@@ -7518,8 +7944,14 @@
         "mapbox-public-token",
         "mapbox-style-and-tile-network"
       ],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -7619,7 +8051,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/dumbbell-chart.json",
       "manifestEntrySha256": "fdcde80d1c5e5a471db49c8bc63f6b56813e78d40d2bc1fcb0c48998a42cff4d",
       "documentationUrl": "https://uipkge.dev/react/charts/dumbbell-chart/",
@@ -7641,13 +8073,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/dumbbell-chart/DumbbellChart.tsx",
+        "components/ui/charts/dumbbell-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/dumbbell-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -7658,7 +8102,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/effect-scatter-chart.json",
       "manifestEntrySha256": "e4593971a7ca04abf3250a313838a9ef301e659f3a306aa79422aa9059d2f2c8",
       "documentationUrl": "https://uipkge.dev/react/charts/effect-scatter-chart/",
@@ -7680,13 +8124,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/effect-scatter-chart/EffectScatterChart.tsx",
+        "components/ui/charts/effect-scatter-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/effect-scatter-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -8102,7 +8558,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/error-bar-chart.json",
       "manifestEntrySha256": "718d486e8040e50f174cdd8623cc9dbe1adf502cc55fdb0c01bf4649685bd75c",
       "documentationUrl": "https://uipkge.dev/react/charts/error-bar-chart/",
@@ -8124,13 +8580,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/error-bar-chart/ErrorBarChart.tsx",
+        "components/ui/charts/error-bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/error-bar-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -8593,7 +9061,7 @@
       "kind": "component",
       "categories": ["control", "navigation"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/fab.json",
       "manifestEntrySha256": "b41245764af2f3c272e8158aa9ad53f44bbbd9cef5bf11d25320b360caa36c78",
       "documentationUrl": "https://uipkge.dev/react/components/fab/",
@@ -8614,13 +9082,20 @@
         "components/ui/fab/fab.variants.ts",
         "components/ui/fab/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/fab/Fab.tsx",
+        "components/ui/fab/fab.variants.ts",
+        "components/ui/fab/index.ts"
+      ],
       "demoRoute": "/ui-kit/fab",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/fab.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT003.json"],
+      "adaptations": [
+        "Defaulted native FAB rendering to type=button while omitting that attribute for asChild composition.",
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -10091,7 +10566,7 @@
       "kind": "component",
       "categories": ["control", "form"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/float-label.json",
       "manifestEntrySha256": "6439a0d044bc77e68abf711e14b09b4137ca18f29a1a670a7830ed06a786109b",
       "documentationUrl": "https://uipkge.dev/react/components/float-label/",
@@ -10111,13 +10586,18 @@
         "components/ui/float-label/FloatLabel.tsx",
         "components/ui/float-label/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/float-label/FloatLabel.tsx",
+        "components/ui/float-label/index.ts"
+      ],
       "demoRoute": "/ui-kit/float-label",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/float-label.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT003.json"],
+      "adaptations": [
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -10633,7 +11113,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/funnel-chart.json",
       "manifestEntrySha256": "15485630d706c2a25524a4b6669b1b2aad3223b0a109e63a41e223d5114fd22c",
       "documentationUrl": "https://uipkge.dev/react/charts/funnel-chart/",
@@ -10655,13 +11135,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/funnel-chart/FunnelChart.tsx",
+        "components/ui/charts/funnel-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/funnel-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -10672,7 +11164,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/gantt.json",
       "manifestEntrySha256": "fd37fc50f20ccdf83430e285274e389debe2bfe411c7cbab2400d60b43fddbdf",
       "documentationUrl": "https://uipkge.dev/react/components/gantt/",
@@ -10699,13 +11191,26 @@
         "components/ui/gantt/index.ts",
         "components/ui/gantt/types.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/gantt/Gantt.tsx",
+        "components/ui/gantt/GanttBar.tsx",
+        "components/ui/gantt/GanttContextMenu.tsx",
+        "components/ui/gantt/GanttHeader.tsx",
+        "components/ui/gantt/GanttMilestone.tsx",
+        "components/ui/gantt/GanttTimeline.tsx",
+        "components/ui/gantt/GanttTree.tsx",
+        "components/ui/gantt/index.ts",
+        "components/ui/gantt/types.ts"
+      ],
       "demoRoute": "/ui-kit/gantt",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/gantt.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT007.json"],
+      "adaptations": [
+        "Pinned Radix Context Menu 2.3.7 exactly through the reviewed dependency.",
+        "Rendered the declared assignee option instead of leaving its prop unused."
+      ],
       "gaps": []
     },
     {
@@ -10716,7 +11221,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/gantt-chart.json",
       "manifestEntrySha256": "ad828164f6d1335360cd33dabe6b3a6c447ce59b7e4ce8e18e2f865364820d2c",
       "documentationUrl": "https://uipkge.dev/react/charts/gantt-chart/",
@@ -10738,13 +11243,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/gantt-chart/GanttChart.tsx",
+        "components/ui/charts/gantt-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/gantt-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -10755,7 +11272,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/gauge-chart.json",
       "manifestEntrySha256": "51263bc8df28685fb1686f80424d504f195e8dc2e5d472cc9caf846543ba4647",
       "documentationUrl": "https://uipkge.dev/react/charts/gauge-chart/",
@@ -10777,13 +11294,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/gauge-chart/GaugeChart.tsx",
+        "components/ui/charts/gauge-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/gauge-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -10954,7 +11483,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/graph-chart.json",
       "manifestEntrySha256": "65c8536aeda5d9a792dcb1b409830d1000708cbca62b6270de2bc457e5fb3d8b",
       "documentationUrl": "https://uipkge.dev/react/charts/graph-chart/",
@@ -10976,13 +11505,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/graph-chart/GraphChart.tsx",
+        "components/ui/charts/graph-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/graph-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -11454,7 +11995,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/heatmap.json",
       "manifestEntrySha256": "56ee75b72f3773fde33f140e68e35f776ab42f750e138797ba47bcb9147d8597",
       "documentationUrl": "https://uipkge.dev/react/charts/heatmap/",
@@ -11476,13 +12017,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/heatmap/Heatmap.tsx",
+        "components/ui/charts/heatmap/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/heatmap",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -11493,7 +12046,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/heikin-ashi-chart.json",
       "manifestEntrySha256": "a03fd0a95efd528452b5842cd9eababa3c552fe4a9a150321eb4bfb437bfbc2c",
       "documentationUrl": "https://uipkge.dev/react/charts/heikin-ashi-chart/",
@@ -11515,13 +12068,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/heikin-ashi-chart/HeikinAshiChart.tsx",
+        "components/ui/charts/heikin-ashi-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/heikin-ashi-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -12069,7 +12634,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/histogram-chart.json",
       "manifestEntrySha256": "08610a7881407c300168c79e7d18374924e333ed1e1d5eb55495151336fe8715",
       "documentationUrl": "https://uipkge.dev/react/charts/histogram-chart/",
@@ -12091,13 +12656,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/histogram-chart/HistogramChart.tsx",
+        "components/ui/charts/histogram-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/histogram-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -12444,7 +13021,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/icicle-chart.json",
       "manifestEntrySha256": "369ed9738dfcb7f85b063fa31a1f60ddbab22e2b03e28bb1be7285b493e053e6",
       "documentationUrl": "https://uipkge.dev/react/charts/icicle-chart/",
@@ -12466,13 +13043,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/icicle-chart/IcicleChart.tsx",
+        "components/ui/charts/icicle-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/icicle-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -12483,7 +13072,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/icon-box.json",
       "manifestEntrySha256": "5e364620fe281476a94d393c4b9c45994984d8cdd2122a53f8957ca74be0d40a",
       "documentationUrl": "https://uipkge.dev/react/components/icon-box/",
@@ -12504,13 +13093,19 @@
         "components/ui/icon-box/icon-box.tsx",
         "components/ui/icon-box/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/icon-box/IconStack.tsx",
+        "components/ui/icon-box/icon-box.tsx",
+        "components/ui/icon-box/index.ts"
+      ],
       "demoRoute": "/ui-kit/icon-box",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/icon-box.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT007.json"],
+      "adaptations": [
+        "Formatted the audited registry source with no behavioral changes."
+      ],
       "gaps": []
     },
     {
@@ -12558,7 +13153,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/icons.json",
       "manifestEntrySha256": "826c154c991b298f9f0ab440ff86c71ea6528299403908675b7713c71fb09233",
       "documentationUrl": "https://uipkge.dev/react/components/icons/",
@@ -12578,13 +13173,18 @@
         "components/ui/icons/icons.tsx",
         "components/ui/icons/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/icons/icons.tsx",
+        "components/ui/icons/index.ts"
+      ],
       "demoRoute": "/ui-kit/icons",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/icons.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT007.json"],
+      "adaptations": [
+        "Formatted the audited registry source; previews use local Lucide SVG children only."
+      ],
       "gaps": []
     },
     {
@@ -12902,7 +13502,7 @@
       "kind": "component",
       "categories": ["control"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/input.json",
       "manifestEntrySha256": "607e863ff635e6d1a71d30cb75d1a733ae265c59ff0463957939fd027b5e7577",
       "documentationUrl": "https://uipkge.dev/react/components/input/",
@@ -12925,13 +13525,23 @@
         "components/ui/input/InputGroupButton.tsx",
         "components/ui/input/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/input/Input.tsx",
+        "components/ui/input/InputGroup.tsx",
+        "components/ui/input/InputGroupAddon.tsx",
+        "components/ui/input/InputGroupButton.tsx",
+        "components/ui/input/index.ts"
+      ],
       "demoRoute": "/ui-kit/input",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/input.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT003.json"],
+      "adaptations": [
+        "Changed Input and InputGroup child sizing to min-w-0 flex behavior so addons and long values remain inside narrow containers.",
+        "Made InputGroupAddon's declared align value observable through data-align.",
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -13509,7 +14119,7 @@
       "kind": "component",
       "categories": ["data-display", "layout"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/kanban.json",
       "manifestEntrySha256": "4fcb1cf7c8a20e0f554340ccba84891bd336ff5d5deb7dff340bc5f3b2803461",
       "documentationUrl": "https://uipkge.dev/react/components/kanban/",
@@ -13530,13 +14140,19 @@
         "components/ui/kanban/index.ts",
         "components/ui/kanban/kanban.variants.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/kanban/Kanban.tsx",
+        "components/ui/kanban/index.ts",
+        "components/ui/kanban/kanban.variants.ts"
+      ],
       "demoRoute": "/ui-kit/kanban",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/kanban.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT008.json"],
+      "adaptations": [
+        "Formatted the audited registry source; pointer and keyboard movement remain consumer-owned local state."
+      ],
       "gaps": []
     },
     {
@@ -13652,7 +14268,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/kbd.json",
       "manifestEntrySha256": "8ccc6ca001c04436f01c708f6c34cef2dcf6c759d311e5422353cf3ff97fefa1",
       "documentationUrl": "https://uipkge.dev/react/components/kbd/",
@@ -13672,13 +14288,18 @@
         "components/ui/kbd/index.ts",
         "components/ui/kbd/kbd.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/kbd/index.ts",
+        "components/ui/kbd/kbd.tsx"
+      ],
       "demoRoute": "/ui-kit/kbd",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/kbd.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT008.json"],
+      "adaptations": [
+        "Formatted the audited registry source with no behavioral changes."
+      ],
       "gaps": []
     },
     {
@@ -13845,7 +14466,7 @@
       "kind": "component",
       "categories": ["form"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/label.json",
       "manifestEntrySha256": "fadc29c2bfd6ca71cf77033a0d5826fb8f0276841844fefd1d3a4201a1c5c6c5",
       "documentationUrl": "https://uipkge.dev/react/components/label/",
@@ -13865,13 +14486,19 @@
         "components/ui/label/Label.tsx",
         "components/ui/label/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/label/Label.tsx",
+        "components/ui/label/index.ts"
+      ],
       "demoRoute": "/ui-kit/label",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT005; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -13882,7 +14509,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/labeled-value.json",
       "manifestEntrySha256": "90b2024c9ca8eb6dc412e0d38d11302a55e9aa86f100e6e3012f5d13dcefe08e",
       "documentationUrl": "https://uipkge.dev/react/components/labeled-value/",
@@ -13902,13 +14529,18 @@
         "components/ui/labeled-value/index.ts",
         "components/ui/labeled-value/labeled-value.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/labeled-value/index.ts",
+        "components/ui/labeled-value/labeled-value.tsx"
+      ],
       "demoRoute": "/ui-kit/labeled-value",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/labeled-value.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT008.json"],
+      "adaptations": [
+        "Formatted the audited registry source with no behavioral changes."
+      ],
       "gaps": []
     },
     {
@@ -14006,7 +14638,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/lazy-image.json",
       "manifestEntrySha256": "ff6fd3de90400c096b2b0dd23088395a57a6aa335a89e933c8cf96d1749ea594",
       "documentationUrl": "https://uipkge.dev/react/components/lazy-image/",
@@ -14026,13 +14658,19 @@
         "components/ui/lazy-image/Img.tsx",
         "components/ui/lazy-image/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/lazy-image/Img.tsx",
+        "components/ui/lazy-image/index.ts"
+      ],
       "demoRoute": "/ui-kit/lazy-image",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/lazy-image.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT008.json"],
+      "adaptations": [
+        "Installed the reviewed Skeleton dependency and retained browser-native image rendering for data-URL and consumer-provided sources.",
+        "Kept the registry's intentional effect-driven visibility/load state synchronization behind a narrow lint boundary."
+      ],
       "gaps": []
     },
     {
@@ -15478,7 +16116,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/line-chart.json",
       "manifestEntrySha256": "25d4d12ac8e9d4b4f2abc8197e037a6aeff528e0a46b3e52f9755708c6cc269d",
       "documentationUrl": "https://uipkge.dev/react/charts/line-chart/",
@@ -15500,13 +16138,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/line-chart/LineChart.tsx",
+        "components/ui/charts/line-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/line-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -15555,7 +16205,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/liquid-fill-chart.json",
       "manifestEntrySha256": "f9b7041e48c51a66894efe971b0de708a8ecfd81beddf2e142949a82cb52f9ef",
       "documentationUrl": "https://uipkge.dev/react/charts/liquid-fill-chart/",
@@ -15576,13 +16226,23 @@
         "components/ui/charts/liquid-fill-chart/index.ts",
         "components/ui/charts/shared.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/liquid-fill-chart/LiquidFillChart.tsx",
+        "components/ui/charts/liquid-fill-chart/index.ts",
+        "components/ui/charts/shared.tsx"
+      ],
       "demoRoute": "/ui-kit/liquid-fill-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -15593,7 +16253,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/list.json",
       "manifestEntrySha256": "fb252ef0836796e76fce01aeb4d99d8521a2ffe81cb95a7e2857fdadc3e43be8",
       "documentationUrl": "https://uipkge.dev/react/components/list/",
@@ -15613,13 +16273,18 @@
         "components/ui/list/index.ts",
         "components/ui/list/list.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/list/index.ts",
+        "components/ui/list/list.tsx"
+      ],
       "demoRoute": "/ui-kit/list",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/list.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT008.json"],
+      "adaptations": [
+        "Corrected disabled-item event propagation and replaced empty prop interfaces with equivalent type aliases."
+      ],
       "gaps": []
     },
     {
@@ -16087,7 +16752,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/lollipop-chart.json",
       "manifestEntrySha256": "15589eb4037d2abe738cb3fd85fbd80f1989d86889de10c47f8aa131913752b0",
       "documentationUrl": "https://uipkge.dev/react/charts/lollipop-chart/",
@@ -16109,13 +16774,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/lollipop-chart/LollipopChart.tsx",
+        "components/ui/charts/lollipop-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/lollipop-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -16214,7 +16891,7 @@
       "kind": "map",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/map.json",
       "manifestEntrySha256": "eb8bd77b21d8dbc5a4ab6385f8f7dbcc41f51d5a6ee6268cf314453457ff938d",
       "documentationUrl": "https://uipkge.dev/react/maps/map/",
@@ -16241,7 +16918,12 @@
         "components/ui/map/map.tsx",
         "components/ui/map/map.variants.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/map/index.ts",
+        "components/ui/map/map.css",
+        "components/ui/map/map.tsx",
+        "components/ui/map/map.variants.ts"
+      ],
       "demoRoute": "/ui-kit/map",
       "requiredPermission": "showcase.view",
       "previewModule": null,
@@ -16250,8 +16932,17 @@
         "mapbox-public-token",
         "mapbox-style-and-tile-network"
       ],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "Environment lookup uses NEXT_PUBLIC_MAPBOX_ENABLED and NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN, matching the project opt-in contract.",
+        "Provider attribution controls remain enabled.",
+        "MapVariant is re-exported from the concrete module for the installed map chart imports."
+      ],
       "gaps": []
     },
     {
@@ -16946,7 +17637,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/marimekko-chart.json",
       "manifestEntrySha256": "0c7b5bbbc8fba4045f52aa13c8f7f770cb006163771e0f1cb8f65bde5110a9f4",
       "documentationUrl": "https://uipkge.dev/react/charts/marimekko-chart/",
@@ -16968,13 +17659,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/marimekko-chart/MarimekkoChart.tsx",
+        "components/ui/charts/marimekko-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/marimekko-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -17828,7 +18531,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/nightingale-chart.json",
       "manifestEntrySha256": "bba2fd9aa3933387836eeb290ba2d33d0ea87f2ed16f352fffb4d04d05a70b78",
       "documentationUrl": "https://uipkge.dev/react/charts/nightingale-chart/",
@@ -17850,13 +18553,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/nightingale-chart/NightingaleChart.tsx",
+        "components/ui/charts/nightingale-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/nightingale-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -18374,7 +19089,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/parallel-chart.json",
       "manifestEntrySha256": "b4960c4f09cb23f73d2dc8d1637be5ab6e055a00bc1024b7d53ac61ad43e8199",
       "documentationUrl": "https://uipkge.dev/react/charts/parallel-chart/",
@@ -18396,13 +19111,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/parallel-chart/ParallelChart.tsx",
+        "components/ui/charts/parallel-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/parallel-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -18413,7 +19140,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/pareto-chart.json",
       "manifestEntrySha256": "3b54414d305f011f72195984e5c0f9055d03179a6bda2c838f9614e6202804eb",
       "documentationUrl": "https://uipkge.dev/react/charts/pareto-chart/",
@@ -18435,13 +19162,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/pareto-chart/ParetoChart.tsx",
+        "components/ui/charts/pareto-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/pareto-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -18548,7 +19287,7 @@
       "kind": "component",
       "categories": ["control", "form"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/password-input.json",
       "manifestEntrySha256": "a1615093377d0769d7ac1c02d4850c495d2ec8cef4a934c68e6a09b153513042",
       "documentationUrl": "https://uipkge.dev/react/components/password-input/",
@@ -18569,13 +19308,19 @@
         "components/ui/password-input/index.ts",
         "components/ui/password-input/password-input.variants.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/password-input/PasswordInput.tsx",
+        "components/ui/password-input/index.ts",
+        "components/ui/password-input/password-input.variants.ts"
+      ],
       "demoRoute": "/ui-kit/password-input",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/password-input.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT004.json"],
+      "adaptations": [
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -18676,7 +19421,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/payment-card.json",
       "manifestEntrySha256": "1bc2f9eb43f521e6964088519f8f96b85b1b5dc06f8797a8a7ecb60780ab26d0",
       "documentationUrl": "https://uipkge.dev/react/components/payment-card/",
@@ -18696,13 +19441,18 @@
         "components/ui/payment-card/index.ts",
         "components/ui/payment-card/payment-card.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/payment-card/index.ts",
+        "components/ui/payment-card/payment-card.tsx"
+      ],
       "demoRoute": "/ui-kit/payment-card",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/payment-card.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT009.json"],
+      "adaptations": [
+        "Kept the component purely presentational; the preview uses fixed synthetic values and disables pointer tilt."
+      ],
       "gaps": []
     },
     {
@@ -18982,7 +19732,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/pictorial-bar-chart.json",
       "manifestEntrySha256": "e30a8cb85c14708bd20a5d4bb35dfe46f43503e944fe0cf02a06be408ff1c65e",
       "documentationUrl": "https://uipkge.dev/react/charts/pictorial-bar-chart/",
@@ -19004,13 +19754,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/pictorial-bar-chart/PictorialBarChart.tsx",
+        "components/ui/charts/pictorial-bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/pictorial-bar-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -19021,7 +19783,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/pie-chart.json",
       "manifestEntrySha256": "7d3dba64b38f539cafada1999704669214681113b133000ba6ee1e4597373535",
       "documentationUrl": "https://uipkge.dev/react/charts/pie-chart/",
@@ -19043,13 +19805,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/pie-chart/PieChart.tsx",
+        "components/ui/charts/pie-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/pie-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -19142,7 +19916,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/polar-bar-chart.json",
       "manifestEntrySha256": "e60fbea765af180a88abce2b9f38745b28cea28f746e3f65f84fc0d8f064f58e",
       "documentationUrl": "https://uipkge.dev/react/charts/polar-bar-chart/",
@@ -19164,13 +19938,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/polar-bar-chart/PolarBarChart.tsx",
+        "components/ui/charts/polar-bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/polar-bar-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -19225,7 +20011,7 @@
       "kind": "component",
       "categories": ["overlay"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/popover.json",
       "manifestEntrySha256": "fc02cc3339da9cd47202aab894efbcf45bc5ffc98e6cfcf4b002c2c26642d3fc",
       "documentationUrl": "https://uipkge.dev/react/components/popover/",
@@ -19245,13 +20031,19 @@
         "components/ui/popover/index.ts",
         "components/ui/popover/popover.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/popover/index.ts",
+        "components/ui/popover/popover.tsx"
+      ],
       "demoRoute": "/ui-kit/popover",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT003.json"],
+      "adaptations": [
+        "Corrected persisted uncontrolled-state wiring and deferred optional storage hydration to a cancellable browser task.",
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -19262,7 +20054,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/population-pyramid-chart.json",
       "manifestEntrySha256": "eba46de6268f360e1b7f5b08e84b29e1ba80ec70f17882b66e50aaa11347e514",
       "documentationUrl": "https://uipkge.dev/react/charts/population-pyramid-chart/",
@@ -19284,13 +20076,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/population-pyramid-chart/PopulationPyramidChart.tsx",
+        "components/ui/charts/population-pyramid-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/population-pyramid-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -20343,7 +21147,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/progress-ring-chart.json",
       "manifestEntrySha256": "46e1998e5798807d99f3fe11e4e8415300ad56e65720e2535bcfd1fe510e08a0",
       "documentationUrl": "https://uipkge.dev/react/charts/progress-ring-chart/",
@@ -20364,13 +21168,23 @@
         "components/ui/charts/progress-ring-chart/index.ts",
         "components/ui/charts/shared.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/progress-ring-chart/ProgressRingChart.tsx",
+        "components/ui/charts/progress-ring-chart/index.ts",
+        "components/ui/charts/shared.tsx"
+      ],
       "demoRoute": "/ui-kit/progress-ring-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -20667,7 +21481,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/qr-code.json",
       "manifestEntrySha256": "7b52338d91bf83c26fdf0f5cdaa05bb9518e2c0a4a6c8d47ac12de94444ecab2",
       "documentationUrl": "https://uipkge.dev/react/components/qr-code/",
@@ -20687,13 +21501,18 @@
         "components/ui/qr-code/QrCode.tsx",
         "components/ui/qr-code/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/qr-code/QrCode.tsx",
+        "components/ui/qr-code/index.ts"
+      ],
       "demoRoute": "/ui-kit/qr-code",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/qr-code.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT009.json"],
+      "adaptations": [
+        "Pinned qrcode 1.5.4 and its 1.5.6 types exactly; generation remains entirely in the browser."
+      ],
       "gaps": []
     },
     {
@@ -20704,7 +21523,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/quadrant-chart.json",
       "manifestEntrySha256": "64bc2763e2e83e59344ff13c7045860ac1e71c446f712154082579b4c84fcda9",
       "documentationUrl": "https://uipkge.dev/react/charts/quadrant-chart/",
@@ -20726,13 +21545,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/quadrant-chart/QuadrantChart.tsx",
+        "components/ui/charts/quadrant-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/quadrant-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -20861,7 +21692,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/radar-chart.json",
       "manifestEntrySha256": "f02a9b1ec843a017ea6f9475f7cd0e92ae1ed4a94aa0c963af3d6ba83a32406e",
       "documentationUrl": "https://uipkge.dev/react/charts/radar-chart/",
@@ -20883,13 +21714,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/radar-chart/RadarChart.tsx",
+        "components/ui/charts/radar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/radar-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -20982,7 +21825,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/range-area-chart.json",
       "manifestEntrySha256": "aa827f7654abad7cb63597046d689170d4add048af9f163905fdf22400865791",
       "documentationUrl": "https://uipkge.dev/react/charts/range-area-chart/",
@@ -21004,13 +21847,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/range-area-chart/RangeAreaChart.tsx",
+        "components/ui/charts/range-area-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/range-area-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -21021,7 +21876,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/range-bar-chart.json",
       "manifestEntrySha256": "f177eb74de0a2667ef7532dd4014261b1a3829d65dd7278880ede269edd79587",
       "documentationUrl": "https://uipkge.dev/react/charts/range-bar-chart/",
@@ -21043,13 +21898,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/range-bar-chart/RangeBarChart.tsx",
+        "components/ui/charts/range-bar-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/range-bar-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -21060,7 +21927,7 @@
       "kind": "component",
       "categories": ["date-time"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/range-calendar.json",
       "manifestEntrySha256": "5f30de773907631018a1c88964def0047aec1ef10708a6d04dec85cc62e9ebff",
       "documentationUrl": "https://uipkge.dev/react/components/range-calendar/",
@@ -21080,13 +21947,19 @@
         "components/ui/range-calendar/RangeCalendar.tsx",
         "components/ui/range-calendar/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/range-calendar/RangeCalendar.tsx",
+        "components/ui/range-calendar/index.ts"
+      ],
       "demoRoute": "/ui-kit/range-calendar",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT005; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -21325,7 +22198,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/raw-chart.json",
       "manifestEntrySha256": "a8f69dcd8140413092592031ce880135bd9bff90b53048c46518b06a096de39e",
       "documentationUrl": "https://uipkge.dev/react/charts/raw-chart/",
@@ -21347,13 +22220,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/raw-chart/RawChart.tsx",
+        "components/ui/charts/raw-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/raw-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -22100,7 +22985,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/sankey-chart.json",
       "manifestEntrySha256": "b39c0f085653b8c59767d75df51c817c5bd45fdd3d0b3e184939a3461774ea7e",
       "documentationUrl": "https://uipkge.dev/react/charts/sankey-chart/",
@@ -22122,13 +23007,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/sankey-chart/SankeyChart.tsx",
+        "components/ui/charts/sankey-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/sankey-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -22184,7 +23081,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/scatter-chart.json",
       "manifestEntrySha256": "defda9e38b87b6f0517b98da9ead901bc0a2987d08b064b934a18565938bc451",
       "documentationUrl": "https://uipkge.dev/react/charts/scatter-chart/",
@@ -22206,13 +23103,25 @@
         "components/ui/charts/shared.tsx",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/scatter-chart/ScatterChart.tsx",
+        "components/ui/charts/scatter-chart/index.ts",
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/scatter-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -22266,7 +23175,7 @@
       "kind": "component",
       "categories": ["layout"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/scroll-area.json",
       "manifestEntrySha256": "05657703c1c257ce15101cb41e669d32026ca0e9d9e5d3e6e3a78ccf5f612291",
       "documentationUrl": "https://uipkge.dev/react/components/scroll-area/",
@@ -22286,13 +23195,19 @@
         "components/ui/scroll-area/index.ts",
         "components/ui/scroll-area/scroll-area.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/scroll-area/index.ts",
+        "components/ui/scroll-area/scroll-area.tsx"
+      ],
       "demoRoute": "/ui-kit/scroll-area",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT009.json"],
+      "adaptations": [
+        "Pinned Radix Scroll Area 1.2.18 exactly as the reviewed Transfer dependency.",
+        "Registry source is formatted with the repository Prettier configuration; its own preview and ticket verification remain deferred."
+      ],
       "gaps": []
     },
     {
@@ -22688,7 +23603,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/segmented-gauge.json",
       "manifestEntrySha256": "fb56d258926ba41327ad8c8e6ba976565bea146fc935c87d38ec4e71f132ff53",
       "documentationUrl": "https://uipkge.dev/react/charts/segmented-gauge/",
@@ -22708,13 +23623,22 @@
         "components/ui/charts/segmented-gauge/SegmentedGauge.tsx",
         "components/ui/charts/segmented-gauge/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/segmented-gauge/SegmentedGauge.tsx",
+        "components/ui/charts/segmented-gauge/index.ts"
+      ],
       "demoRoute": "/ui-kit/segmented-gauge",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -22725,7 +23649,7 @@
       "kind": "component",
       "categories": ["control"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/select.json",
       "manifestEntrySha256": "d996e49bcf313fdec6ad078f478c5cfd52ba51006ee174739f0099649a750075",
       "documentationUrl": "https://uipkge.dev/react/components/select/",
@@ -22746,13 +23670,19 @@
         "components/ui/select/index.ts",
         "components/ui/select/select.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/select/NativeSelect.tsx",
+        "components/ui/select/index.ts",
+        "components/ui/select/select.tsx"
+      ],
       "demoRoute": "/ui-kit/select",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/select.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT004.json"],
+      "adaptations": [
+        "Pinned the Radix Select dependency to its exact resolved version and formatted registry source."
+      ],
       "gaps": []
     },
     {
@@ -22807,7 +23737,7 @@
       "kind": "component",
       "categories": ["layout"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/separator.json",
       "manifestEntrySha256": "5714bb0a8b09a055d7fb5da771e3c88a6475ba13f92420e2d316ddd68f0b3cb1",
       "documentationUrl": "https://uipkge.dev/react/components/separator/",
@@ -22827,13 +23757,19 @@
         "components/ui/separator/Separator.tsx",
         "components/ui/separator/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/separator/Separator.tsx",
+        "components/ui/separator/index.ts"
+      ],
       "demoRoute": "/ui-kit/separator",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT005; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -22962,7 +23898,7 @@
       "kind": "component",
       "categories": ["overlay"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/sheet.json",
       "manifestEntrySha256": "5de1f6ccbddd16497cb4e789907ea812f33e07d099b9c07dabeee3c84bd305b9",
       "documentationUrl": "https://uipkge.dev/react/components/sheet/",
@@ -22982,13 +23918,19 @@
         "components/ui/sheet/index.ts",
         "components/ui/sheet/sheet.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/sheet/index.ts",
+        "components/ui/sheet/sheet.tsx"
+      ],
       "demoRoute": "/ui-kit/sheet",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT005; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -23445,7 +24387,7 @@
       "kind": "component",
       "categories": ["control", "form"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/signature-pad.json",
       "manifestEntrySha256": "029c7839d7e5a67297e5dbf31ce6516d5afaacd15b44587abad4f6e027eca2d2",
       "documentationUrl": "https://uipkge.dev/react/components/signature-pad/",
@@ -23466,13 +24408,21 @@
         "components/ui/signature-pad/index.ts",
         "components/ui/signature-pad/signature-pad.variants.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/signature-pad/SignaturePad.tsx",
+        "components/ui/signature-pad/index.ts",
+        "components/ui/signature-pad/signature-pad.variants.ts"
+      ],
       "demoRoute": "/ui-kit/signature-pad",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/signature-pad.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT004.json"],
+      "adaptations": [
+        "Made the canvas scale inside narrow containers while preserving logical drawing coordinates and high-DPI output.",
+        "Removed an unsupported canvas aria-disabled attribute and exposed only the presence, never the value, of an external model value.",
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -23483,7 +24433,7 @@
       "kind": "component",
       "categories": ["feedback"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/skeleton.json",
       "manifestEntrySha256": "f4d1747ee7048aa6fe9b7144b98b2acaf4241576a50536f5270d188928aca12a",
       "documentationUrl": "https://uipkge.dev/react/components/skeleton/",
@@ -23504,13 +24454,20 @@
         "components/ui/skeleton/skeleton.tsx",
         "components/ui/skeleton/skeleton.variants.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/skeleton/index.ts",
+        "components/ui/skeleton/skeleton.tsx",
+        "components/ui/skeleton/skeleton.variants.ts"
+      ],
       "demoRoute": "/ui-kit/skeleton",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT008.json"],
+      "adaptations": [
+        "Installed as the reviewed Lazy Image dependency.",
+        "Registry source is formatted with the repository Prettier configuration; its own preview and ticket verification remain deferred."
+      ],
       "gaps": []
     },
     {
@@ -23602,7 +24559,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/slope-chart.json",
       "manifestEntrySha256": "bfd5c77e6cada9fd3286407a1a6aa2d20dbfa08a2381db75361c288c4c006afc",
       "documentationUrl": "https://uipkge.dev/react/charts/slope-chart/",
@@ -23624,13 +24581,25 @@
         "components/ui/charts/slope-chart/index.ts",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/slope-chart/SlopeChart.tsx",
+        "components/ui/charts/slope-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/slope-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -23677,7 +24646,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/smooth-funnel.json",
       "manifestEntrySha256": "82e9bdeafff56597525758649e2e073825caf638809c55e7a77f9301720fe92c",
       "documentationUrl": "https://uipkge.dev/react/charts/smooth-funnel/",
@@ -23697,13 +24666,22 @@
         "components/ui/charts/smooth-funnel/SmoothFunnel.tsx",
         "components/ui/charts/smooth-funnel/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/smooth-funnel/SmoothFunnel.tsx",
+        "components/ui/charts/smooth-funnel/index.ts"
+      ],
       "demoRoute": "/ui-kit/smooth-funnel",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -23926,7 +24904,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/sparkline.json",
       "manifestEntrySha256": "06e107b1744d0278babfedadbc9b2d9b08e029b0f26269df70184364350510fa",
       "documentationUrl": "https://uipkge.dev/react/charts/sparkline/",
@@ -23948,13 +24926,25 @@
         "components/ui/charts/sparkline/index.ts",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/sparkline/Sparkline.tsx",
+        "components/ui/charts/sparkline/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/sparkline",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -23965,7 +24955,7 @@
       "kind": "component",
       "categories": ["control", "navigation"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/speed-dial.json",
       "manifestEntrySha256": "2ba999d2bb3de8252eac45f5352d324a846b3efefd7ec18343eefe8222b59f23",
       "documentationUrl": "https://uipkge.dev/react/components/speed-dial/",
@@ -23985,13 +24975,20 @@
         "components/ui/speed-dial/SpeedDial.tsx",
         "components/ui/speed-dial/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/speed-dial/SpeedDial.tsx",
+        "components/ui/speed-dial/index.ts"
+      ],
       "demoRoute": "/ui-kit/speed-dial",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/speed-dial.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT004.json"],
+      "adaptations": [
+        "Added menu and menuitem semantics matching the trigger's declared popup type.",
+        "Preserved the already adapted CAT003 FAB and Popover dependency files rather than overwriting them.",
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -24002,7 +24999,7 @@
       "kind": "component",
       "categories": ["feedback"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/spinner.json",
       "manifestEntrySha256": "f2bd06d44607a3799e2b918936fa2629c9311ba559707d191075a29dbdf96986",
       "documentationUrl": "https://uipkge.dev/react/components/spinner/",
@@ -24023,13 +25020,20 @@
         "components/ui/spinner/index.ts",
         "components/ui/spinner/spinner.variants.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/spinner/Spinner.tsx",
+        "components/ui/spinner/index.ts",
+        "components/ui/spinner/spinner.variants.ts"
+      ],
       "demoRoute": "/ui-kit/spinner",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT005; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -24160,7 +25164,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/stacked-area-chart.json",
       "manifestEntrySha256": "c679ea53adfec73fd94d91be02905bbc6ac39335b21e4c11002d51397dc66b4f",
       "documentationUrl": "https://uipkge.dev/react/charts/stacked-area-chart/",
@@ -24182,13 +25186,25 @@
         "components/ui/charts/stacked-area-chart/index.ts",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/stacked-area-chart/StackedAreaChart.tsx",
+        "components/ui/charts/stacked-area-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/stacked-area-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -24199,7 +25215,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/stacked-bar-chart.json",
       "manifestEntrySha256": "ed499513ad94e2ec5a0f850fd6ed717e46ebddf5f09ff762e25c1897c23a257d",
       "documentationUrl": "https://uipkge.dev/react/charts/stacked-bar-chart/",
@@ -24221,13 +25237,25 @@
         "components/ui/charts/stacked-bar-chart/index.ts",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/stacked-bar-chart/StackedBarChart.tsx",
+        "components/ui/charts/stacked-bar-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/stacked-bar-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -24848,7 +25876,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/sunburst-chart.json",
       "manifestEntrySha256": "d5143707124d33b635c9f4d0f2b4be31ad85749bc8df2e0abe9aaf8354611097",
       "documentationUrl": "https://uipkge.dev/react/charts/sunburst-chart/",
@@ -24870,13 +25898,25 @@
         "components/ui/charts/sunburst-chart/index.ts",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/sunburst-chart/SunburstChart.tsx",
+        "components/ui/charts/sunburst-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/sunburst-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -25023,7 +26063,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/table.json",
       "manifestEntrySha256": "cd4b54287cff7772a9c20a93332e85430359b6719f6ec4e1f56e3c2cd39bbb2e",
       "documentationUrl": "https://uipkge.dev/react/components/table/",
@@ -25044,13 +26084,19 @@
         "components/ui/table/table.tsx",
         "components/ui/table/utils.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/table/index.ts",
+        "components/ui/table/table.tsx",
+        "components/ui/table/utils.ts"
+      ],
       "demoRoute": "/ui-kit/table",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/table.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT009.json"],
+      "adaptations": [
+        "Reused the reviewed CAT005 installation and compatible TanStack Table 8.21.3 pin without overwriting either."
+      ],
       "gaps": []
     },
     {
@@ -25828,7 +26874,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/theme-river.json",
       "manifestEntrySha256": "171ad507ed8f69703a4a459561d5f2e386065de0db25222f3235caf3cb6e752b",
       "documentationUrl": "https://uipkge.dev/react/charts/theme-river/",
@@ -25850,13 +26896,25 @@
         "components/ui/charts/theme-river/index.ts",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/theme-river/ThemeRiver.tsx",
+        "components/ui/charts/theme-river/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/theme-river",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -26083,7 +27141,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/timeline.json",
       "manifestEntrySha256": "3d3e2a47e20c8c52d247da7aadce468a97ea0e792ac328d40551cf39e9566204",
       "documentationUrl": "https://uipkge.dev/react/components/timeline/",
@@ -26105,13 +27163,20 @@
         "components/ui/timeline/timeline.tsx",
         "components/ui/timeline/timeline.variants.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/timeline/context.ts",
+        "components/ui/timeline/index.ts",
+        "components/ui/timeline/timeline.tsx",
+        "components/ui/timeline/timeline.variants.ts"
+      ],
       "demoRoute": "/ui-kit/timeline",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/timeline.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT009.json"],
+      "adaptations": [
+        "Formatted the audited registry source; injected animation styles are local and honor reduced motion."
+      ],
       "gaps": []
     },
     {
@@ -26453,7 +27518,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/transfer.json",
       "manifestEntrySha256": "3c58a6affb6e39df2326f9994536532dfc998b04e6a1bcda48f6bc1714901e6e",
       "documentationUrl": "https://uipkge.dev/react/components/transfer/",
@@ -26473,13 +27538,19 @@
         "components/ui/transfer/index.ts",
         "components/ui/transfer/transfer.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/transfer/index.ts",
+        "components/ui/transfer/transfer.tsx"
+      ],
       "demoRoute": "/ui-kit/transfer",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/transfer.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT009.json"],
+      "adaptations": [
+        "Installed the reviewed Scroll Area dependency and pinned Radix Scroll Area 1.2.18 exactly.",
+        "Kept the registry's stable drag/drop state ref and pagination synchronization behind narrow lint boundaries."
+      ],
       "gaps": []
     },
     {
@@ -26490,7 +27561,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/tree-chart.json",
       "manifestEntrySha256": "f7d64c5f6cc73b51488bff1a70371b28f786e199c47da2dd742f2745f252c7a7",
       "documentationUrl": "https://uipkge.dev/react/charts/tree-chart/",
@@ -26512,13 +27583,25 @@
         "components/ui/charts/tree-chart/index.ts",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/tree-chart/TreeChart.tsx",
+        "components/ui/charts/tree-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/tree-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -26529,7 +27612,7 @@
       "kind": "component",
       "categories": ["control", "form"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/tree-select.json",
       "manifestEntrySha256": "3b153bf25ff24fbcb7b79ce6ef6f3e06902ae03289d8ce6efdf940b8911bba4c",
       "documentationUrl": "https://uipkge.dev/react/components/tree-select/",
@@ -26552,13 +27635,23 @@
         "components/ui/tree-select/tree-select.variants.ts",
         "components/ui/tree-select/types.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/tree-select/TreeSelect.tsx",
+        "components/ui/tree-select/TreeSelectNode.tsx",
+        "components/ui/tree-select/index.ts",
+        "components/ui/tree-select/tree-select.variants.ts",
+        "components/ui/tree-select/types.ts"
+      ],
       "demoRoute": "/ui-kit/tree-select",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/tree-select.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT004.json"],
+      "adaptations": [
+        "Added stable accessible naming and a controlled dialog relationship for the tree chooser.",
+        "Removed the nested interactive clear control and retained keyboard clearing on the single trigger.",
+        "Preserved the already adapted CAT003 Popover dependency instead of overwriting it and formatted registry source."
+      ],
       "gaps": []
     },
     {
@@ -26569,7 +27662,7 @@
       "kind": "component",
       "categories": ["data", "display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/tree-table.json",
       "manifestEntrySha256": "836143d5b87ca79f4c364092fa055b91947b53967c7c45308c6c930ed0b9c78b",
       "documentationUrl": "https://uipkge.dev/react/components/tree-table/",
@@ -26590,13 +27683,21 @@
         "components/ui/tree-table/index.ts",
         "components/ui/tree-table/types.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/tree-table/TreeTable.tsx",
+        "components/ui/tree-table/index.ts",
+        "components/ui/tree-table/types.ts"
+      ],
       "demoRoute": "/ui-kit/tree-table",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/tree-table.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT005.json"],
+      "adaptations": [
+        "Applied treegrid semantics and a stable accessible name to the actual table rather than a wrapper around a nested table.",
+        "Added an explicit accessible loading status and kept open-ended consumer row fields narrowly scoped in ESLint.",
+        "Formatted registry source with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -26607,7 +27708,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/tree-view.json",
       "manifestEntrySha256": "e195cb87cb349157a9aed465d18a9d7f0a5265faae3b44f7a2655bebe24a9d14",
       "documentationUrl": "https://uipkge.dev/react/components/tree-view/",
@@ -26629,13 +27730,20 @@
         "components/ui/tree-view/tree-view.tsx",
         "components/ui/tree-view/types.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/tree-view/context.ts",
+        "components/ui/tree-view/index.ts",
+        "components/ui/tree-view/tree-view.tsx",
+        "components/ui/tree-view/types.ts"
+      ],
       "demoRoute": "/ui-kit/tree-view",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/tree-view.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT010.json"],
+      "adaptations": [
+        "Kept the registry's controlled-selection synchronization behind a narrow lint boundary and verified keyboard navigation."
+      ],
       "gaps": []
     },
     {
@@ -26646,7 +27754,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/treemap-chart.json",
       "manifestEntrySha256": "83e656198876149aa98a086f0870fcbcf6748fe543d9c6548723a0fedb5cb29a",
       "documentationUrl": "https://uipkge.dev/react/charts/treemap-chart/",
@@ -26668,13 +27776,25 @@
         "components/ui/charts/treemap-chart/index.ts",
         "components/ui/charts/useChartTheme.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/treemap-chart/TreemapChart.tsx",
+        "components/ui/charts/treemap-chart/index.ts",
+        "components/ui/charts/useChartTheme.ts"
+      ],
       "demoRoute": "/ui-kit/treemap-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -26768,7 +27888,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/uptime-tracker-chart.json",
       "manifestEntrySha256": "d2b2efa45f610695e95bc8c2cfbd5526a3ade4b25692a325495f8a095cc13545",
       "documentationUrl": "https://uipkge.dev/react/charts/uptime-tracker-chart/",
@@ -26789,13 +27909,23 @@
         "components/ui/charts/uptime-tracker-chart/UptimeTrackerChart.tsx",
         "components/ui/charts/uptime-tracker-chart/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/uptime-tracker-chart/UptimeTrackerChart.tsx",
+        "components/ui/charts/uptime-tracker-chart/index.ts"
+      ],
       "demoRoute": "/ui-kit/uptime-tracker-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -27555,7 +28685,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/violin-chart.json",
       "manifestEntrySha256": "e425cfb4e919a1cc5b60d064a576aec2108e3a8198c7cc18d6acdc33548c6ef7",
       "documentationUrl": "https://uipkge.dev/react/charts/violin-chart/",
@@ -27577,13 +28707,25 @@
         "components/ui/charts/violin-chart/ViolinChart.tsx",
         "components/ui/charts/violin-chart/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts",
+        "components/ui/charts/violin-chart/ViolinChart.tsx",
+        "components/ui/charts/violin-chart/index.ts"
+      ],
       "demoRoute": "/ui-kit/violin-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -27637,7 +28779,7 @@
       "kind": "component",
       "categories": ["data-display"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "verified",
       "manifestUrl": "https://uipkge.dev/r/react/virtual-list.json",
       "manifestEntrySha256": "f69d7e435b583f00f9f0fc7f0564b809179f0385be18ef88cefea4f2740d8c31",
       "documentationUrl": "https://uipkge.dev/react/components/virtual-list/",
@@ -27657,13 +28799,18 @@
         "components/ui/virtual-list/index.ts",
         "components/ui/virtual-list/virtual-list.tsx"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/virtual-list/index.ts",
+        "components/ui/virtual-list/virtual-list.tsx"
+      ],
       "demoRoute": "/ui-kit/virtual-list",
       "requiredPermission": "showcase.view",
-      "previewModule": null,
+      "previewModule": "features/showcase/previews/virtual-list.tsx",
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": ["catalogue/evidence/CAT010.json"],
+      "adaptations": [
+        "Pinned TanStack React Virtual 3.14.13 exactly, replaced explicit any constraints with unknown records, and confined the compiler compatibility exception to this boundary."
+      ],
       "gaps": []
     },
     {
@@ -27812,7 +28959,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/waffle-chart.json",
       "manifestEntrySha256": "2abc16a810fc34bc1023b0188706ba044f85a44528527b3e13577ab5a5f6ae78",
       "documentationUrl": "https://uipkge.dev/react/charts/waffle-chart/",
@@ -27833,13 +28980,23 @@
         "components/ui/charts/waffle-chart/WaffleChart.tsx",
         "components/ui/charts/waffle-chart/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/waffle-chart/WaffleChart.tsx",
+        "components/ui/charts/waffle-chart/index.ts"
+      ],
       "demoRoute": "/ui-kit/waffle-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {
@@ -27976,7 +29133,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/waterfall-chart.json",
       "manifestEntrySha256": "330efbe2fa9a7640d385af6dc744e2b2e9c4ef1b18c27695f9091ab222313f66",
       "documentationUrl": "https://uipkge.dev/react/charts/waterfall-chart/",
@@ -27998,13 +29155,25 @@
         "components/ui/charts/waterfall-chart/WaterfallChart.tsx",
         "components/ui/charts/waterfall-chart/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/useChartTheme.ts",
+        "components/ui/charts/waterfall-chart/WaterfallChart.tsx",
+        "components/ui/charts/waterfall-chart/index.ts"
+      ],
       "demoRoute": "/ui-kit/waterfall-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration.",
+        "The shared chart foundation adds a requestAnimationFrame fallback and a nested-partial option merge type correction."
+      ],
       "gaps": []
     },
     {
@@ -28224,7 +29393,7 @@
       "kind": "chart",
       "categories": ["chart"],
       "registryType": "registry:ui",
-      "status": "discovered",
+      "status": "installed",
       "manifestUrl": "https://uipkge.dev/r/react/word-cloud-chart.json",
       "manifestEntrySha256": "b575f6406dfd2e1456cdb3776f6e13bad7bbbd5a775b6bb579c2235d41f2567e",
       "documentationUrl": "https://uipkge.dev/react/charts/word-cloud-chart/",
@@ -28245,13 +29414,23 @@
         "components/ui/charts/word-cloud-chart/WordCloudChart.tsx",
         "components/ui/charts/word-cloud-chart/index.ts"
       ],
-      "installedPaths": [],
+      "installedPaths": [
+        "components/ui/charts/shared.tsx",
+        "components/ui/charts/word-cloud-chart/WordCloudChart.tsx",
+        "components/ui/charts/word-cloud-chart/index.ts"
+      ],
       "demoRoute": "/ui-kit/word-cloud-chart",
       "requiredPermission": "showcase.view",
       "previewModule": null,
       "externalRequirements": [],
-      "evidence": [],
-      "adaptations": [],
+      "evidence": [
+        "catalogue/evidence/CAT002.json",
+        "catalogue/evidence/CAT002-manifests.json"
+      ],
+      "adaptations": [
+        "Installed as a reviewed transitive registry dependency of CAT002; its own preview and ticket verification remain deferred.",
+        "Registry source is formatted with the repository Prettier configuration."
+      ],
       "gaps": []
     },
     {

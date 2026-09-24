@@ -4,13 +4,13 @@
   "generatedFrom": {
     "capturedAt": "2026-09-24T00:00:00.000Z",
     "upstreamRevision": "744eb7902473a05c42f8bf707847fc6c89b0096e",
-    "snapshotSha256": "79a255b220051e0e067ce46753c06ab48a040479d0769a844966b98fea4f8753"
+    "snapshotSha256": "3e144dff7668273a6d6776b13d8e8fe11cc3e5f062588af1940bbf1d4d93d054"
   },
   "summary": {
     "tickets": 611,
-    "planned": 570,
+    "planned": 561,
     "blockedUpstream": 38,
-    "complete": 3,
+    "complete": 12,
     "items": 713
   },
   "tickets": [
@@ -31,7 +31,7 @@
     },
     {
       "id": "CAT002",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "chart",
       "complex": false,
@@ -46,7 +46,7 @@
     },
     {
       "id": "CAT003",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "control",
       "complex": false,
@@ -61,7 +61,7 @@
     },
     {
       "id": "CAT004",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "control",
       "complex": false,
@@ -82,7 +82,7 @@
     },
     {
       "id": "CAT005",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "data",
       "complex": false,
@@ -97,7 +97,7 @@
     },
     {
       "id": "CAT006",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "data-display",
       "complex": false,
@@ -112,7 +112,7 @@
     },
     {
       "id": "CAT007",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "data-display",
       "complex": false,
@@ -127,7 +127,7 @@
     },
     {
       "id": "CAT008",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "data-display",
       "complex": false,
@@ -142,7 +142,7 @@
     },
     {
       "id": "CAT009",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "data-display",
       "complex": false,
@@ -157,7 +157,7 @@
     },
     {
       "id": "CAT010",
-      "status": "planned",
+      "status": "complete",
       "kind": "component",
       "category": "data-display",
       "complex": false,

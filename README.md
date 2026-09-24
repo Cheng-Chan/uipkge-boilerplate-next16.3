@@ -31,8 +31,8 @@ pnpm preview
 that directory; this project does not use `next start`.
 
 The current export includes a responsive public `/` composition, `/login`, `/signup`, `/dashboard`,
-`/access-control`, `/403`, the searchable `/ui-kit`, and a generated item record route for every
-tracked catalogue slug.
+`/access-control`, `/403`, the searchable `/ui-kit`, an on-demand `/ui-kit/gallery`, and a generated
+item record route for every tracked catalogue slug.
 Login uses the deliberately public demo accounts shown on the page and stores only a versioned
 fixture identity reference in `sessionStorage`. Sign-up is a form simulation and does not create an
 account. Protected routes and permissions demonstrate browser-side presentation behavior only.

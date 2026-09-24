@@ -1,5 +1,55 @@
 import { expect, test } from "@playwright/test";
 
+test("opens the verified gallery from home and reveals previews on demand", async ({
+  page,
+}) => {
+  const browserErrors: string[] = [];
+  const requests: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "error") browserErrors.push(message.text());
+  });
+  page.on("pageerror", (error) => browserErrors.push(error.message));
+  page.on("request", (request) => requests.push(request.url()));
+
+  await page.goto("/");
+  await page.getByRole("link", { name: /View 39 live components/ }).click();
+  await expect(page).toHaveURL(/\/login\/?\?next=%2Fui-kit%2Fgallery/);
+  await page.getByRole("button", { name: "Use demo-viewer" }).click();
+  await page.getByRole("button", { name: "Enter demo" }).click();
+
+  await expect(
+    page.getByRole("heading", {
+      level: 1,
+      name: "39 verified components, ready to try",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Component groups" }),
+  ).toContainText("Data Display (22)");
+
+  await page.getByRole("button", { name: "Load Kbd preview" }).click();
+  const keyboardPreview = page
+    .getByRole("heading", { name: "Keyboard shortcuts" })
+    .locator("..");
+  await expect(keyboardPreview).toBeVisible();
+  await keyboardPreview.focus();
+  await page.keyboard.press("K");
+  await expect(
+    page.getByText("Last key pressed in this panel: K"),
+  ).toBeVisible();
+
+  await page.goto("/ui-kit/?status=verified&q=kbd");
+  await expect(page.getByText("1 matching items")).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /Open live preview/ }),
+  ).toHaveAttribute("href", "/ui-kit/kbd/");
+
+  expect(
+    requests.every((url) => url.startsWith("http://127.0.0.1:4173/")),
+  ).toBe(true);
+  expect(browserErrors).toEqual([]);
+});
+
 test("searches the snapshot and refreshes a generated item route", async ({
   page,
 }) => {

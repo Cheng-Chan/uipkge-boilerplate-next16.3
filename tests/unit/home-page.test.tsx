@@ -26,6 +26,9 @@ describe("HomePage", () => {
     render(<HomePage />);
 
     expect(
+      screen.getByRole("link", { name: /View 39 live components/ }),
+    ).toHaveAttribute("href", "/ui-kit/gallery");
+    expect(
       screen.getByRole("link", { name: /Explore UI kit/ }),
     ).toHaveAttribute("href", "/ui-kit");
     expect(

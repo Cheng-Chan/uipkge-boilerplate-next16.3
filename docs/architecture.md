@@ -166,9 +166,9 @@ role/account controls, theme selection, a skip link, and the persistent demo war
 authenticated roles receive the 403 presentation. This remains browser-controlled UI behavior.
 
 The public `/` route is a lightweight server-rendered composition that reads only catalogue summary
-values. Its UI-kit links disable prefetch, so the root route does not eagerly load catalogue metadata
-or preview modules. The existing theme and local demo-session controls remain the only client
-boundaries on the landing page.
+values. Its UI-kit and live-gallery links disable prefetch, so the root route does not eagerly load
+catalogue metadata or preview modules. The existing theme and local demo-session controls remain the
+only client boundaries on the landing page.
 
 These controls demonstrate application states. Static assets, fixtures, credentials, and code are
 public, so they cannot protect confidential data. See [demo security](demo-security.md).
@@ -185,8 +185,10 @@ verification.
 
 `/ui-kit` reads snapshot metadata without importing preview modules. Every deduplicated ID has a
 statically generated `/ui-kit/[slug]` record route. The client preview runtime consults one explicit
-lazy-loader map only on that item route, contains module errors locally, and renders an honest
-unavailable state until an exact CAT ticket supplies the real source and evidence. See
+lazy-loader map on item routes and on the opt-in `/ui-kit/gallery`. The gallery lists every verified
+preview in category groups but mounts an implementation only after the user selects its load
+control. Both surfaces contain module errors locally, and item routes render an honest unavailable
+state until an exact CAT ticket supplies the real source and evidence. See
 [catalogue discovery](catalogue-discovery.md) for counts and upstream gaps.
 
 ## External network policy

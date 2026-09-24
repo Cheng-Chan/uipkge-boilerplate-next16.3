@@ -103,6 +103,22 @@ export function CatalogueBrowser({ items, summary }: CatalogueBrowserProps) {
           installed, and only real previews with recorded evidence can advance
           to demo-ready or verified.
         </p>
+        <div className="flex flex-wrap gap-3 pt-2">
+          <Link
+            className="bg-primary text-primary-foreground rounded-lg px-4 py-2 text-sm font-semibold"
+            href="/ui-kit/gallery"
+            prefetch={false}
+          >
+            View {summary.catalogueByStatus.verified ?? 0} live components
+          </Link>
+          <Link
+            className="border-input rounded-lg border px-4 py-2 text-sm font-semibold"
+            href="/ui-kit?status=verified"
+            prefetch={false}
+          >
+            Verified records only
+          </Link>
+        </div>
       </div>
 
       <section
@@ -258,7 +274,10 @@ export function CatalogueBrowser({ items, summary }: CatalogueBrowserProps) {
                     href={item.demoRoute}
                     prefetch={false}
                   >
-                    Open item record <span aria-hidden="true">→</span>
+                    {item.previewModule
+                      ? "Open live preview"
+                      : "Open item record"}{" "}
+                    <span aria-hidden="true">→</span>
                   </Link>
                 ) : (
                   <p className="text-muted-foreground text-sm">

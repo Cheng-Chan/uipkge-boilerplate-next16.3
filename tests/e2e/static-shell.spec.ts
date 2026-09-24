@@ -29,6 +29,9 @@ test("keeps the landing composition usable at mobile and desktop widths", async 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await expect(
+    page.getByRole("link", { name: /View 39 live components/ }),
+  ).toHaveAttribute("href", "/ui-kit/gallery/");
+  await expect(
     page.getByRole("link", { name: /Explore UI kit/ }),
   ).toBeVisible();
   await expect(

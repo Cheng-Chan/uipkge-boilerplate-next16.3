@@ -32,6 +32,7 @@ Last updated: 2026-09-24
 | LAB03  | Complete | Searchable/filterable permission-aware catalogue browser exports from metadata without preview imports                                              |
 | LAB04  | Complete | All tracked slugs export through an isolated explicit lazy-preview runtime with contained errors and honest unavailable states                      |
 | FE01   | Complete | Responsive root composition links auth and UI-kit flows, renders live coverage, preserves warnings, and keeps lab code out of root payloads         |
+| FE12   | Complete | Homepage and catalogue entry points expose a grouped 39-component gallery whose isolated real previews load only after explicit user action         |
 | CAT001 | Complete | Theme Switch, Toggle, and Toggle Group installed with real lazy previews, interaction coverage, and dependency-only transitive tracking             |
 | CAT002 | Complete | Charts meta-bundle installed with a real isolated ECharts preview, responsive/theme checks, and provider-safe default behavior                      |
 | CAT003 | Complete | Button, Cascade Select, FAB, Float Label, and Input installed with real lazy previews, accessibility checks, and responsive interactions            |
@@ -428,6 +429,29 @@ Three additional verified records are previously completed nonvisual foundation 
   official Ubuntu extracts for its missing Chromium runtime libraries.
 - Desktop and mobile full-page visual inspection confirmed readable hierarchy, intact coverage bars,
   visible safety copy, responsive stacking, and no horizontal overflow.
+
+### FE12 — catalogue visibility wiring
+
+- Added a prominent snapshot-derived “View 39 live components” entry on `/`, a gallery and
+  verified-record shortcut on `/ui-kit`, and clear “Open live preview” labels for records with real
+  preview modules. The existing FE02 form-laboratory reservation remains unchanged; this separately
+  approved visibility scope uses the next unallocated frontend ID.
+- Added the protected static `/ui-kit/gallery` route. It derives all 39 entries from verified
+  snapshot metadata, groups them into Action, Chart, Control, Data, and Data Display sections, and
+  provides full-record links without duplicating component/count data.
+- Each card exposes an accessible load/hide control. Registry implementations do not mount until
+  selected, retain the existing Suspense/error/isolation boundaries, and can be independently
+  unloaded. No dependency, catalogue status, permission, persistence, or network behavior changed.
+- Focused verification passed 8 tests across 3 files. `pnpm check` passed formatting, lint,
+  TypeScript, 176 tests across 41 files, offline registry reconciliation, and a 723-page static
+  export. Coverage passed at 47.68% statements, 38.26% branches, 42.95% functions, and 49.60% lines.
+- All 21 Chromium tests passed. The FE12 flow followed the homepage link through the safe protected
+  login return, verified all five groups, loaded and interacted with Kbd, and confirmed the
+  verified-only catalogue action without external requests or browser errors. Existing mobile and
+  desktop landing checks also passed.
+- Linked-output inspection found neither the gallery runtime nor Kbd implementation in `/` scripts.
+  The gallery route links its reveal/runtime boundary, while Kbd remains absent from its initial
+  scripts and loads through its existing independent preview chunk only on request.
 
 ### CAT001 — Theme Switch, Toggle, Toggle Group catalogue coverage
 

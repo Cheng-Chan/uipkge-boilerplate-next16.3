@@ -131,13 +131,21 @@ export function LandingPage({ summary }: LandingPageProps) {
             <div className="flex flex-wrap gap-3">
               <Link
                 className="bg-primary text-primary-foreground inline-flex items-center gap-2 rounded-lg px-5 py-3 font-semibold shadow-sm"
+                href="/ui-kit/gallery"
+                prefetch={false}
+              >
+                View {summary.catalogueByStatus.verified ?? 0} live components{" "}
+                <ArrowIcon />
+              </Link>
+              <Link
+                className="border-input bg-background inline-flex items-center gap-2 rounded-lg border px-5 py-3 font-semibold"
                 href="/ui-kit"
                 prefetch={false}
               >
                 Explore UI kit <ArrowIcon />
               </Link>
               <Link
-                className="border-input bg-background inline-flex items-center rounded-lg border px-5 py-3 font-semibold"
+                className="text-muted-foreground hover:text-foreground inline-flex items-center px-2 py-3 font-semibold"
                 href="/login"
               >
                 View demo accounts

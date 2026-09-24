@@ -31,6 +31,7 @@ Last updated: 2026-09-24
 | LAB02  | Complete | Typed schemas and offline registry gate reject route, dependency, path, reference, evidence, preview, and count drift                               |
 | LAB03  | Complete | Searchable/filterable permission-aware catalogue browser exports from metadata without preview imports                                              |
 | LAB04  | Complete | All tracked slugs export through an isolated explicit lazy-preview runtime with contained errors and honest unavailable states                      |
+| FE01   | Complete | Responsive root composition links auth and UI-kit flows, renders live coverage, preserves warnings, and keeps lab code out of root payloads         |
 
 “Complete” applies only to the named ticket. It does not mean the application, demo platform, or
 catalogue is complete.
@@ -394,6 +395,29 @@ catalogue coverage.
   The host required temporary official Ubuntu extracts for its missing Chromium runtime libraries.
 - Built-output inspection found 713 slug directories with none missing and no ECharts, Mapbox,
   Tiptap, or React Leaflet marker in emitted JavaScript. `git diff --check` passed.
+
+### FE01 — landing composition
+
+- Replaced the foundation-only root with a project-authored, UIPKGE-informed marketing composition:
+  sticky navigation, metric-led hero, persistent demo warning, capabilities, snapshot-backed
+  coverage bars, evidence workflow, demo-account CTA, and footer.
+- `/ui-kit`, `/login`, and `/signup` links work from the public page. UI-kit links disable prefetch,
+  and the only client behavior retained is the existing local account panel and global theme control.
+- Snapshot counts render from tracked metadata: 713 total records, 675 live manifests, 38 blocked
+  upstream, and the exact component/block/chart/map totals. No duplicate count constant was added.
+- Unit coverage verifies the hero, current counts, links, and warning. Production-browser coverage
+  verifies the public route without browser errors, 390px/1440px layouts, no horizontal overflow,
+  navigation visibility, and the existing login/session flows.
+- Root-output inspection found no distant catalogue ID, preview-runtime copy, ECharts, Mapbox,
+  Tiptap, or React Leaflet marker in any linked script, `index.html`, or route payload.
+- `pnpm install --frozen-lockfile`, `pnpm peers check`, and `pnpm check` passed. The aggregate gate
+  included formatting, lint, TypeScript, 152 tests across 34 files, the offline registry gate, and
+  the unchanged 722-page static export.
+- `pnpm test:coverage` passed at 85.97% statements, 74.83% branches, 85.46% functions, and 89.12%
+  lines. All 10 Chromium tests passed against the production static preview. The host used temporary
+  official Ubuntu extracts for its missing Chromium runtime libraries.
+- Desktop and mobile full-page visual inspection confirmed readable hierarchy, intact coverage bars,
+  visible safety copy, responsive stacking, and no horizontal overflow.
 
 ## Known constraints
 

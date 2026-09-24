@@ -165,6 +165,11 @@ role/account controls, theme selection, a skip link, and the persistent demo war
 `/access-control` renders the exact tracked fixture users and permission matrix for admin; other
 authenticated roles receive the 403 presentation. This remains browser-controlled UI behavior.
 
+The public `/` route is a lightweight server-rendered composition that reads only catalogue summary
+values. Its UI-kit links disable prefetch, so the root route does not eagerly load catalogue metadata
+or preview modules. The existing theme and local demo-session controls remain the only client
+boundaries on the landing page.
+
 These controls demonstrate application states. Static assets, fixtures, credentials, and code are
 public, so they cannot protect confidential data. See [demo security](demo-security.md).
 
